@@ -11,13 +11,18 @@
   --white:#ffffff;--off:#f8fafc;--dark:#0f172a;--blue:#2563eb;--blue2:#3b82f6;
   --blue-dark:#1d4ed8;--navy:#1e3a8a;--blue-light:#eff6ff;--blue-mid:#dbeafe;
   --gray:#64748b;--gray-light:#94a3b8;--border:#e2e8f0;--ink:#0f172a;
+  --green:#25D366;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--ink);font-family:"Nunito",sans-serif;overflow-x:hidden;cursor:none;}
+
+/* ─── CURSOR ─── */
 .cur,.cur-ring{position:fixed;pointer-events:none;border-radius:50%;}
 .cur{width:9px;height:9px;background:var(--blue);top:0;left:0;z-index:9999;mix-blend-mode:multiply;transition:transform .12s,opacity .15s;}
 .cur-ring{width:38px;height:38px;border:1.5px solid rgba(37,99,235,.38);top:0;left:0;z-index:9998;}
 .cur.pop{transform:scale(2.4);opacity:.4;}.cur-ring.pop{transform:scale(.55);border-color:var(--blue);}
+
+/* ─── NAV ─── */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;height:66px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);backdrop-filter:blur(20px) saturate(200%);-webkit-backdrop-filter:blur(20px) saturate(200%);border-bottom:1px solid var(--border);transition:box-shadow .3s,border-color .3s;}
 nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,235,.16);}
 .nav-logo img{height:38px;display:block;}
@@ -29,16 +34,24 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .nav-ig{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1.5px solid var(--border);border-radius:8px;color:var(--gray);text-decoration:none;transition:all .22s;}
 .nav-ig:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
 .nav-ig svg{width:16px;height:16px;}
+.nav-cart-btn{position:relative;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1.5px solid var(--border);border-radius:8px;background:none;cursor:none;color:var(--gray);transition:all .22s;}
+.nav-cart-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
+.nav-cart-btn svg{width:17px;height:17px;}
+.cart-badge{position:absolute;top:-7px;right:-7px;background:var(--blue);color:white;font-size:.5rem;font-weight:800;min-width:18px;height:18px;border-radius:100px;display:none;align-items:center;justify-content:center;padding:0 4px;border:2px solid white;}
 .nav-cta{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:9px 20px;background:var(--blue);color:var(--white);text-decoration:none;border-radius:8px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:7px;transition:all .22s;}
 .nav-cta:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.3);}
 .nav-cta svg{width:13px;height:13px;}
 .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px;}
 .ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .28s;}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}.ham.open span:nth-child(2){opacity:0;}.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+/* ─── MOBILE MENU ─── */
 .mob-menu{position:fixed;inset:0;z-index:250;background:rgba(255,255,255,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .28s;}
 .mob-menu.open{opacity:1;pointer-events:auto;}
 .mob-menu a{font-size:1.5rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s;}
 .mob-menu a:hover{color:var(--blue);}.mob-menu .nav-cta{font-size:.82rem;padding:13px 32px;margin-top:8px;}
+
+/* ─── HERO ─── */
 #hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden;}
 .hero-left{padding:110px 56px 80px 52px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;background:var(--white);}
 .hero-dots{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(37,99,235,.055) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
@@ -56,8 +69,8 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .hero-sub{font-size:.95rem;color:var(--gray);line-height:1.85;max-width:400px;margin-bottom:34px;}
 .hero-sub strong{color:var(--ink);font-weight:800;}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;text-decoration:none;padding:13px 24px;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid #25D366;border-radius:8px;transition:all .24s;}
-.btn-wa:hover{background:transparent;color:#25D366;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.22);}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:white;text-decoration:none;padding:13px 24px;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--green);border-radius:8px;transition:all .24s;}
+.btn-wa:hover{background:transparent;color:var(--green);transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.22);}
 .btn-wa svg{width:16px;height:16px;flex-shrink:0;}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);text-decoration:none;padding:13px 24px;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--border);border-radius:8px;transition:all .24s;}
 .btn-outline:hover{border-color:var(--blue);color:var(--blue);}
@@ -72,11 +85,15 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .hero-right{animation:fadeIn .8s ease .3s both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ─── MARQUEE ─── */
 .marquee-wrap{background:var(--dark);padding:13px 0;overflow:hidden;}
 .marquee-track{display:flex;animation:marquee 26s linear infinite;width:max-content;}
 .marquee-item{display:flex;align-items:center;gap:14px;padding:0 28px;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);white-space:nowrap;}
 .m-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;flex-shrink:0;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ─── ABOUT ─── */
 #about{padding:120px 52px;background:var(--off);}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1180px;margin:0 auto;}
 .section-tag{font-size:.58rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
@@ -99,23 +116,68 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .about-pill{position:absolute;bottom:-16px;left:-16px;background:var(--blue);border-radius:14px;padding:16px 20px;box-shadow:0 12px 36px rgba(37,99,235,.32);}
 .pill-n{font-family:"Bebas Neue",sans-serif;font-size:2rem;color:white;line-height:1;}
 .pill-l{font-size:.56rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.68);}
+
+/* ─── MENU ─── */
 #menu{padding:120px 52px;background:white;}
-.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;max-width:1180px;margin-left:auto;margin-right:auto;flex-wrap:wrap;gap:16px;}
+.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;max-width:1180px;margin-left:auto;margin-right:auto;flex-wrap:wrap;gap:16px;}
 .sec-title{font-family:"DM Serif Display",serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:400;color:var(--ink);line-height:1;}
 .sec-title em{font-style:italic;color:var(--blue);}
+
+/* Box type selector */
+.box-type-wrap{max-width:1180px;margin:0 auto 32px;display:flex;flex-direction:column;gap:16px;}
+.box-type-toggle{display:flex;gap:10px;flex-wrap:wrap;}
+.box-btn{flex:1;min-width:220px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 22px;border:2px solid var(--border);border-radius:14px;background:var(--off);cursor:none;transition:all .24s;text-align:left;}
+.box-btn:hover{border-color:rgba(37,99,235,.3);background:var(--blue-light);}
+.box-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.box-btn-icon{font-size:1.4rem;margin-bottom:4px;}
+.box-btn-name{font-size:.82rem;font-weight:800;color:var(--ink);letter-spacing:.04em;}
+.box-btn.active .box-btn-name{color:var(--blue);}
+.box-btn-sub{font-size:.72rem;color:var(--gray);font-weight:600;}
+.box-btn-price{font-family:"Bebas Neue",sans-serif;font-size:1.2rem;color:var(--blue);margin-top:6px;}
+
+/* Cart progress bar */
+.cart-progress-bar{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;}
+.progress-track{flex:1;height:6px;background:var(--border);border-radius:100px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:100px;transition:width .35s ease;width:0%;}
+.progress-label{font-size:.72rem;font-weight:800;color:var(--gray);white-space:nowrap;}
+.progress-label span{color:var(--blue);}
+.cart-open-mini{display:flex;align-items:center;gap:8px;background:var(--blue);color:white;border:none;border-radius:8px;padding:8px 16px;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:none;transition:all .22s;white-space:nowrap;}
+.cart-open-mini:hover{background:var(--blue-dark);}
+
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;max-width:1180px;margin:0 auto;}
-.mcard{background:var(--off);border:1px solid var(--border);padding:26px;border-radius:14px;position:relative;overflow:hidden;transition:all .28s cubic-bezier(.34,1.56,.64,1);cursor:none;}
+.mcard{background:var(--off);border:2px solid var(--border);padding:26px;border-radius:14px;position:relative;overflow:hidden;transition:all .28s cubic-bezier(.34,1.56,.64,1);cursor:none;}
 .mcard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:scaleX(0);transform-origin:left;transition:transform .28s;}
 .mcard:hover::before{transform:scaleX(1);}
-.mcard:hover{border-color:rgba(37,99,235,.2);transform:translateY(-5px);box-shadow:0 18px 44px rgba(37,99,235,.1);background:white;}
+.mcard:hover{border-color:rgba(37,99,235,.2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(37,99,235,.1);background:white;}
+.mcard.selected{border-color:var(--blue);background:var(--blue-light);transform:translateY(-4px);box-shadow:0 16px 40px rgba(37,99,235,.14);}
+.mcard.selected::before{transform:scaleX(1);}
+.mcard.has-items{border-color:rgba(37,99,235,.4);background:white;}
 .mcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .mcard-num{font-family:"Bebas Neue",sans-serif;font-size:2rem;color:var(--border);line-height:1;transition:color .28s;}
-.mcard:hover .mcard-num{color:var(--blue-mid);}.mcard-emoji{font-size:1.6rem;}
+.mcard:hover .mcard-num,.mcard.selected .mcard-num,.mcard.has-items .mcard-num{color:var(--blue-mid);}
+.mcard-emoji{font-size:1.6rem;}
 .mcard-name{font-family:"DM Serif Display",serif;font-size:1.22rem;color:var(--ink);margin-bottom:7px;}
 .mcard-desc{font-size:.78rem;color:var(--gray);line-height:1.72;margin-bottom:18px;}
-.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
 .tag{font-size:.56rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--border);color:var(--gray-light);border-radius:100px;transition:all .22s;}
-.mcard:hover .tag{border-color:var(--blue-mid);color:var(--blue);background:var(--blue-light);}
+.mcard:hover .tag,.mcard.selected .tag,.mcard.has-items .tag{border-color:var(--blue-mid);color:var(--blue);background:var(--blue-light);}
+
+/* Card controls */
+.card-ctrl{margin-top:4px;}
+/* Chef's Special: +/- qty */
+.qty-ctrl{display:flex;align-items:center;gap:0;border:1.5px solid var(--border);border-radius:8px;overflow:hidden;width:fit-content;transition:border-color .22s;}
+.qty-ctrl:has(.qty-count:not(:empty):not([data-val="0"])){border-color:var(--blue);}
+.qty-btn{width:34px;height:34px;background:none;border:none;font-size:1.1rem;font-weight:700;color:var(--gray);cursor:none;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.qty-btn:hover{background:var(--blue-light);color:var(--blue);}
+.qty-btn.minus:hover{background:#fef2f2;color:#ef4444;}
+.qty-count{min-width:32px;text-align:center;font-size:.82rem;font-weight:800;color:var(--ink);padding:0 4px;}
+/* Classic: select btn */
+.select-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:9px;border:1.5px solid var(--border);border-radius:8px;background:none;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);cursor:none;transition:all .24s;}
+.select-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
+.mcard.selected .select-btn{border-color:var(--blue);background:var(--blue);color:white;}
+.select-btn svg{width:14px;height:14px;}
+
+/* ─── HOW TO ─── */
 #howto{padding:120px 52px;background:var(--off);}
 .howto-hdr{text-align:center;max-width:480px;margin:0 auto 60px;}
 .howto-hdr .section-tag{justify-content:center;}
@@ -129,6 +191,8 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .step-desc{font-size:.75rem;color:var(--gray);line-height:1.68;}
 .howto-frame{max-width:760px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 22px 64px rgba(37,99,235,.13);border:1px solid var(--border);}
 .howto-frame img{display:block;width:100%;height:auto;}
+
+/* ─── ORDER CTA ─── */
 #order{min-height:clamp(520px,65vh,680px);padding:110px 52px;text-align:center;background:linear-gradient(140deg,var(--dark) 0%,var(--navy) 40%,var(--blue) 80%,var(--blue2) 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 #order::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(255,255,255,.08) 0%,transparent 62%);pointer-events:none;}
 #order::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;}
@@ -140,6 +204,8 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .order-btn:hover{background:transparent;color:white;transform:translateY(-3px);box-shadow:0 18px 48px rgba(0,0,0,.2);}
 .order-btn svg{width:19px;height:19px;}
 .order-note{margin-top:18px;font-size:.6rem;color:rgba(255,255,255,.34);letter-spacing:.14em;text-transform:uppercase;font-weight:700;position:relative;z-index:1;}
+
+/* ─── FOOTER ─── */
 footer{padding:0;background:white;border-top:1px solid var(--border);}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;max-width:1180px;margin:0 auto;padding:52px 52px 44px;}
 .footer-brand img{height:34px;display:block;opacity:.6;margin-bottom:14px;}
@@ -155,28 +221,147 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
 .footer-copy{font-size:.6rem;font-weight:700;color:var(--gray-light);letter-spacing:.08em;text-transform:uppercase;}
 .footer-credit{font-size:.6rem;font-weight:800;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:opacity .2s;}
 .footer-credit:hover{opacity:.7;}
+
+/* ─── CART DRAWER ─── */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:400;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(3px);}
+.cart-overlay.open{opacity:1;pointer-events:auto;}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:white;z-index:401;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 48px rgba(0,0,0,.12);}
+.cart-drawer.open{transform:translateX(0);}
+.cart-drawer-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.cart-drawer-head h3{font-family:"DM Serif Display",serif;font-size:1.3rem;color:var(--ink);}
+.cart-head-right{display:flex;align-items:center;gap:8px;}
+.cart-pieces-pill{font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:100px;}
+.cart-close-btn{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;cursor:none;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gray);transition:all .2s;}
+.cart-close-btn:hover{border-color:var(--blue);color:var(--blue);}
+.cart-body{flex:1;overflow-y:auto;padding:20px 24px;}
+.cart-empty{text-align:center;padding:48px 0;}
+.cart-empty-icon{font-size:2.8rem;margin-bottom:12px;opacity:.5;}
+.cart-empty p{font-size:.85rem;color:var(--gray-light);font-weight:600;}
+.cart-section-label{font-size:.58rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:10px;}
+.cart-items{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.cart-item{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--off);border:1px solid var(--border);border-radius:10px;}
+.cart-item-emoji{font-size:1.4rem;flex-shrink:0;}
+.cart-item-info{flex:1;}
+.cart-item-name{font-size:.82rem;font-weight:800;color:var(--ink);}
+.cart-item-sub{font-size:.7rem;color:var(--gray);margin-top:1px;}
+.cart-item-price{font-family:"Bebas Neue",sans-serif;font-size:1.1rem;color:var(--blue);flex-shrink:0;}
+.cart-item-remove{width:26px;height:26px;border:1px solid var(--border);border-radius:6px;background:none;cursor:none;display:flex;align-items:center;justify-content:center;color:var(--gray-light);font-size:.9rem;transition:all .2s;flex-shrink:0;}
+.cart-item-remove:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2;}
+/* Box count control in cart */
+.cart-box-ctrl{display:flex;align-items:center;justify-content:space-between;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:20px;}
+.cart-box-ctrl-label{font-size:.78rem;font-weight:700;color:var(--gray);}
+.box-qty-ctrl{display:flex;align-items:center;gap:8px;}
+.box-qty-btn{width:30px;height:30px;border:1.5px solid var(--border);border-radius:7px;background:white;cursor:none;font-size:.9rem;color:var(--gray);display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.box-qty-btn:hover{border-color:var(--blue);color:var(--blue);}
+.box-qty-num{font-family:"Bebas Neue",sans-serif;font-size:1.3rem;color:var(--ink);min-width:24px;text-align:center;}
+/* Cart warning */
+.cart-warning{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fef9c3;border:1px solid #fde047;border-radius:8px;font-size:.74rem;font-weight:700;color:#713f12;margin-bottom:16px;}
+.cart-warning svg{width:14px;height:14px;flex-shrink:0;}
+.cart-divider{height:1px;background:var(--border);margin:16px 0;}
+.cart-summary-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.cart-summary-row span:first-child{font-size:.78rem;color:var(--gray);font-weight:600;}
+.cart-summary-row span:last-child{font-size:.78rem;font-weight:800;color:var(--ink);}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+.cart-total-row span:first-child{font-size:.82rem;font-weight:800;color:var(--ink);}
+.cart-total-price{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;color:var(--blue);}
+.cart-footer{padding:16px 24px 24px;border-top:1px solid var(--border);flex-shrink:0;}
+.checkout-btn{width:100%;padding:15px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:all .28s;display:flex;align-items:center;justify-content:center;gap:10px;}
+.checkout-btn:hover:not(:disabled){background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.3);}
+.checkout-btn:disabled{opacity:.45;cursor:not-allowed;}
+.checkout-btn svg{width:16px;height:16px;}
+
+/* ─── CHECKOUT MODAL ─── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal-box{background:white;border-radius:20px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);transform:translateY(20px);transition:transform .3s;}
+.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-head{padding:24px 28px 0;display:flex;align-items:flex-start;justify-content:space-between;}
+.modal-head h3{font-family:"DM Serif Display",serif;font-size:1.6rem;color:var(--ink);}
+.modal-head p{font-size:.78rem;color:var(--gray);margin-top:4px;}
+.modal-close{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;cursor:none;font-size:1.1rem;color:var(--gray);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.modal-close:hover{border-color:var(--blue);color:var(--blue);}
+.modal-body{padding:20px 28px 28px;}
+/* Order summary in modal */
+.order-review{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:22px;}
+.order-review-title{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:10px;}
+.order-review-items{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;}
+.or-item{display:flex;justify-content:space-between;font-size:.8rem;}
+.or-item span:first-child{color:var(--gray);}
+.or-item span:last-child{font-weight:800;color:var(--ink);}
+.or-total{display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);}
+.or-total span:first-child{font-size:.78rem;font-weight:700;color:var(--gray);}
+.or-total-price{font-family:"Bebas Neue",sans-serif;font-size:1.4rem;color:var(--blue);}
+/* Form */
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:6px;}
+.form-group label span{color:#ef4444;}
+.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:9px;font-family:"Nunito",sans-serif;font-size:.88rem;color:var(--ink);background:white;transition:border-color .22s;outline:none;}
+.form-input:focus{border-color:var(--blue);}
+.form-input::placeholder{color:var(--gray-light);}
+textarea.form-input{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.place-order-btn{width:100%;margin-top:20px;padding:15px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:all .28s;display:flex;align-items:center;justify-content:center;gap:10px;}
+.place-order-btn:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.3);}
+.place-order-btn svg{width:16px;height:16px;}
+
+/* ─── SUCCESS MODAL ─── */
+.success-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:600;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;}
+.success-modal.open{opacity:1;pointer-events:auto;}
+.success-box{background:white;border-radius:20px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);transform:scale(.95);transition:transform .3s;}
+.success-modal.open .success-box{transform:scale(1);}
+.success-box-head{padding:32px 28px 20px;text-align:center;}
+.success-check{width:64px;height:64px;background:linear-gradient(135deg,var(--blue),var(--blue2));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 8px 24px rgba(37,99,235,.32);}
+.success-check svg{width:28px;height:28px;color:white;}
+.success-box-head h3{font-family:"DM Serif Display",serif;font-size:1.8rem;color:var(--ink);margin-bottom:6px;}
+.success-box-head p{font-size:.85rem;color:var(--gray);line-height:1.7;}
+.success-box-body{padding:0 28px 28px;}
+.success-order-sum{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px;font-size:.8rem;}
+.success-order-sum h4{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:10px;}
+.success-items{display:flex;flex-direction:column;gap:4px;margin-bottom:8px;}
+.si{display:flex;justify-content:space-between;color:var(--gray);}
+.si span:last-child{font-weight:800;color:var(--ink);}
+.success-total{display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);}
+.success-total span:first-child{font-weight:700;color:var(--gray);}
+.success-total-num{font-family:"Bebas Neue",sans-serif;font-size:1.3rem;color:var(--blue);}
+.success-actions{display:flex;flex-direction:column;gap:10px;}
+.wa-send-btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:15px;background:var(--green);color:white;text-decoration:none;border-radius:10px;font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transition:all .28s;}
+.wa-send-btn:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,211,102,.3);}
+.wa-send-btn svg{width:18px;height:18px;}
+.email-send-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;background:white;color:var(--gray);text-decoration:none;border:1.5px solid var(--border);border-radius:10px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transition:all .22s;}
+.email-send-btn:hover{border-color:var(--blue);color:var(--blue);}
+.email-send-btn svg{width:15px;height:15px;}
+.success-note{text-align:center;font-size:.68rem;color:var(--gray-light);margin-top:12px;line-height:1.6;}
+
+/* ─── REVEAL ─── */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:none;}
 .reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
 .reveal-l.in{opacity:1;transform:none;}
 .reveal-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease;}
 .reveal-r.in{opacity:1;transform:none;}
+
+/* ─── RESPONSIVE ─── */
 @media(max-width:1024px){#hero{grid-template-columns:1fr;min-height:auto;}.hero-left{padding:96px 24px 48px;}.hero-right{min-height:50vw;max-height:480px;}.hero-elephant{width:clamp(260px,60%,420px);}}
-@media(max-width:768px){nav{padding:0 18px;}.nav-links,.nav-ig{display:none;}.ham{display:flex;}.hero-right{max-height:360px;}#about{padding:72px 20px;}.about-grid{grid-template-columns:1fr;gap:40px;}#menu{padding:72px 20px;}#howto{padding:72px 20px;}.steps{grid-template-columns:1fr 1fr;gap:24px;}.steps::before{display:none;}#order{padding:80px 20px;}.footer-top{grid-template-columns:1fr;gap:32px;padding:40px 20px 32px;}.footer-bottom{padding:14px 20px;}}
+@media(max-width:768px){nav{padding:0 18px;}.nav-links,.nav-ig{display:none;}.ham{display:flex;}.hero-right{max-height:360px;}#about{padding:72px 20px;}.about-grid{grid-template-columns:1fr;gap:40px;}#menu{padding:72px 20px;}.sec-hdr{margin-bottom:20px;}.box-type-toggle{flex-direction:column;}.box-btn{min-width:0;}#howto{padding:72px 20px;}.steps{grid-template-columns:1fr 1fr;gap:24px;}.steps::before{display:none;}#order{padding:80px 20px;}.footer-top{grid-template-columns:1fr;gap:32px;padding:40px 20px 32px;}.footer-bottom{padding:14px 20px;}.form-row{grid-template-columns:1fr;}}
 @media(max-width:480px){.steps{grid-template-columns:1fr;}.hero-stats,.stats-row{flex-wrap:wrap;border:none;gap:8px;}.hstat,.stat{border:1px solid var(--border);border-radius:9px;}.hero-right{max-height:300px;}}
 </style>
 </head>
 <body>
+
 <div class="cur" id="cur"></div>
 <div class="cur-ring" id="curRing"></div>
+
+<!-- ── MOBILE MENU ── -->
 <div class="mob-menu" id="mobMenu">
   <a href="#about" onclick="closeMM()">About</a>
   <a href="#menu" onclick="closeMM()">Menu</a>
   <a href="#howto" onclick="closeMM()">How to Use</a>
   <a href="#order" onclick="closeMM()">Order</a>
   <a href="https://www.instagram.com/trunkinocoffee/" target="_blank" onclick="closeMM()">Instagram</a>
-  <a class="nav-cta" href="https://wa.me/971504594090" target="_blank" onclick="closeMM()">Order Now</a>
+  <a class="nav-cta" href="#menu" onclick="closeMM()">Build Your Box</a>
 </div>
+
+<!-- ── NAV ── -->
 <nav id="nav">
   <a class="nav-logo" href="#"><img src="assets/trunkinologo-removebg-preview.png" alt="Trunkino Coffee"/></a>
   <ul class="nav-links">
@@ -189,13 +374,16 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
     <a class="nav-ig" href="https://www.instagram.com/trunkinocoffee/" target="_blank" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
     </a>
-    <a class="nav-cta" href="https://wa.me/971504594090" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Order Now
-    </a>
+    <button class="nav-cart-btn" id="navCartBtn" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+    <a class="nav-cta" href="#menu">Build Your Box →</a>
     <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-left">
     <div class="hero-dots"></div>
@@ -209,12 +397,12 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Order on WhatsApp
         </a>
-        <a class="btn-outline" href="#menu">See the Flavors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a class="btn-outline" href="#menu">Build Your Box <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n">10</div><div class="hstat-l">Bags / Box</div></div>
         <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Flavors</div></div>
-        <div class="hstat"><div class="hstat-n">UAE</div><div class="hstat-l">Delivery</div></div>
+        <div class="hstat"><div class="hstat-n">150</div><div class="hstat-l">AED / Box</div></div>
       </div>
     </div>
   </div>
@@ -223,10 +411,14 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
     <img class="hero-elephant" src="assets/hero-bg.jpg" alt="Trunkino Coffee"/>
   </div>
 </section>
+
+<!-- ── MARQUEE ── -->
 <div class="marquee-wrap"><div class="marquee-track">
-  <span class="marquee-item"><span class="m-dot"></span>Specialty Drip Coffee</span><span class="marquee-item"><span class="m-dot"></span>8 Bold Flavors</span><span class="marquee-item"><span class="m-dot"></span>10 Bags Per Box</span><span class="marquee-item"><span class="m-dot"></span>UAE Delivery</span><span class="marquee-item"><span class="m-dot"></span>No Machine Needed</span><span class="marquee-item"><span class="m-dot"></span>Order on WhatsApp</span><span class="marquee-item"><span class="m-dot"></span>Trunkino Coffee</span>
-  <span class="marquee-item"><span class="m-dot"></span>Specialty Drip Coffee</span><span class="marquee-item"><span class="m-dot"></span>8 Bold Flavors</span><span class="marquee-item"><span class="m-dot"></span>10 Bags Per Box</span><span class="marquee-item"><span class="m-dot"></span>UAE Delivery</span><span class="marquee-item"><span class="m-dot"></span>No Machine Needed</span><span class="marquee-item"><span class="m-dot"></span>Order on WhatsApp</span><span class="marquee-item"><span class="m-dot"></span>Trunkino Coffee</span>
+  <span class="marquee-item"><span class="m-dot"></span>Specialty Drip Coffee</span><span class="marquee-item"><span class="m-dot"></span>8 Bold Flavors</span><span class="marquee-item"><span class="m-dot"></span>10 Bags Per Box</span><span class="marquee-item"><span class="m-dot"></span>AED 150 / Box</span><span class="marquee-item"><span class="m-dot"></span>No Machine Needed</span><span class="marquee-item"><span class="m-dot"></span>UAE Delivery</span><span class="marquee-item"><span class="m-dot"></span>Trunkino Coffee</span>
+  <span class="marquee-item"><span class="m-dot"></span>Specialty Drip Coffee</span><span class="marquee-item"><span class="m-dot"></span>8 Bold Flavors</span><span class="marquee-item"><span class="m-dot"></span>10 Bags Per Box</span><span class="marquee-item"><span class="m-dot"></span>AED 150 / Box</span><span class="marquee-item"><span class="m-dot"></span>No Machine Needed</span><span class="marquee-item"><span class="m-dot"></span>UAE Delivery</span><span class="marquee-item"><span class="m-dot"></span>Trunkino Coffee</span>
 </div></div>
+
+<!-- ── ABOUT ── -->
 <section id="about">
   <div class="about-grid">
     <div class="reveal-l">
@@ -241,7 +433,7 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
       <div class="stats-row">
         <div class="stat"><div class="stat-n">10</div><div class="stat-l">Bags / Box</div></div>
         <div class="stat"><div class="stat-n">8</div><div class="stat-l">Flavors</div></div>
-        <div class="stat"><div class="stat-n">UAE</div><div class="stat-l">Delivery</div></div>
+        <div class="stat"><div class="stat-n">150</div><div class="stat-l">AED / Box</div></div>
       </div>
     </div>
     <div class="about-visual reveal-r">
@@ -250,22 +442,105 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
     </div>
   </div>
 </section>
+
+<!-- ── MENU + CART ── -->
 <section id="menu">
   <div class="sec-hdr">
-    <div><p class="section-tag">What We Brew</p><h2 class="sec-title">The <em>8 Flavors</em></h2></div>
-    <a class="nav-cta" href="https://wa.me/971504594090" target="_blank">Order Now →</a>
+    <div><p class="section-tag">Build Your Box</p><h2 class="sec-title">Choose Your <em>Flavors</em></h2></div>
+    <button class="nav-cta" id="openCartFromMenu" style="border:none;cursor:none;">View Cart →</button>
   </div>
-  <div class="menu-grid">
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">01</div><div class="mcard-emoji">🫙</div></div><div class="mcard-name">Dates</div><div class="mcard-desc">A nod to tradition. Sweet, warm, and deeply comforting — like your favorite Emirati moment in a cup.</div><div class="tags"><span class="tag">Sweet</span><span class="tag">Cozy</span><span class="tag">Traditional</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">02</div><div class="mcard-emoji">🍫</div></div><div class="mcard-name">Chocolate</div><div class="mcard-desc">Rich, smooth, and indulgent. Specialty coffee wrapped in velvety chocolate notes for the ultimate treat.</div><div class="tags"><span class="tag">Rich</span><span class="tag">Smooth</span><span class="tag">Indulgent</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">03</div><div class="mcard-emoji">🍈</div></div><div class="mcard-name">Guava</div><div class="mcard-desc">Fresh, tropical, and juicy. Guava brings a vibrant brightness to your morning brew that wakes you right up.</div><div class="tags"><span class="tag">Fresh</span><span class="tag">Tropical</span><span class="tag">Juicy</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">04</div><div class="mcard-emoji">🌿</div></div><div class="mcard-name">Tabacco</div><div class="mcard-desc">Bold, smoky, and intense. Not for the faint-hearted — this one is for those who like depth in every sip.</div><div class="tags"><span class="tag">Bold</span><span class="tag">Smoky</span><span class="tag">Intense</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">05</div><div class="mcard-emoji">🥭</div></div><div class="mcard-name">Mango</div><div class="mcard-desc">Sunny, sweet, and vibrant. Tropical mango meets specialty coffee in a combination that just makes sense.</div><div class="tags"><span class="tag">Sunny</span><span class="tag">Sweet</span><span class="tag">Vibrant</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">06</div><div class="mcard-emoji">⚡</div></div><div class="mcard-name">Red Bull</div><div class="mcard-desc">Energetic, bold, and powerful. The UAE's most daring coffee drink — double the energy, double the flavor.</div><div class="tags"><span class="tag">Energetic</span><span class="tag">Bold</span><span class="tag">Powerful</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">07</div><div class="mcard-emoji">🥥</div></div><div class="mcard-name">Coconut</div><div class="mcard-desc">Creamy, smooth, and soft. A tropical escape in every sip — like drinking coffee on a beach.</div><div class="tags"><span class="tag">Creamy</span><span class="tag">Smooth</span><span class="tag">Soft</span></div></div>
-    <div class="mcard reveal"><div class="mcard-top"><div class="mcard-num">08</div><div class="mcard-emoji">🫐</div></div><div class="mcard-name">Berries</div><div class="mcard-desc">Fresh, fruity, and refreshing. Mixed berry notes dance through specialty coffee for a bright, lively cup.</div><div class="tags"><span class="tag">Fresh</span><span class="tag">Fruity</span><span class="tag">Refreshing</span></div></div>
+
+  <!-- Box type selector -->
+  <div class="box-type-wrap">
+    <div class="box-type-toggle">
+      <button class="box-btn active" data-type="chefs" id="btnChefs">
+        <div class="box-btn-icon">🍳</div>
+        <div class="box-btn-name">Chef's Special</div>
+        <div class="box-btn-sub">Mix any flavors you like — total must be 10 pieces</div>
+        <div class="box-btn-price">AED 150 / box</div>
+      </button>
+      <button class="box-btn" data-type="classic" id="btnClassic">
+        <div class="box-btn-icon">🫙</div>
+        <div class="box-btn-name">Classic Box</div>
+        <div class="box-btn-sub">One flavor, 10 pieces — the full dedicated experience</div>
+        <div class="box-btn-price">AED 150 / box</div>
+      </button>
+    </div>
+    <!-- Progress (Chef's Special) -->
+    <div class="cart-progress-bar" id="chefsProgress">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label"><span id="progressCount">0</span> / 10 pieces per box</span>
+      <button class="cart-open-mini" id="openCartMini">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Cart
+      </button>
+    </div>
+  </div>
+
+  <!-- Flavor cards -->
+  <div class="menu-grid" id="menuGrid">
+    <div class="mcard reveal" data-flavor="Dates" data-emoji="🫙">
+      <div class="mcard-top"><div class="mcard-num">01</div><div class="mcard-emoji">🫙</div></div>
+      <div class="mcard-name">Dates</div>
+      <div class="mcard-desc">A nod to tradition. Sweet, warm, and deeply comforting — like your favorite Emirati moment in a cup.</div>
+      <div class="tags"><span class="tag">Sweet</span><span class="tag">Cozy</span><span class="tag">Traditional</span></div>
+      <div class="card-ctrl">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+    <div class="mcard reveal" data-flavor="Chocolate" data-emoji="🍫">
+      <div class="mcard-top"><div class="mcard-num">02</div><div class="mcard-emoji">🍫</div></div>
+      <div class="mcard-name">Chocolate</div>
+      <div class="mcard-desc">Rich, smooth, and indulgent. Specialty coffee wrapped in velvety chocolate notes for the ultimate treat.</div>
+      <div class="tags"><span class="tag">Rich</span><span class="tag">Smooth</span><span class="tag">Indulgent</span></div>
+      <div class="card-ctrl"></div>
+    </div>
+    <div class="mcard reveal" data-flavor="Guava" data-emoji="🍈">
+      <div class="mcard-top"><div class="mcard-num">03</div><div class="mcard-emoji">🍈</div></div>
+      <div class="mcard-name">Guava</div>
+      <div class="mcard-desc">Fresh, tropical, and juicy. Guava brings a vibrant brightness to your morning brew that wakes you right up.</div>
+      <div class="tags"><span class="tag">Fresh</span><span class="tag">Tropical</span><span class="tag">Juicy</span></div>
+      <div class="card-ctrl"></div>
+    </div>
+    <div class="mcard reveal" data-flavor="Tabacco" data-emoji="🌿">
+      <div class="mcard-top"><div class="mcard-num">04</div><div class="mcard-emoji">🌿</div></div>
+      <div class="mcard-name">Tabacco</div>
+      <div class="mcard-desc">Bold, smoky, and intense. Not for the faint-hearted — this one is for those who like depth in every sip.</div>
+      <div class="tags"><span class="tag">Bold</span><span class="tag">Smoky</span><span class="tag">Intense</span></div>
+      <div class="card-ctrl"></div>
+    </div>
+    <div class="mcard reveal" data-flavor="Mango" data-emoji="🥭">
+      <div class="mcard-top"><div class="mcard-num">05</div><div class="mcard-emoji">🥭</div></div>
+      <div class="mcard-name">Mango</div>
+      <div class="mcard-desc">Sunny, sweet, and vibrant. Tropical mango meets specialty coffee in a combination that just makes sense.</div>
+      <div class="tags"><span class="tag">Sunny</span><span class="tag">Sweet</span><span class="tag">Vibrant</span></div>
+      <div class="card-ctrl"></div>
+    </div>
+    <div class="mcard reveal" data-flavor="Red Bull" data-emoji="⚡">
+      <div class="mcard-top"><div class="mcard-num">06</div><div class="mcard-emoji">⚡</div></div>
+      <div class="mcard-name">Red Bull</div>
+      <div class="mcard-desc">Energetic, bold, and powerful. The UAE's most daring coffee drink — double the energy, double the flavor.</div>
+      <div class="tags"><span class="tag">Energetic</span><span class="tag">Bold</span><span class="tag">Powerful</span></div>
+      <div class="card-ctrl"></div>
+    </div>
+    <div class="mcard reveal" data-flavor="Coconut" data-emoji="🥥">
+      <div class="mcard-top"><div class="mcard-num">07</div><div class="mcard-emoji">🥥</div></div>
+      <div class="mcard-name">Coconut</div>
+      <div class="mcard-desc">Creamy, smooth, and soft. A tropical escape in every sip — like drinking coffee on a beach.</div>
+      <div class="tags"><span class="tag">Creamy</span><span class="tag">Smooth</span><span class="tag">Soft</span></div>
+      <div class="card-ctrl"></div>
+    </div>
+    <div class="mcard reveal" data-flavor="Berries" data-emoji="🫐">
+      <div class="mcard-top"><div class="mcard-num">08</div><div class="mcard-emoji">🫐</div></div>
+      <div class="mcard-name">Berries</div>
+      <div class="mcard-desc">Fresh, fruity, and refreshing. Mixed berry notes dance through specialty coffee for a bright, lively cup.</div>
+      <div class="tags"><span class="tag">Fresh</span><span class="tag">Fruity</span><span class="tag">Refreshing</span></div>
+      <div class="card-ctrl"></div>
+    </div>
   </div>
 </section>
+
+<!-- ── HOW TO ── -->
 <section id="howto">
   <div class="howto-hdr reveal">
     <p class="section-tag">Simple by Design</p>
@@ -280,16 +555,20 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
   </div>
   <div class="howto-frame reveal"><img src="assets/howto.jpg" alt="How to brew Trunkino drip bag coffee"/></div>
 </section>
+
+<!-- ── ORDER CTA ── -->
 <section id="order">
   <div class="order-eyebrow">Ready to order?</div>
   <h2 class="order-title">Your cup is<br/><em>waiting.</em></h2>
-  <p class="order-sub">Order directly on WhatsApp and get Trunkino delivered to your door anywhere in the UAE.</p>
+  <p class="order-sub">Build your box above or order directly on WhatsApp — delivered anywhere in the UAE.</p>
   <a class="order-btn" href="https://wa.me/971504594090" target="_blank">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Order on WhatsApp
   </a>
   <p class="order-note">Fast delivery · UAE-wide · Any flavor · Any time</p>
 </section>
+
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -311,10 +590,7 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
         @trunkinocoffee
       </a>
-      <div style="margin-top:20px;">
-        <h4>Order</h4>
-        <ul style="margin-top:10px;"><li><a href="https://wa.me/971504594090" target="_blank">WhatsApp</a></li></ul>
-      </div>
+      <div style="margin-top:20px;"><h4>Order</h4><ul style="margin-top:10px;"><li><a href="https://wa.me/971504594090" target="_blank">WhatsApp</a></li></ul></div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -322,19 +598,541 @@ footer{padding:0;background:white;border-top:1px solid var(--border);}
     <a class="footer-credit" href="https://www.instagram.com/falahstudios/" target="_blank">Made &amp; Designed by Falah Studios</a>
   </div>
 </footer>
+
+<!-- ── CART DRAWER ── -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-head">
+    <h3>Your Box</h3>
+    <div class="cart-head-right">
+      <span class="cart-pieces-pill" id="cartPiecesPill">0 pieces</span>
+      <button class="cart-close-btn" id="cartCloseBtn">×</button>
+    </div>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Your box is empty.<br/>Select flavors from the menu.</p>
+    </div>
+    <div id="cartContent" style="display:none;">
+      <p class="cart-section-label" id="cartTypeLabel">Chef's Special</p>
+      <div class="cart-items" id="cartItemsList"></div>
+      <!-- Classic box qty -->
+      <div class="cart-box-ctrl" id="classicBoxCtrl" style="display:none;">
+        <span class="cart-box-ctrl-label">Number of boxes</span>
+        <div class="box-qty-ctrl">
+          <button class="box-qty-btn" id="boxQtyMinus">−</button>
+          <span class="box-qty-num" id="boxQtyNum">1</span>
+          <button class="box-qty-btn" id="boxQtyPlus">+</button>
+        </div>
+      </div>
+      <!-- Warning if not valid -->
+      <div class="cart-warning" id="cartWarning" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="cartWarningText">Add more pieces to complete a box of 10.</span>
+      </div>
+      <div class="cart-divider"></div>
+      <div class="cart-summary-row"><span>Box type</span><span id="sumBoxType">Chef's Special</span></div>
+      <div class="cart-summary-row"><span>Total pieces</span><span id="sumPieces">0</span></div>
+      <div class="cart-summary-row"><span>Boxes</span><span id="sumBoxes">0</span></div>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span class="cart-total-price" id="sumTotal">AED 0</span>
+      </div>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <button class="checkout-btn" id="checkoutBtn" disabled>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Proceed to Checkout
+    </button>
+  </div>
+</div>
+
+<!-- ── CHECKOUT MODAL ── -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div><h3>Complete Your Order</h3><p>Fill in your details and we'll get it to you.</p></div>
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="order-review">
+        <div class="order-review-title">Order Summary</div>
+        <div class="order-review-items" id="modalOrderItems"></div>
+        <div class="or-total"><span>Total</span><span class="or-total-price" id="modalTotal">AED 0</span></div>
+      </div>
+      <form id="checkoutForm" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label>Full Name <span>*</span></label><input class="form-input" type="text" name="name" placeholder="Your full name" required/></div>
+          <div class="form-group"><label>WhatsApp Number <span>*</span></label><input class="form-input" type="tel" name="phone" placeholder="+971 XX XXX XXXX" required/></div>
+        </div>
+        <div class="form-group"><label>Email Address <span>*</span></label><input class="form-input" type="email" name="email" placeholder="your@email.com" required/></div>
+        <div class="form-group"><label>Delivery Area &amp; Address <span>*</span></label><textarea class="form-input" name="address" placeholder="e.g. Dubai Marina, Building X, Apt 12" required></textarea></div>
+        <div class="form-group"><label>Notes <span style="color:var(--gray-light);font-weight:600;">(optional)</span></label><textarea class="form-input" name="notes" placeholder="Any special requests or instructions?"></textarea></div>
+        <button type="submit" class="place-order-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Place Order
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ── SUCCESS MODAL ── -->
+<div class="success-modal" id="successModal">
+  <div class="success-box">
+    <div class="success-box-head">
+      <div class="success-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>Order Placed!</h3>
+      <p>Your order is ready. Send it to us on WhatsApp and we'll get it prepared right away.</p>
+    </div>
+    <div class="success-box-body">
+      <div class="success-order-sum">
+        <h4>Your Order Receipt</h4>
+        <div class="success-items" id="successItems"></div>
+        <div class="success-total"><span>Total</span><span class="success-total-num" id="successTotal">AED 0</span></div>
+      </div>
+      <div class="success-actions">
+        <a class="wa-send-btn" id="waSendBtn" href="#" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send Order on WhatsApp
+        </a>
+        <a class="email-send-btn" id="emailSendBtn" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Also Send via Email
+        </a>
+      </div>
+      <p class="success-note">Screenshot this order summary for your records. Trunkino will confirm your order and delivery details via WhatsApp.</p>
+    </div>
+  </div>
+</div>
+
 <script>
+// ── CONFIG
+const TRUNKINO_WA = '971504594090';
+const TRUNKINO_EMAIL = 'hello@trunkino.com'; // update to your email
+const PRICE_PER_PIECE = 15;
+const PIECES_PER_BOX = 10;
+
+// ── CURSOR
 const cur=document.getElementById('cur'),ring=document.getElementById('curRing');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=(mx-4.5)+'px';cur.style.top=(my-4.5)+'px';});
 (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=(rx-19)+'px';ring.style.top=(ry-19)+'px';requestAnimationFrame(loop);})();
-document.querySelectorAll('a,button,.mcard,.step,.feat').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('pop');ring.classList.add('pop');});el.addEventListener('mouseleave',()=>{cur.classList.remove('pop');ring.classList.remove('pop');});});
+function addCursorHover(els){els.forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('pop');ring.classList.add('pop');});el.addEventListener('mouseleave',()=>{cur.classList.remove('pop');ring.classList.remove('pop');});});}
+addCursorHover(document.querySelectorAll('a,button,.mcard,.step,.feat'));
+
+// ── NAV SCROLL
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>14));
+
+// ── MOBILE MENU
 const ham=document.getElementById('ham'),mm=document.getElementById('mobMenu');
 ham.addEventListener('click',()=>{ham.classList.toggle('open');mm.classList.toggle('open');});
 function closeMM(){ham.classList.remove('open');mm.classList.remove('open');}
+
+// ── SCROLL REVEAL
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -36px 0px'});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+
+// ── CART STATE
+const cart = {
+  type: 'chefs',       // 'chefs' | 'classic'
+  items: {},           // { 'Dates': 3, ... }  — for Chef's
+  classicFlavor: null, // string — for Classic
+  classicBoxes: 1,
+};
+
+function totalPieces(){
+  if(cart.type==='classic') return cart.classicFlavor ? cart.classicBoxes*PIECES_PER_BOX : 0;
+  return Object.values(cart.items).reduce((a,b)=>a+b,0);
+}
+function totalBoxes(){
+  const p=totalPieces();
+  return cart.type==='classic' ? cart.classicBoxes : Math.floor(p/PIECES_PER_BOX);
+}
+function totalPrice(){ return totalPieces()*PRICE_PER_PIECE; }
+function isValid(){
+  if(cart.type==='classic') return cart.classicFlavor!==null && cart.classicBoxes>=1;
+  const p=totalPieces();
+  return p>=PIECES_PER_BOX && p%PIECES_PER_BOX===0;
+}
+function isCartEmpty(){
+  if(cart.type==='classic') return !cart.classicFlavor;
+  return totalPieces()===0;
+}
+
+// ── BOX TYPE TOGGLE
+const btnChefs=document.getElementById('btnChefs');
+const btnClassic=document.getElementById('btnClassic');
+const chefsProgress=document.getElementById('chefsProgress');
+
+function setBoxType(type){
+  cart.type=type;
+  // reset selections
+  cart.items={};
+  cart.classicFlavor=null;
+  cart.classicBoxes=1;
+  btnChefs.classList.toggle('active',type==='chefs');
+  btnClassic.classList.toggle('active',type==='classic');
+  chefsProgress.style.display=type==='chefs'?'flex':'none';
+  renderCardControls();
+  updateAll();
+}
+btnChefs.addEventListener('click',()=>setBoxType('chefs'));
+btnClassic.addEventListener('click',()=>setBoxType('classic'));
+addCursorHover([btnChefs,btnClassic]);
+
+// ── CARD CONTROLS
+function renderCardControls(){
+  document.querySelectorAll('.mcard').forEach(card=>{
+    const flavor=card.dataset.flavor;
+    const ctrl=card.querySelector('.card-ctrl');
+    card.classList.remove('selected','has-items');
+    if(cart.type==='chefs'){
+      const qty=cart.items[flavor]||0;
+      if(qty>0) card.classList.add('has-items');
+      ctrl.innerHTML=`
+        <div class="qty-ctrl">
+          <button class="qty-btn minus" data-flavor="${flavor}">−</button>
+          <span class="qty-count">${qty||0}</span>
+          <button class="qty-btn plus" data-flavor="${flavor}">+</button>
+        </div>`;
+      ctrl.querySelectorAll('.qty-btn').forEach(btn=>{
+        addCursorHover([btn]);
+        btn.addEventListener('click',e=>{
+          e.stopPropagation();
+          const f=btn.dataset.flavor;
+          if(btn.classList.contains('plus')) addPiece(f);
+          else removePiece(f);
+        });
+      });
+    } else {
+      const selected=cart.classicFlavor===flavor;
+      if(selected) card.classList.add('selected');
+      ctrl.innerHTML=`
+        <button class="select-btn" data-flavor="${flavor}">
+          ${selected
+            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Selected'
+            : 'Select This Flavor'}
+        </button>`;
+      const selBtn=ctrl.querySelector('.select-btn');
+      addCursorHover([selBtn]);
+      selBtn.addEventListener('click',e=>{
+        e.stopPropagation();
+        selectClassicFlavor(flavor);
+      });
+    }
+  });
+}
+
+function addPiece(flavor){
+  const current=totalPieces();
+  // allow adding up to next multiple of 10
+  const boxCap=Math.ceil((current+1)/PIECES_PER_BOX)*PIECES_PER_BOX;
+  if(current>=boxCap && current>0 && current%PIECES_PER_BOX===0){
+    // at a complete box, allow adding for next box
+  }
+  cart.items[flavor]=(cart.items[flavor]||0)+1;
+  updateAll();
+}
+function removePiece(flavor){
+  if(!cart.items[flavor]) return;
+  cart.items[flavor]--;
+  if(cart.items[flavor]===0) delete cart.items[flavor];
+  updateAll();
+}
+function selectClassicFlavor(flavor){
+  cart.classicFlavor=cart.classicFlavor===flavor?null:flavor;
+  renderCardControls();
+  updateAll();
+}
+
+// ── BOX QTY (classic)
+document.getElementById('boxQtyMinus').addEventListener('click',()=>{
+  if(cart.classicBoxes>1){cart.classicBoxes--;updateAll();}
+});
+document.getElementById('boxQtyPlus').addEventListener('click',()=>{
+  cart.classicBoxes++;updateAll();
+});
+addCursorHover([document.getElementById('boxQtyMinus'),document.getElementById('boxQtyPlus')]);
+
+// ── UPDATE ALL UI
+function updateAll(){
+  updateProgress();
+  updateBadge();
+  updateDrawer();
+  // re-render card controls for Chef's (qty numbers change)
+  if(cart.type==='chefs') renderCardControls();
+}
+
+function updateProgress(){
+  if(cart.type!=='chefs') return;
+  const p=totalPieces();
+  const fill=document.getElementById('progressFill');
+  const count=document.getElementById('progressCount');
+  const pct=(p%PIECES_PER_BOX)/PIECES_PER_BOX*100;
+  fill.style.width=(p%PIECES_PER_BOX===0&&p>0?100:pct)+'%';
+  count.textContent=p;
+}
+
+function updateBadge(){
+  const p=totalPieces();
+  const badge=document.getElementById('cartBadge');
+  const pill=document.getElementById('cartPiecesPill');
+  badge.textContent=p;
+  badge.style.display=p>0?'flex':'none';
+  pill.textContent=p+' piece'+(p!==1?'s':'');
+}
+
+function updateDrawer(){
+  const empty=isCartEmpty();
+  const emptyEl=document.getElementById('cartEmpty');
+  const contentEl=document.getElementById('cartContent');
+  emptyEl.style.display=empty?'block':'none';
+  contentEl.style.display=empty?'none':'block';
+  if(empty){
+    document.getElementById('checkoutBtn').disabled=true;
+    return;
+  }
+  // type label
+  document.getElementById('cartTypeLabel').textContent=cart.type==='chefs'?'Chef\'s Special':'Classic Box';
+  document.getElementById('sumBoxType').textContent=cart.type==='chefs'?'Chef\'s Special':'Classic Box';
+
+  // items list
+  const list=document.getElementById('cartItemsList');
+  list.innerHTML='';
+  if(cart.type==='chefs'){
+    Object.entries(cart.items).forEach(([flavor,qty])=>{
+      const card=document.querySelector(`.mcard[data-flavor="${flavor}"]`);
+      const emoji=card?card.dataset.emoji:'☕';
+      const item=document.createElement('div');
+      item.className='cart-item';
+      item.innerHTML=`
+        <span class="cart-item-emoji">${emoji}</span>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${flavor}</div>
+          <div class="cart-item-sub">${qty} piece${qty>1?'s':''} · AED ${qty*PRICE_PER_PIECE}</div>
+        </div>
+        <span class="cart-item-price">×${qty}</span>
+        <button class="cart-item-remove" data-flavor="${flavor}" aria-label="Remove">×</button>`;
+      item.querySelector('.cart-item-remove').addEventListener('click',e=>{
+        delete cart.items[e.currentTarget.dataset.flavor];
+        updateAll();
+      });
+      addCursorHover([item.querySelector('.cart-item-remove')]);
+      list.appendChild(item);
+    });
+  } else if(cart.classicFlavor){
+    const card=document.querySelector(`.mcard[data-flavor="${cart.classicFlavor}"]`);
+    const emoji=card?card.dataset.emoji:'☕';
+    const item=document.createElement('div');
+    item.className='cart-item';
+    item.innerHTML=`
+      <span class="cart-item-emoji">${emoji}</span>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${cart.classicFlavor}</div>
+        <div class="cart-item-sub">${cart.classicBoxes*PIECES_PER_BOX} pieces · Classic Box</div>
+      </div>
+      <span class="cart-item-price">×${cart.classicBoxes*PIECES_PER_BOX}</span>`;
+    list.appendChild(item);
+  }
+
+  // classic box qty control
+  const classicCtrl=document.getElementById('classicBoxCtrl');
+  classicCtrl.style.display=cart.type==='classic'&&cart.classicFlavor?'flex':'none';
+  document.getElementById('boxQtyNum').textContent=cart.classicBoxes;
+
+  // warning
+  const warning=document.getElementById('cartWarning');
+  const valid=isValid();
+  if(!valid&&!isCartEmpty()){
+    warning.style.display='flex';
+    if(cart.type==='chefs'){
+      const p=totalPieces();
+      const rem=PIECES_PER_BOX-(p%PIECES_PER_BOX);
+      document.getElementById('cartWarningText').textContent=
+        p%PIECES_PER_BOX!==0
+          ? `Add ${rem} more piece${rem>1?'s':''} to complete a box of 10.`
+          : 'Add at least 10 pieces to checkout.';
+    }
+  } else {
+    warning.style.display='none';
+  }
+
+  // summary
+  const p=totalPieces();
+  document.getElementById('sumPieces').textContent=p;
+  document.getElementById('sumBoxes').textContent=totalBoxes()+' box'+(totalBoxes()!==1?'es':'');
+  document.getElementById('sumTotal').textContent='AED '+totalPrice();
+
+  // checkout btn
+  document.getElementById('checkoutBtn').disabled=!valid;
+}
+
+// ── CART OPEN/CLOSE
+function openCart(){
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('navCartBtn').addEventListener('click',openCart);
+document.getElementById('cartCloseBtn').addEventListener('click',closeCart);
+document.getElementById('cartOverlay').addEventListener('click',closeCart);
+document.getElementById('openCartFromMenu').addEventListener('click',openCart);
+document.getElementById('openCartMini').addEventListener('click',openCart);
+addCursorHover([document.getElementById('navCartBtn'),document.getElementById('cartCloseBtn'),document.getElementById('openCartFromMenu'),document.getElementById('openCartMini')]);
+
+// ── CHECKOUT OPEN/CLOSE
+function openCheckout(){
+  closeCart();
+  // Populate modal summary
+  const itemsEl=document.getElementById('modalOrderItems');
+  itemsEl.innerHTML='';
+  if(cart.type==='chefs'){
+    Object.entries(cart.items).forEach(([flavor,qty])=>{
+      const d=document.createElement('div');
+      d.className='or-item';
+      d.innerHTML=`<span>${flavor} × ${qty}</span><span>AED ${qty*PRICE_PER_PIECE}</span>`;
+      itemsEl.appendChild(d);
+    });
+  } else if(cart.classicFlavor){
+    const d=document.createElement('div');
+    d.className='or-item';
+    d.innerHTML=`<span>${cart.classicFlavor} × ${cart.classicBoxes*PIECES_PER_BOX} (${cart.classicBoxes} box${cart.classicBoxes>1?'es':''})</span><span>AED ${totalPrice()}</span>`;
+    itemsEl.appendChild(d);
+  }
+  document.getElementById('modalTotal').textContent='AED '+totalPrice();
+  document.getElementById('checkoutModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCheckout(){
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('checkoutBtn').addEventListener('click',openCheckout);
+document.getElementById('modalClose').addEventListener('click',closeCheckout);
+document.getElementById('checkoutModal').addEventListener('click',e=>{if(e.target===document.getElementById('checkoutModal'))closeCheckout();});
+addCursorHover([document.getElementById('modalClose')]);
+
+// ── FORM SUBMIT
+document.getElementById('checkoutForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const name=fd.get('name').trim();
+  const phone=fd.get('phone').trim();
+  const email=fd.get('email').trim();
+  const address=fd.get('address').trim();
+  const notes=fd.get('notes').trim();
+  if(!name||!phone||!email||!address){
+    alert('Please fill in all required fields.');
+    return;
+  }
+  closeCheckout();
+  showSuccess({name,phone,email,address,notes});
+});
+
+// ── SUCCESS
+function showSuccess(customer){
+  // Build order lines
+  const lines=[];
+  let orderDetail='';
+  if(cart.type==='chefs'){
+    Object.entries(cart.items).forEach(([flavor,qty])=>{
+      const card=document.querySelector(`.mcard[data-flavor="${flavor}"]`);
+      const emoji=card?card.dataset.emoji:'☕';
+      lines.push({emoji,flavor,qty,price:qty*PRICE_PER_PIECE});
+      orderDetail+=`${emoji} ${flavor} × ${qty} pieces\n`;
+    });
+  } else if(cart.classicFlavor){
+    const card=document.querySelector(`.mcard[data-flavor="${cart.classicFlavor}"]`);
+    const emoji=card?card.dataset.emoji:'☕';
+    const qty=cart.classicBoxes*PIECES_PER_BOX;
+    lines.push({emoji,flavor:cart.classicFlavor,qty,price:totalPrice()});
+    orderDetail+=`${emoji} ${cart.classicFlavor} × ${qty} pieces (${cart.classicBoxes} box${cart.classicBoxes>1?'es':''})\n`;
+  }
+
+  // Success items
+  const successItems=document.getElementById('successItems');
+  successItems.innerHTML='';
+  lines.forEach(l=>{
+    const d=document.createElement('div');
+    d.className='si';
+    d.innerHTML=`<span>${l.emoji} ${l.flavor} × ${l.qty}</span><span>AED ${l.price}</span>`;
+    successItems.appendChild(d);
+  });
+  // customer info
+  ['name','phone','email','area'].forEach(k=>{
+    const d=document.createElement('div');
+    d.className='si';
+    const labels={name:'Name',phone:'WhatsApp',email:'Email',area:'Address'};
+    const vals={name:customer.name,phone:customer.phone,email:customer.email,area:customer.address};
+    if(vals[k]) d.innerHTML=`<span>${labels[k]}</span><span>${vals[k]}</span>`;
+    if(vals[k]) successItems.appendChild(d);
+  });
+  document.getElementById('successTotal').textContent='AED '+totalPrice();
+
+  // WhatsApp message
+  const boxLabel=cart.type==='chefs'?"Chef's Special":`Classic Box (${cart.classicFlavor})`;
+  const waMsg=
+`🧾 *New Trunkino Order*
+
+📦 *Box Type:* ${boxLabel}
+
+${orderDetail}
+🔢 *Total Pieces:* ${totalPieces()} (${totalBoxes()} box${totalBoxes()>1?'es':''})
+💰 *Total:* AED ${totalPrice()}
+
+👤 *Name:* ${customer.name}
+📱 *WhatsApp:* ${customer.phone}
+📧 *Email:* ${customer.email}
+📍 *Address:* ${customer.address}${customer.notes?'\n📝 *Notes:* '+customer.notes:''}
+
+---
+Sent from trunkino.com`;
+
+  document.getElementById('waSendBtn').href=`https://wa.me/${TRUNKINO_WA}?text=${encodeURIComponent(waMsg)}`;
+
+  // Email body
+  const emailBody=
+`New Order from Trunkino Website
+
+Box Type: ${boxLabel}
+${orderDetail}
+Total Pieces: ${totalPieces()} (${totalBoxes()} box${totalBoxes()>1?'es':''})
+Total: AED ${totalPrice()}
+
+Customer Details:
+Name: ${customer.name}
+WhatsApp: ${customer.phone}
+Email: ${customer.email}
+Address: ${customer.address}${customer.notes?'\nNotes: '+customer.notes:''}`;
+
+  document.getElementById('emailSendBtn').href=
+    `mailto:${TRUNKINO_EMAIL}?subject=New Order - ${customer.name}&body=${encodeURIComponent(emailBody)}`;
+
+  document.getElementById('successModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  addCursorHover([document.getElementById('waSendBtn'),document.getElementById('emailSendBtn')]);
+}
+document.getElementById('successModal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('successModal')){
+    document.getElementById('successModal').classList.remove('open');
+    document.body.style.overflow='';
+    // reset cart
+    cart.items={};cart.classicFlavor=null;cart.classicBoxes=1;
+    renderCardControls();updateAll();
+  }
+});
+
+// ── INIT
+setBoxType('chefs');
 </script>
 </body>
 </html>
