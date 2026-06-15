@@ -64,8 +64,11 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .badge-dot{width:6px;height:6px;background:white;border-radius:50%;animation:blink 1.4s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.22;}}
 .hero-logo{height:clamp(54px,7vw,88px);display:block;margin-bottom:18px;}
-.hero-title{font-family:"DM Serif Display",serif;font-size:clamp(2.8rem,6.5vw,6rem);font-weight:400;line-height:.93;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px;}
-.hero-title em{font-style:italic;color:var(--blue);display:block;}
+.hero-title{font-family:"DM Serif Display",serif;font-size:clamp(3.6rem,9vw,8.4rem);font-weight:400;line-height:.9;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px;}
+.hero-title span,.hero-title em{display:block;}
+.hero-title em{font-style:italic;color:var(--blue);}
+.hero-deliver{font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1.5px solid var(--blue-mid);border-radius:100px;background:var(--blue-light);margin-bottom:34px;width:fit-content;}
+.hero-deliver svg{width:12px;height:12px;}
 .hero-sub{font-size:.95rem;color:var(--gray);line-height:1.85;max-width:400px;margin-bottom:34px;}
 .hero-sub strong{color:var(--ink);font-weight:800;}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
@@ -81,7 +84,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,2
 .hstat-l{font-size:.54rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-light);margin-top:2px;}
 .hero-badge{animation:fadeUp .55s ease .15s both;}.hero-logo{animation:fadeUp .55s ease .28s both;}
 .hero-title{animation:fadeUp .65s ease .38s both;}.hero-sub{animation:fadeUp .65s ease .5s both;}
-.hero-btns{animation:fadeUp .65s ease .6s both;}.hero-stats{animation:fadeUp .65s ease .72s both;}
+.hero-btns{animation:fadeUp .65s ease .6s both;}
 .hero-right{animation:fadeIn .8s ease .3s both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
@@ -390,19 +393,19 @@ textarea.form-input{resize:vertical;min-height:80px;}
     <div style="position:relative;z-index:2;">
       <div class="hero-badge"><span class="badge-dot"></span>Now Delivering Across UAE</div>
       <img class="hero-logo" src="assets/trunkinologo-removebg-preview.png" alt="Trunkino Coffee"/>
-      <h1 class="hero-title">The coffee<br/>that <em>dares.</em></h1>
-      <p class="hero-sub">Specialty drip bag coffee in <strong>8 unexpected flavors</strong> — delivered across the UAE. No machine. No barista. Just your perfect moment.</p>
+      <h1 class="hero-title"><span>Coffee</span><em>Drip</em><span>Bag</span></h1>
+      <p class="hero-sub">Specialty drip bag coffee in <strong>Unique Flavors</strong></p>
+      <p class="hero-sub" style="margin-top:-18px;margin-bottom:20px;">No machine. No barista. Just your perfect moment.</p>
+      <div class="hero-deliver">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Delivering across the UAE
+      </div>
       <div class="hero-btns">
         <a class="btn-wa" href="https://wa.me/971504594090" target="_blank">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Order on WhatsApp
         </a>
         <a class="btn-outline" href="#menu">Build Your Box <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat"><div class="hstat-n">10</div><div class="hstat-l">Bags / Box</div></div>
-        <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Flavors</div></div>
-        <div class="hstat"><div class="hstat-n">150</div><div class="hstat-l">AED / Box</div></div>
       </div>
     </div>
   </div>
@@ -426,19 +429,13 @@ textarea.form-input{resize:vertical;min-height:80px;}
       <h2 class="about-headline">Not your average<br/><em>coffee brand.</em></h2>
       <p class="about-body">Trunkino was born from a love of specialty coffee and bold creativity. We take precision drip bag brewing and pair it with unexpected, vibrant flavors — delivering a unique coffee experience straight to your door across the UAE.</p>
       <div class="feat-list">
-        <div class="feat"><div class="feat-icon">🎒</div><div class="feat-text"><strong>Drip Bag Precision</strong><span>Café-quality specialty coffee in a portable drip bag. Open, expand, pour 150ml, enjoy.</span></div></div>
-        <div class="feat"><div class="feat-icon">🌿</div><div class="feat-text"><strong>Bold &amp; Unexpected Flavors</strong><span>From classic Dates to bold Red Bull — coffee you've never tasted before.</span></div></div>
-        <div class="feat"><div class="feat-icon">📦</div><div class="feat-text"><strong>UAE-Wide Delivery</strong><span>Order on WhatsApp and get Trunkino anywhere in the UAE, fast.</span></div></div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-n">10</div><div class="stat-l">Bags / Box</div></div>
-        <div class="stat"><div class="stat-n">8</div><div class="stat-l">Flavors</div></div>
-        <div class="stat"><div class="stat-n">150</div><div class="stat-l">AED / Box</div></div>
+        <div class="feat"><div class="feat-icon">☕</div><div class="feat-text"><strong>Drip Bag Precision</strong><span>Café-quality specialty coffee in a portable drip bag. Open, expand, pour 150ml, enjoy.</span></div></div>
+        <div class="feat"><div class="feat-icon">✨</div><div class="feat-text"><strong>Bold &amp; Unexpected Flavors</strong><span>From classic Dates to bold Red Bull — coffee you've never tasted before.</span></div></div>
+        <div class="feat"><div class="feat-icon">🇦🇪</div><div class="feat-text"><strong>UAE-Wide Delivery</strong><span>Order on WhatsApp and get Trunkino anywhere in the UAE, fast.</span></div></div>
       </div>
     </div>
     <div class="about-visual reveal-r">
       <img class="about-img" src="assets/hero-bg.jpg" alt="Trunkino Coffee Product"/>
-      <div class="about-pill"><div class="pill-n">10</div><div class="pill-l">Bags per Box</div></div>
     </div>
   </div>
 </section>
@@ -454,7 +451,7 @@ textarea.form-input{resize:vertical;min-height:80px;}
   <div class="box-type-wrap">
     <div class="box-type-toggle">
       <button class="box-btn active" data-type="chefs" id="btnChefs">
-        <div class="box-btn-icon">🍳</div>
+        <div class="box-btn-icon">🐘</div>
         <div class="box-btn-name">Chef's Special</div>
         <div class="box-btn-sub">Mix any flavors you like — total must be 10 pieces</div>
         <div class="box-btn-price">AED 150 / box</div>
@@ -553,7 +550,7 @@ textarea.form-input{resize:vertical;min-height:80px;}
     <div class="step reveal"><div class="step-n">03</div><div class="step-title">Pour Hot Water</div><div class="step-desc">Slowly pour 150ml of hot water over the drip bag. Let it bloom and drip.</div></div>
     <div class="step reveal"><div class="step-n">04</div><div class="step-title">Enjoy Your Coffee</div><div class="step-desc">Remove the bag, sit back, and enjoy your perfectly brewed Trunkino cup.</div></div>
   </div>
-  <div class="howto-frame reveal"><img src="assets/howto.jpg" alt="How to brew Trunkino drip bag coffee"/></div>
+  <div class="howto-frame reveal"><img src="assets/howto.jpg?v=2" alt="How to brew Trunkino drip bag coffee"/></div>
 </section>
 
 <!-- ── ORDER CTA ── -->
@@ -573,7 +570,7 @@ textarea.form-input{resize:vertical;min-height:80px;}
   <div class="footer-top">
     <div class="footer-brand">
       <img src="assets/trunkinologo-removebg-preview.png" alt="Trunkino Coffee"/>
-      <p>Specialty drip bag coffee in 8 unexpected flavors, delivered across the UAE. No machine needed.</p>
+      <p>Specialty drip bag coffee in unique flavors, delivered across the UAE. No machine needed.</p>
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
