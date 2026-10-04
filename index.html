@@ -1,1135 +1,1263 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Trunkino Coffee — Specialty Drip Coffee, UAE</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trunkino Coffee — Specialty Drip Bag Coffee in 8 Flavors · UAE</title>
+<meta name="description" content="Specialty drip bag coffee in 8 unexpected flavors — Dates, Chocolate, Guava, Mango, Red Bull and more. No machine needed. AED 150 for a box of 10, delivered across the UAE.">
+<meta name="theme-color" content="#2563eb">
+<link rel="canonical" href="https://www.trunkinocoffee.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Cpath d='M32 12c8 12 14 19 14 27a14 14 0 0 1-28 0c0-8 6-15 14-27z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trunkino Coffee">
+<meta property="og:title" content="Trunkino Coffee — Café coffee. No machine.">
+<meta property="og:description" content="Specialty drip bag coffee in 8 unexpected flavors. AED 150 for a box of 10, delivered across the UAE.">
+<meta property="og:url" content="https://www.trunkinocoffee.com/">
+<meta property="og:image" content="https://www.trunkinocoffee.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // Theme and language before first paint, so nothing flashes.
+  (function () {
+    try {
+      var d = document.documentElement, q = new URLSearchParams(location.search).get("lang");
+      var t = localStorage.getItem("trunkino-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var l = q || localStorage.getItem("trunkino-lang") || "en";
+      d.dataset.theme = t === "dark" ? "dark" : "light";
+      if (l === "ar") { d.lang = "ar"; d.dir = "rtl"; d.classList.add("i18n-pending"); }
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&family=Gochi+Hand&family=Archivo+Black&family=Lalezar&family=Alexandria:wght@400..800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Trunkino Specialty Drip Bag Coffee — Box of 10","brand":{"@type":"Brand","name":"Trunkino Coffee"},"description":"Specialty drip bag coffee in 8 flavors: Dates, Chocolate, Guava, Tobacco, Mango, Red Bull, Coconut and Berries. No machine needed.","image":"https://www.trunkinocoffee.com/assets/og.jpg","offers":{"@type":"Offer","price":"150","priceCurrency":"AED","availability":"https://schema.org/InStock","areaServed":"AE","url":"https://www.trunkinocoffee.com/#build"}}
+</script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+/* Trunkino's signature palette: blue, white and deep navy */
 :root{
-  --white:#ffffff;--off:#f8fafc;--dark:#0f172a;--blue:#2563eb;--blue2:#3b82f6;
-  --blue-dark:#1d4ed8;--navy:#1e3a8a;--blue-light:#eff6ff;--blue-mid:#dbeafe;
-  --gray:#64748b;--gray-light:#94a3b8;--border:#e2e8f0;--ink:#0f172a;
-  --green:#25D366;
+  --blue:#2563eb; --blue2:#3b82f6; --blue-d:#1d4ed8; --navy:#1e3a8a; --ink-navy:#0f172a; --wa:#25d366;
+  --bg:#ffffff; --bg2:#f4f7ff; --surface:#ffffff; --surface2:#eff6ff; --text:#0f172a; --muted:#64748b; --line:#e2e8f0;
+  --accent:#2563eb; --accent-ink:#1d4ed8; --sky:#dbeafe;
+  --glass:rgba(255,255,255,.68); --glass-line:rgba(15,23,42,.08); --hi:rgba(255,255,255,.95); --shadow:rgba(15,23,42,.16);
+  --grid:rgba(37,99,235,.075); --aurora:.5;
+  --display:"Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Gochi Hand", "Comic Sans MS", cursive;
+  --r:28px; color-scheme:light;
 }
-html{scroll-behavior:smooth;}
-body{background:var(--white);color:var(--ink);font-family:"Nunito",sans-serif;overflow-x:hidden;cursor:none;}
+[data-theme="dark"]{
+  --bg:#050a17; --bg2:#091127; --surface:#0d162e; --surface2:#121e3d; --text:#eef2ff; --muted:#94a3b8; --line:rgba(148,163,184,.16);
+  --accent:#3b82f6; --accent-ink:#93c5fd; --sky:#1a2a55;
+  --glass:rgba(13,22,46,.58); --glass-line:rgba(255,255,255,.09); --hi:rgba(255,255,255,.07); --shadow:rgba(0,0,0,.65);
+  --grid:rgba(96,165,250,.08); --aurora:.85; color-scheme:dark;
+}
+[lang="ar"]{ --display:"Alexandria", "IBM Plex Sans Arabic", sans-serif; --body:"IBM Plex Sans Arabic", "Alexandria", system-ui, sans-serif; --hand:"Alexandria", sans-serif; }
+.i18n-pending body{opacity:0;animation:reveal 0s 1.2s forwards}
+@keyframes reveal{to{opacity:1}}
 
-/* ─── CURSOR ─── */
-.cur,.cur-ring{position:fixed;pointer-events:none;border-radius:50%;}
-.cur{width:9px;height:9px;background:var(--blue);top:0;left:0;z-index:9999;mix-blend-mode:multiply;transition:transform .12s,opacity .15s;}
-.cur-ring{width:38px;height:38px;border:1.5px solid rgba(37,99,235,.38);top:0;left:0;z-index:9998;}
-.cur.pop{transform:scale(2.4);opacity:.4;}.cur-ring.pop{transform:scale(.55);border-color:var(--blue);}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:100px;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .4s, color .4s}
+body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:10px}
+.wrap{width:100%;max-width:1220px;margin-inline:auto;padding-inline:clamp(18px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1;margin:0;text-wrap:balance}
+[lang="ar"] h1,[lang="ar"] h2,[lang="ar"] h3{letter-spacing:0;line-height:1.25;font-weight:700}
+p{margin:0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:700 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+[lang="ar"] .kicker{letter-spacing:0;font-size:15px}
+.kicker::before{content:"";width:24px;height:2px;border-radius:2px;background:currentColor}
+.hand{font-family:var(--hand);font-weight:400;letter-spacing:0}
+[lang="ar"] .hand{font-weight:600}
+[dir="rtl"] .flip{transform:scaleX(-1)}
+.sec{padding-block:clamp(76px,10vw,132px);position:relative}
+.sec-head{display:grid;gap:18px;max-width:660px;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head h2{font-size:clamp(42px,6.2vw,78px)}
+.sec-head p{font-size:clamp(17px,1.5vw,19px);color:var(--muted)}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);box-shadow:inset 0 1px 0 var(--hi), inset 0 0 0 1px var(--glass-line), 0 18px 40px -26px var(--shadow)}
 
-/* ─── NAV ─── */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;height:66px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);backdrop-filter:blur(20px) saturate(200%);-webkit-backdrop-filter:blur(20px) saturate(200%);border-bottom:1px solid var(--border);transition:box-shadow .3s,border-color .3s;}
-nav.scrolled{box-shadow:0 4px 28px rgba(37,99,235,.09);border-color:rgba(37,99,235,.16);}
-.nav-logo img{height:38px;display:block;}
-.nav-links{display:flex;gap:30px;list-style:none;}
-.nav-links a{font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);text-decoration:none;position:relative;transition:color .2s;}
-.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--blue);border-radius:2px;transition:width .25s;}
-.nav-links a:hover{color:var(--blue);}.nav-links a:hover::after{width:100%;}
-.nav-right{display:flex;align-items:center;gap:12px;}
-.nav-ig{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1.5px solid var(--border);border-radius:8px;color:var(--gray);text-decoration:none;transition:all .22s;}
-.nav-ig:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
-.nav-ig svg{width:16px;height:16px;}
-.nav-cart-btn{position:relative;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1.5px solid var(--border);border-radius:8px;background:none;cursor:none;color:var(--gray);transition:all .22s;}
-.nav-cart-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
-.nav-cart-btn svg{width:17px;height:17px;}
-.cart-badge{position:absolute;top:-7px;right:-7px;background:var(--blue);color:white;font-size:.5rem;font-weight:800;min-width:18px;height:18px;border-radius:100px;display:none;align-items:center;justify-content:center;padding:0 4px;border:2px solid white;}
-.nav-cta{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:9px 20px;background:var(--blue);color:var(--white);text-decoration:none;border-radius:8px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:7px;transition:all .22s;}
-.nav-cta:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.3);}
-.nav-cta svg{width:13px;height:13px;}
-.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px;}
-.ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .28s;}
-.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}.ham.open span:nth-child(2){opacity:0;}.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 26px;border-radius:999px;border:0;font:700 16px/1 var(--body);text-decoration:none;white-space:nowrap;overflow:hidden;transition:transform .2s ease, background-color .2s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:linear-gradient(180deg,#3b82f6,#2563eb 55%,#1d4ed8);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 14px 30px -12px rgba(37,99,235,.85)}
+.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-120%);transition:transform .7s ease}
+.btn-primary:hover::after{transform:translateX(120%)}
+.btn-wa{background:var(--wa);color:#03321a;box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 14px 30px -14px rgba(37,211,102,.9)}
+.btn-ghost{color:var(--text)}
+.btn-white{background:#fff;color:var(--blue-d);box-shadow:0 14px 30px -14px rgba(0,0,0,.5)}
+.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
 
-/* ─── MOBILE MENU ─── */
-.mob-menu{position:fixed;inset:0;z-index:250;background:rgba(255,255,255,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .28s;}
-.mob-menu.open{opacity:1;pointer-events:auto;}
-.mob-menu a{font-size:1.5rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s;}
-.mob-menu a:hover{color:var(--blue);}.mob-menu .nav-cta{font-size:.82rem;padding:13px 32px;margin-top:8px;}
+/* Progress + top bar + nav */
+.progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:100%;z-index:90;background:linear-gradient(90deg,#60a5fa,#2563eb);transform-origin:left;transform:scaleX(0)}
+[dir="rtl"] .progress{transform-origin:right}
+.topbar{background:var(--ink-navy);color:#dbeafe;font-size:14px;text-align:center;padding:9px 16px;line-height:1.4}
+.topbar a{color:#93c5fd;font-weight:700;text-decoration:none;white-space:nowrap}
+.nav{position:sticky;top:12px;z-index:40;padding-inline:12px;margin-top:12px}
+.nav-in{max-width:1220px;margin-inline:auto;height:68px;padding-inline:20px 10px;border-radius:999px;display:flex;align-items:center;gap:22px;transition:box-shadow .3s}
+.logo{display:block;flex:none;width:122px;height:46px;background:var(--accent);-webkit-mask:url(assets/trunkinologo-removebg-preview.png) left center/contain no-repeat;mask:url(assets/trunkinologo-removebg-preview.png) left center/contain no-repeat}
+[dir="rtl"] .logo{-webkit-mask-position:right center;mask-position:right center}
+.nav-links{display:flex;gap:26px;margin:0;margin-inline-start:auto;padding:0;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:15.5px;opacity:.78;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{position:relative;width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:0;box-shadow:inset 0 0 0 1.5px var(--line);color:var(--text);text-decoration:none;font:800 15px/1 var(--body);transition:transform .2s, background .2s}
+.icon-btn:hover{transform:translateY(-2px)}
+.icon-btn svg{width:21px;height:21px}
+.lang-btn{font-family:"Alexandria",var(--body);font-size:17px}
+[lang="ar"] .lang-btn{font-family:"Figtree",sans-serif;font-size:14px}
+.theme-btn .moon,[data-theme="dark"] .theme-btn .sun{display:none}
+[data-theme="dark"] .theme-btn .moon{display:block}
+.badge{position:absolute;top:-5px;inset-inline-end:-5px;min-width:22px;height:22px;border-radius:11px;padding:0 6px;background:var(--blue);color:#fff;font:800 12px/22px "Figtree",sans-serif;text-align:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,1.7,.5,1)}
+.badge.on{transform:scale(1)}
+.nav .btn{height:48px;padding:0 22px;font-size:15px}
+.menu-btn{display:none}
+.mmenu{position:fixed;inset:0;z-index:60;background:linear-gradient(150deg,#0f172a,#1d4ed8 65%,#3b82f6);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 22px) 24px calc(env(safe-area-inset-bottom,0px) + 28px);display:flex;flex-direction:column;gap:6px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.mmenu.open{transform:none;visibility:visible}
+.mmenu .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.mmenu .logo{background:#fff}
+.mmenu .icon-btn{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.mmenu a.big{font:800 46px/1.15 var(--display);letter-spacing:-.03em;text-decoration:none}
+[lang="ar"] .mmenu a.big{letter-spacing:0;font-size:40px;line-height:1.5}
+.mmenu .tools{display:flex;gap:10px;margin-top:auto;margin-bottom:12px}
+.mmenu .btn{background:#fff;color:var(--blue-d)}
 
-/* ─── HERO ─── */
-#hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden;}
-.hero-left{padding:110px 56px 80px 52px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;background:var(--white);}
-.hero-dots{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(37,99,235,.055) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
-.hero-right{position:relative;overflow:hidden;background:linear-gradient(155deg,var(--navy) 0%,var(--blue) 60%,var(--blue2) 100%);display:flex;align-items:center;justify-content:center;}
-.hero-right::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 55% 50%,rgba(255,255,255,.1) 0%,transparent 65%);pointer-events:none;}
-.hero-right-word{position:absolute;font-family:"Bebas Neue",sans-serif;font-size:clamp(90px,18vw,220px);color:rgba(255,255,255,.04);letter-spacing:.05em;white-space:nowrap;bottom:-10px;left:50%;transform:translateX(-50%);pointer-events:none;user-select:none;}
-.hero-elephant{position:relative;z-index:2;width:clamp(320px,78%,600px);filter:drop-shadow(0 32px 80px rgba(0,0,0,.35));animation:elephantFloat 7s ease-in-out infinite;}
-@keyframes elephantFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:white;font-size:.57rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:26px;width:fit-content;}
-.badge-dot{width:6px;height:6px;background:white;border-radius:50%;animation:blink 1.4s ease-in-out infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:.22;}}
-.hero-logo{height:clamp(54px,7vw,88px);display:block;margin-bottom:18px;}
-.hero-title{font-family:"DM Serif Display",serif;font-size:clamp(3.6rem,9vw,8.4rem);font-weight:400;line-height:.9;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px;}
-.hero-title span,.hero-title em{display:block;}
-.hero-title em{font-style:italic;color:var(--blue);}
-.hero-deliver{font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1.5px solid var(--blue-mid);border-radius:100px;background:var(--blue-light);margin-bottom:34px;width:fit-content;}
-.hero-deliver svg{width:12px;height:12px;}
-.hero-sub{font-size:.95rem;color:var(--gray);line-height:1.85;max-width:400px;margin-bottom:34px;}
-.hero-sub strong{color:var(--ink);font-weight:800;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:white;text-decoration:none;padding:13px 24px;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--green);border-radius:8px;transition:all .24s;}
-.btn-wa:hover{background:transparent;color:var(--green);transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.22);}
-.btn-wa svg{width:16px;height:16px;flex-shrink:0;}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);text-decoration:none;padding:13px 24px;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--border);border-radius:8px;transition:all .24s;}
-.btn-outline:hover{border-color:var(--blue);color:var(--blue);}
-.btn-outline svg{width:13px;height:13px;}
-.hero-stats{display:flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;width:fit-content;background:white;box-shadow:0 4px 16px rgba(0,0,0,.055);}
-.hstat{padding:14px 24px;text-align:center;border-right:1px solid var(--border);}.hstat:last-child{border-right:none;}
-.hstat-n{font-family:"Bebas Neue",sans-serif;font-size:1.9rem;color:var(--blue);line-height:1;}
-.hstat-l{font-size:.54rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-light);margin-top:2px;}
-.hero-badge{animation:fadeUp .55s ease .15s both;}.hero-logo{animation:fadeUp .55s ease .28s both;}
-.hero-title{animation:fadeUp .65s ease .38s both;}.hero-sub{animation:fadeUp .65s ease .5s both;}
-.hero-btns{animation:fadeUp .65s ease .6s both;}
-.hero-right{animation:fadeIn .8s ease .3s both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+/* Hero */
+.hero{position:relative;overflow:hidden;margin-top:-80px;padding-top:calc(80px + clamp(40px,6vw,84px));padding-bottom:clamp(64px,8vw,110px);isolation:isolate}
+.aurora{position:absolute;inset:0;z-index:-2;opacity:var(--aurora);filter:blur(70px);pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;animation:drift 16s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:44vw;height:44vw;max-width:640px;max-height:640px;background:#60a5fa;inset-inline-end:2%;top:4%}
+.aurora i:nth-child(2){width:30vw;height:30vw;max-width:440px;max-height:440px;background:#2563eb;inset-inline-end:26%;top:40%;animation-duration:20s;animation-delay:-6s}
+.aurora i:nth-child(3){width:26vw;height:26vw;max-width:380px;max-height:380px;background:#93c5fd;inset-inline-start:-6%;top:-10%;animation-duration:22s;animation-delay:-3s}
+[data-theme="dark"] .aurora i:nth-child(3){background:#1e3a8a}
+@keyframes drift{to{transform:translate(6%,-8%) scale(1.15)}}
+.gridbg{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 25%,transparent 75%)}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,5vw,64px);align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;border-radius:999px;font-weight:600;font-size:14.5px}
+[dir="rtl"] .pill{padding:9px 12px 9px 16px}
+.pill .dot{width:10px;height:10px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,.22);animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{50%{box-shadow:0 0 0 7px rgba(37,211,102,.06)}}
+.hero h1{font-size:clamp(56px,8.6vw,118px);margin:24px 0;line-height:.92;letter-spacing:-.045em}
+[lang="ar"] .hero h1{font-size:clamp(44px,6.2vw,86px);line-height:1.22;letter-spacing:0}
+.hero h1 .u{position:relative;display:inline-block;white-space:nowrap}
+.hero h1 .u svg{position:absolute;inset-inline-start:-3%;bottom:-.14em;width:106%;height:.3em;z-index:-1;color:var(--sky)}
+.grad{background:linear-gradient(100deg,var(--blue) 0%,#60a5fa 30%,var(--blue-d) 60%,#3b82f6 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+[data-theme="dark"] .grad{background-image:linear-gradient(100deg,#60a5fa 0%,#bfdbfe 30%,#3b82f6 60%,#93c5fd 100%)}
+@keyframes shine{to{background-position:-220% 0}}
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:30em;margin-bottom:32px}
+.lede b{color:var(--text);font-weight:700}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0;padding:0;list-style:none}
+.facts li{padding:12px 18px;border-radius:20px;min-width:118px}
+.facts b{display:block;font:800 26px/1 var(--display);letter-spacing:-.03em;margin-bottom:6px;color:var(--accent)}
+[lang="ar"] .facts b{letter-spacing:0}
+.facts span{font-size:14px;color:var(--muted)}
+.hero-art{position:relative;display:grid;justify-items:center;gap:24px}
+.stage{position:relative;width:min(100%,510px);aspect-ratio:1;display:grid;place-items:center;perspective:900px}
+.orb{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#93c5fd,#3b82f6 34%,#2563eb 58%,#1e3a8a);box-shadow:0 60px 100px -40px rgba(37,99,235,.8), inset 0 -30px 60px rgba(15,23,42,.35), inset 0 20px 40px rgba(255,255,255,.25)}
+.ring{position:absolute;inset:-1%;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);animation:spin 50s linear infinite}
+.ring::before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--accent);top:12%;left:12%;box-shadow:0 0 18px var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stack{position:relative;width:57%;aspect-ratio:100/108;transform-style:preserve-3d;transition:transform .35s ease-out}
+.bean{position:absolute;width:34px;color:#4a2a17;animation:float 6s ease-in-out infinite;transition:translate .35s ease-out;filter:drop-shadow(0 8px 10px rgba(0,0,0,.3))}
+[data-theme="dark"] .bean{color:#6b4226}
+.bean svg{width:100%;display:block}
+@keyframes float{50%{transform:translateY(-14px) rotate(16deg)}}
+.hero-note{position:absolute;inset-inline-end:-3%;top:5%;font-size:25px;line-height:1.05;transform:rotate(8deg);text-align:center}
+[lang="ar"] .hero-note{font-size:19px;line-height:1.4;transform:rotate(-6deg)}
+.hero-note svg{display:block;width:58px;margin:4px auto 0}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:480px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 15px 0 10px;border-radius:999px;border:0;font-weight:650;font-size:14.5px;transition:background .2s, color .2s, transform .2s}
+[dir="rtl"] .chip{padding:0 10px 0 15px}
+.chip i{width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.12)}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:var(--blue);color:#fff;box-shadow:0 10px 24px -12px rgba(37,99,235,.9)}
 
-/* ─── MARQUEE ─── */
-.marquee-wrap{background:var(--dark);padding:13px 0;overflow:hidden;}
-.marquee-track{display:flex;animation:marquee 26s linear infinite;width:max-content;}
-.marquee-item{display:flex;align-items:center;gap:14px;padding:0 28px;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);white-space:nowrap;}
-.m-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;flex-shrink:0;}
-@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+/* Drip bag pouch — modelled on Trunkino's real silver foil packaging */
+.sachet{--c:#ffb020;--pk:#d62828;container-type:inline-size;position:absolute;inset:0;direction:ltr;border-radius:6%/5.5%;overflow:hidden;color:#141414;text-align:left;
+  background:
+    linear-gradient(116deg,transparent 28%,rgba(255,255,255,.6) 36%,transparent 45%),
+    linear-gradient(64deg,transparent 50%,rgba(40,44,52,.08) 57%,transparent 66%),
+    linear-gradient(160deg,transparent 62%,rgba(255,255,255,.45) 70%,transparent 78%),
+    radial-gradient(140% 95% at 12% 0%,#fdfdfe 0%,#e2e4e7 30%,#b9bdc3 55%,#eef0f2 74%,#a9adb4 100%);
+  box-shadow:0 36px 54px -26px rgba(6,14,44,.72), inset 0 0 0 1px rgba(255,255,255,.8), inset 0 0 24px rgba(50,56,70,.2);
+  backface-visibility:hidden}
+.sachet > *{position:absolute}
+.sachet .seal{inset:0;border:4.2cqw solid transparent;border-image:repeating-linear-gradient(90deg,rgba(255,255,255,.7) 0 1px,rgba(110,116,126,.32) 1px 2.4px) 1}
+.sachet .wm{top:8%;left:33%;width:37cqw;aspect-ratio:551/210;background:#161616;-webkit-mask:url(assets/trunkinologo-removebg-preview.png) center/contain no-repeat;mask:url(assets/trunkinologo-removebg-preview.png) center/contain no-repeat;transform:rotate(5deg)}
+.sachet .ar{font:400 7cqw/.95 "Lalezar","Alexandria",sans-serif;color:#74c4f6;-webkit-text-stroke:.75cqw #16357c;paint-order:stroke fill;filter:drop-shadow(0 0 .5cqw #fff) drop-shadow(0 0 .25cqw #fff);direction:rtl;text-align:center;white-space:nowrap}
+.sachet .ar1{top:9%;right:6.5%;transform:rotate(-8deg)}
+.sachet .ar2{bottom:6.5%;left:9%;font-size:6.6cqw;transform:rotate(-5deg)}
+.sachet .burst{top:17%;left:4.5%;width:33cqw;aspect-ratio:100/62;display:grid;place-items:center;transform:rotate(-10deg)}
+.sachet .burst svg{position:absolute;inset:0;width:100%;height:100%}
+.sachet .burst b{position:relative;font:400 4.6cqw/.88 "Lalezar",sans-serif;color:#86d3ff;-webkit-text-stroke:.6cqw #16357c;paint-order:stroke fill;text-align:center;letter-spacing:.03em;filter:drop-shadow(0 0 .35cqw #fff)}
+.sachet .cdb{top:36%;left:8%;font:400 11.4cqw/.98 "Archivo Black","Figtree",sans-serif;letter-spacing:-.01em;color:#141414}
+.sachet .uf{top:61.5%;left:8.5%;font:400 2.45cqw/1.2 "Archivo Black","Figtree",sans-serif;letter-spacing:.04em}
+.sachet .fl{top:68.5%;left:8.5%;font:400 5.6cqw/1 "Archivo Black","Figtree",sans-serif;color:var(--pk);white-space:nowrap}
+.sachet .ill{top:35%;right:6%;width:26cqw;aspect-ratio:1;transform:rotate(9deg);filter:drop-shadow(0 1cqw 1.2cqw rgba(0,0,0,.28))}
+.sachet .ill svg{width:100%;height:100%}
+.sachet .ele{right:-15%;bottom:-7%;width:63cqw;aspect-ratio:780/734;background:url(assets/elephant-pack.jpg) center/contain no-repeat;mix-blend-mode:multiply}
+.sachet .bf{width:6cqw;color:#24314f}
+.sachet .bf1{top:27%;left:58%;transform:rotate(-14deg)}
+.sachet .bf2{top:62%;left:52%;width:5cqw;transform:rotate(12deg)}
+.sachet .holo{inset:0;background:linear-gradient(125deg,rgba(255,120,200,.12),rgba(120,210,255,.14) 35%,rgba(255,240,140,.12) 62%,rgba(170,140,255,.12));mix-blend-mode:overlay;pointer-events:none}
+.sachet .sheen{inset:-30%;background:linear-gradient(110deg,transparent 42%,rgba(255,255,255,.9) 49%,rgba(255,255,255,0) 55%);transform:translateX(-70%);animation:sheen 5.5s ease-in-out infinite;pointer-events:none}
+.stack .b1 .sheen,.stack .b2 .sheen{animation-delay:-2s}
+@keyframes sheen{0%,55%{transform:translateX(-70%)}85%,100%{transform:translateX(70%)}}
+.stack .b1{transform:translate(-46%,9%) rotate(-16deg) scale(.86) translateZ(-40px)}
+.stack .b2{transform:translate(47%,12%) rotate(13deg) scale(.86) translateZ(-40px)}
+.stack .front{z-index:2;transform:rotate(-3deg) translateZ(30px)}
+.stack .front.swap{animation:swap .5s ease-in-out}
+@keyframes swap{50%{transform:rotate(-3deg) rotateY(90deg) translateZ(30px)}}
 
-/* ─── ABOUT ─── */
-#about{padding:120px 52px;background:var(--off);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1180px;margin:0 auto;}
-.section-tag{font-size:.58rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-.section-tag::before{content:"";width:22px;height:2px;background:var(--blue);border-radius:2px;}
-.about-headline{font-family:"DM Serif Display",serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:18px;}
-.about-headline em{font-style:italic;color:var(--blue);}
-.about-body{font-size:.9rem;color:var(--gray);line-height:1.9;margin-bottom:28px;}
-.feat-list{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
-.feat{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:white;transition:all .24s;}
-.feat:hover{border-color:rgba(37,99,235,.25);background:var(--blue-light);transform:translateX(5px);}
-.feat-icon{width:36px;height:36px;border-radius:9px;background:var(--blue-mid);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.feat-text strong{display:block;font-size:.8rem;font-weight:800;color:var(--ink);margin-bottom:2px;}
-.feat-text span{font-size:.75rem;color:var(--gray);line-height:1.55;}
-.stats-row{display:flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;width:fit-content;background:white;}
-.stat{padding:16px 24px;text-align:center;border-right:1px solid var(--border);}.stat:last-child{border-right:none;}
-.stat-n{font-family:"Bebas Neue",sans-serif;font-size:2.5rem;color:var(--blue);line-height:1;}
-.stat-l{font-size:.54rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-light);margin-top:3px;}
-.about-visual{position:relative;}
-.about-img{width:100%;border-radius:18px;display:block;box-shadow:0 24px 64px rgba(37,99,235,.15);border:1px solid var(--border);}
-.about-pill{position:absolute;bottom:-16px;left:-16px;background:var(--blue);border-radius:14px;padding:16px 20px;box-shadow:0 12px 36px rgba(37,99,235,.32);}
-.pill-n{font-family:"Bebas Neue",sans-serif;font-size:2rem;color:white;line-height:1;}
-.pill-l{font-size:.56rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.68);}
+/* Marquee */
+.marquee-wrap{position:relative;z-index:2;overflow:hidden;padding-block:26px;margin-top:-44px}
+.marquee{overflow:hidden;background:var(--blue);color:#fff;transform:rotate(-1.6deg);margin-inline:-12px;padding-block:18px;box-shadow:0 20px 50px -24px rgba(37,99,235,.9)}
+.marquee-track{display:flex;width:max-content;animation:marq 34s linear infinite}
+[dir="rtl"] .marquee-track{animation-name:marqR}
+.marquee span{display:inline-flex;align-items:center;gap:14px;padding-inline:22px;font:800 clamp(22px,2.6vw,34px)/1 var(--display);letter-spacing:-.02em;white-space:nowrap}
+[lang="ar"] .marquee span{letter-spacing:0;line-height:1.3}
+.marquee span.o{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85)}
+.marquee span i{width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px rgba(255,255,255,.25)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes marqR{to{transform:translateX(50%)}}
 
-/* ─── MENU ─── */
-#menu{padding:120px 52px;background:white;}
-.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;max-width:1180px;margin-left:auto;margin-right:auto;flex-wrap:wrap;gap:16px;}
-.sec-title{font-family:"DM Serif Display",serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:400;color:var(--ink);line-height:1;}
-.sec-title em{font-style:italic;color:var(--blue);}
+/* Story bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.tile{border-radius:var(--r);padding:clamp(22px,2.6vw,32px);background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);position:relative;overflow:hidden}
+.t-mascot{grid-column:span 6;grid-row:span 2;background:#fff;display:grid;place-items:center;padding:clamp(18px,3vw,36px)}
+.t-mascot img{width:100%;max-width:520px;mix-blend-mode:multiply}
+.t-mascot .tag{position:absolute;inset-inline-start:22px;bottom:22px;background:var(--blue);color:#fff;padding:9px 16px;border-radius:14px;font-size:22px;transform:rotate(-5deg);box-shadow:0 12px 26px -12px rgba(37,99,235,.9)}
+[lang="ar"] .t-mascot .tag{font-size:17px}
+.t-copy{grid-column:span 6}
+.t-copy h2{font-size:clamp(38px,4.8vw,64px);margin:16px 0 18px}
+.t-copy h2 em{font-style:normal;color:var(--accent)}
+.t-copy p{color:var(--muted);font-size:clamp(16.5px,1.4vw,18.5px)}
+.t-stat{grid-column:span 3;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:200px}
+.t-stat b{font:800 clamp(52px,5.2vw,78px)/.95 var(--display);letter-spacing:-.05em;white-space:nowrap}
+[lang="ar"] .t-stat b{letter-spacing:0}
+.t-stat span{font-weight:650;color:var(--muted)}
+.t-blue{background:linear-gradient(150deg,#3b82f6,#2563eb 50%,#1e3a8a);color:#fff;box-shadow:0 30px 60px -30px rgba(37,99,235,.9)}
+.t-blue span{color:#dbeafe}
+.t-feat{grid-column:span 4;display:grid;gap:12px;align-content:start}
+.t-feat .fi{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--surface2);color:var(--accent)}
+.t-feat .fi svg{width:27px;height:27px}
+.t-feat b{font:750 20px/1.25 var(--display);letter-spacing:-.02em}
+[lang="ar"] .t-feat b{letter-spacing:0;font-size:19px}
+.t-feat span{color:var(--muted);font-size:15.5px;line-height:1.55}
 
-/* Box type selector */
-.box-type-wrap{max-width:1180px;margin:0 auto 32px;display:flex;flex-direction:column;gap:16px;}
-.box-type-toggle{display:flex;gap:10px;flex-wrap:wrap;}
-.box-btn{flex:1;min-width:220px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 22px;border:2px solid var(--border);border-radius:14px;background:var(--off);cursor:none;transition:all .24s;text-align:left;}
-.box-btn:hover{border-color:rgba(37,99,235,.3);background:var(--blue-light);}
-.box-btn.active{border-color:var(--blue);background:var(--blue-light);}
-.box-btn-icon{font-size:1.4rem;margin-bottom:4px;}
-.box-btn-name{font-size:.82rem;font-weight:800;color:var(--ink);letter-spacing:.04em;}
-.box-btn.active .box-btn-name{color:var(--blue);}
-.box-btn-sub{font-size:.72rem;color:var(--gray);font-weight:600;}
-.box-btn-price{font-family:"Bebas Neue",sans-serif;font-size:1.2rem;color:var(--blue);margin-top:6px;}
+/* Build your box */
+.build{background:var(--bg2)}
+.mixes{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:-14px 0 30px}
+.mixes .lbl{font-size:22px;margin-inline-end:6px}
+[lang="ar"] .mixes .lbl{font-size:17px}
+.mix{display:inline-flex;align-items:center;gap:10px;height:46px;padding-inline:12px 16px;border-radius:999px;border:0;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);font-weight:700;font-size:15px;transition:transform .2s, box-shadow .2s}
+.mix:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.mix .dots{display:inline-flex}
+.mix .dots i{width:14px;height:14px;border-radius:50%;background:var(--c);margin-inline-start:-4px;box-shadow:0 0 0 2px var(--surface)}
+.mix .dots i:first-child{margin-inline-start:0}
+.build-grid{display:grid;grid-template-columns:1fr 390px;gap:28px;align-items:start}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.fcard{--c:#888;position:relative;display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:var(--r);background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
+.fcard::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(380px circle at var(--mx,80%) var(--my,0%),color-mix(in srgb,var(--c) 22%,transparent),transparent 55%);opacity:.55;transition:opacity .3s}
+.fcard:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1.5px var(--line), 0 28px 50px -32px var(--shadow)}
+.fcard:hover::before{opacity:1}
+.fcard.on{box-shadow:inset 0 0 0 2.5px var(--accent), 0 28px 50px -34px rgba(37,99,235,.8)}
+.fcard > *{position:relative}
+.fc-top{display:flex;align-items:center;justify-content:space-between}
+.fc-ic{width:70px;height:70px;border-radius:22px;background:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--c) 85%,transparent), inset 0 0 0 1px rgba(15,23,42,.06);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.fc-ic svg{width:46px;height:46px}
+.fcard:hover .fc-ic{transform:rotate(-8deg) scale(1.07)}
+.fc-no{font:800 15px/1 "Figtree",sans-serif;color:var(--muted);opacity:.7}
+.fc-qty{position:absolute;top:16px;inset-inline-end:16px;min-width:36px;height:36px;padding:0 10px;border-radius:18px;background:var(--blue);color:#fff;font:800 15px/36px "Figtree",sans-serif;text-align:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,1.7,.5,1);z-index:2}
+.fcard.on .fc-qty{transform:scale(1)}
+.fcard.on .fc-no{visibility:hidden}
+.fcard h3{font-size:32px}
+.fcard p{font-size:15.5px;line-height:1.6;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{padding:5px 11px;border-radius:999px;background:var(--surface2);font-size:13px;font-weight:650;color:var(--accent-ink)}
+.fc-act{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
+.stepper{display:inline-flex;align-items:center;background:var(--surface2);border-radius:999px;padding:4px}
+.stepper button{width:40px;height:40px;border-radius:50%;border:0;background:transparent;font-size:22px;font-weight:600;line-height:1;display:grid;place-items:center;transition:background .2s, transform .15s}
+.stepper button:active{transform:scale(.9)}
+.stepper button:hover{background:var(--surface)}
+.stepper button.add{background:var(--blue);color:#fff}
+.stepper button.add:hover{background:var(--blue-d)}
+.stepper output{min-width:34px;text-align:center;font:800 16px "Figtree",sans-serif;font-variant-numeric:tabular-nums}
+.fill{border:0;background:transparent;font-weight:750;font-size:14.5px;color:var(--accent);padding:8px 4px;border-radius:8px}
+.fill:hover{text-decoration:underline;text-underline-offset:4px}
 
-/* Cart progress bar */
-.cart-progress-bar{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;}
-.progress-track{flex:1;height:6px;background:var(--border);border-radius:100px;overflow:hidden;}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:100px;transition:width .35s ease;width:0%;}
-.progress-label{font-size:.72rem;font-weight:800;color:var(--gray);white-space:nowrap;}
-.progress-label span{color:var(--blue);}
-.cart-open-mini{display:flex;align-items:center;gap:8px;background:var(--blue);color:white;border:none;border-radius:8px;padding:8px 16px;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:none;transition:all .22s;white-space:nowrap;}
-.cart-open-mini:hover{background:var(--blue-dark);}
+/* Box panel — shared by the sticky aside and the drawer */
+.aside{position:sticky;top:100px}
+.boxp{background:var(--surface);border-radius:var(--r);padding:22px;box-shadow:0 30px 70px -40px var(--shadow), inset 0 0 0 1.5px var(--line);display:grid;gap:16px}
+.boxp-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.boxp-head h3{font-size:28px}
+.boxp-head .cnt{font:700 14.5px/1 var(--body);color:var(--muted)}
+.crate{position:relative;padding:16px;border-radius:22px;background:linear-gradient(150deg,#3b82f6,#2563eb 50%,#1e3a8a);box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 20px 40px -22px rgba(37,99,235,.9);overflow:hidden}
+.crate::after{content:"";position:absolute;width:150px;aspect-ratio:551/210;inset-inline-end:-12px;bottom:-14px;background:rgba(255,255,255,.12);-webkit-mask:url(assets/trunkinologo-removebg-preview.png) center/contain no-repeat;mask:url(assets/trunkinologo-removebg-preview.png) center/contain no-repeat;transform:rotate(-8deg)}
+.slots{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;direction:ltr}
+.slot{aspect-ratio:3/4;border-radius:9px;border:1.5px dashed rgba(255,255,255,.45);display:grid;place-items:center;color:rgba(255,255,255,.7);font:800 12px/1 "Figtree",sans-serif}
+.slot.f{position:relative;overflow:hidden;border:0;background:linear-gradient(#fff,#e6eeff);box-shadow:0 8px 12px -8px rgba(0,0,0,.7);animation:drop .38s cubic-bezier(.3,1.5,.5,1)}
+.slot.f::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:var(--c)}
+.slot.f::before{content:"";position:absolute;left:18%;right:18%;top:16%;border-top:1.5px dashed rgba(37,99,235,.4)}
+@keyframes drop{from{transform:translateY(-18px) scale(.7);opacity:0}}
+.crate-label{position:relative;z-index:1;display:flex;justify-content:space-between;margin-top:12px;font:400 19px/1 var(--hand);color:#fff}
+[lang="ar"] .crate-label{font-size:15px}
+.msg{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:var(--surface2);color:var(--accent-ink);font-size:15px;font-weight:600;line-height:1.45}
+.msg.ok{background:color-mix(in srgb,var(--wa) 16%,var(--surface));color:color-mix(in srgb,var(--wa) 50%,var(--text))}
+.msg svg{width:20px;height:20px;flex:none;margin-top:1px}
+.lines{display:grid;margin:0;padding:0;list-style:none}
+.lines li{display:grid;grid-template-columns:14px 1fr auto auto;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.lines li:last-child{border-bottom:0}
+.lines i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.lines .q{display:inline-flex;align-items:center;gap:2px}
+.lines .q button{width:30px;height:30px;border-radius:50%;border:0;background:var(--surface2);font-weight:700;line-height:1}
+.lines .q b{min-width:24px;text-align:center;font-family:"Figtree",sans-serif;font-variant-numeric:tabular-nums}
+.lines .p{min-width:76px;text-align:end;font-weight:700;font-variant-numeric:tabular-nums}
+.tot{display:flex;justify-content:space-between;align-items:baseline;padding-top:4px}
+.tot span{color:var(--muted);font-weight:600}
+.tot b{font:800 34px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+[lang="ar"] .tot b{letter-spacing:0}
+.boxp .btn{width:100%}
+.clear{justify-self:center;border:0;background:none;color:var(--muted);font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:6px}
 
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;max-width:1180px;margin:0 auto;}
-.mcard{background:var(--off);border:2px solid var(--border);padding:26px;border-radius:14px;position:relative;overflow:hidden;transition:all .28s cubic-bezier(.34,1.56,.64,1);cursor:none;}
-.mcard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:scaleX(0);transform-origin:left;transition:transform .28s;}
-.mcard:hover::before{transform:scaleX(1);}
-.mcard:hover{border-color:rgba(37,99,235,.2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(37,99,235,.1);background:white;}
-.mcard.selected{border-color:var(--blue);background:var(--blue-light);transform:translateY(-4px);box-shadow:0 16px 40px rgba(37,99,235,.14);}
-.mcard.selected::before{transform:scaleX(1);}
-.mcard.has-items{border-color:rgba(37,99,235,.4);background:white;}
-.mcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.mcard-num{font-family:"Bebas Neue",sans-serif;font-size:2rem;color:var(--border);line-height:1;transition:color .28s;}
-.mcard:hover .mcard-num,.mcard.selected .mcard-num,.mcard.has-items .mcard-num{color:var(--blue-mid);}
-.mcard-emoji{font-size:1.6rem;}
-.mcard-name{font-family:"DM Serif Display",serif;font-size:1.22rem;color:var(--ink);margin-bottom:7px;}
-.mcard-desc{font-size:.78rem;color:var(--gray);line-height:1.72;margin-bottom:18px;}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
-.tag{font-size:.56rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--border);color:var(--gray-light);border-radius:100px;transition:all .22s;}
-.mcard:hover .tag,.mcard.selected .tag,.mcard.has-items .tag{border-color:var(--blue-mid);color:var(--blue);background:var(--blue-light);}
+/* Mobile box bar + drawer */
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:35;display:none;align-items:center;gap:12px;padding:10px;padding-inline-start:16px;border-radius:24px;background:rgba(15,23,42,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;box-shadow:0 20px 44px -14px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.1);transform:translateY(150%);visibility:hidden;transition:transform .45s cubic-bezier(.3,1.3,.5,1), visibility .45s}
+.mbar.show{transform:none;visibility:visible}
+.mbar .mini{display:grid;grid-template-columns:repeat(5,9px);gap:3px;direction:ltr}
+.mbar .mini i{height:12px;border-radius:3px;background:rgba(255,255,255,.2)}
+.mbar .mini i.f{background:var(--c)}
+.mbar .txt{flex:1;line-height:1.25;font-size:14px}
+.mbar .txt b{display:block;font-size:16px}
+.mbar .btn{height:46px;padding:0 18px;font-size:15px}
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(5,10,23,.5);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);opacity:0;visibility:hidden;transition:opacity .3s, visibility .3s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;z-index:55;top:0;bottom:0;inset-inline-end:0;width:min(440px,100%);background:var(--bg2);padding:20px;overflow:auto;transform:translateX(105%);transition:transform .45s cubic-bezier(.7,0,.2,1);visibility:hidden;display:grid;align-content:start;gap:14px}
+[dir="rtl"] .drawer{transform:translateX(-105%)}
+.drawer.open{transform:none!important;visibility:visible}
+.drawer-head{display:flex;justify-content:space-between;align-items:center}
+.drawer-head span{font-size:26px;color:var(--accent)}
+[lang="ar"] .drawer-head span{font-size:20px}
 
-/* Card controls */
-.card-ctrl{margin-top:4px;}
-/* Chef's Special: +/- qty */
-.qty-ctrl{display:flex;align-items:center;gap:0;border:1.5px solid var(--border);border-radius:8px;overflow:hidden;width:fit-content;transition:border-color .22s;}
-.qty-ctrl:has(.qty-count:not(:empty):not([data-val="0"])){border-color:var(--blue);}
-.qty-btn{width:34px;height:34px;background:none;border:none;font-size:1.1rem;font-weight:700;color:var(--gray);cursor:none;transition:all .2s;display:flex;align-items:center;justify-content:center;}
-.qty-btn:hover{background:var(--blue-light);color:var(--blue);}
-.qty-btn.minus:hover{background:#fef2f2;color:#ef4444;}
-.qty-count{min-width:32px;text-align:center;font-size:.82rem;font-weight:800;color:var(--ink);padding:0 4px;}
-/* Classic: select btn */
-.select-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:9px;border:1.5px solid var(--border);border-radius:8px;background:none;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);cursor:none;transition:all .24s;}
-.select-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
-.mcard.selected .select-btn{border-color:var(--blue);background:var(--blue);color:white;}
-.select-btn svg{width:14px;height:14px;}
+/* Brew */
+.brew{background:linear-gradient(150deg,#0f172a 0%,#173eaf 58%,#4d87fb 100%);color:#eef2ff;overflow:hidden}
+.brew::before{content:"";position:absolute;width:80vw;height:80vw;max-width:1100px;max-height:1100px;border:1px solid rgba(255,255,255,.12);border-radius:50%;inset-inline-end:-25%;top:-40%}
+.brew::after{content:"";position:absolute;width:50vw;height:50vw;max-width:700px;max-height:700px;border:1px solid rgba(255,255,255,.1);border-radius:50%;inset-inline-start:-15%;bottom:-40%}
+.brew .kicker{color:#93c5fd}
+.brew .sec-head p{color:#c7d6ff}
+.steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.bstep{position:relative;padding:22px;border-radius:var(--r);background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 0 1px rgba(255,255,255,.12);transition:transform .3s, background .3s}
+.bstep:hover{transform:translateY(-4px);background:rgba(255,255,255,.12)}
+.bstep .n{font-size:34px;line-height:1;color:#93c5fd}
+.bstep svg{display:block;width:100%;height:132px;margin:8px 0 14px;color:#fff;overflow:visible}
+.bstep h3{font-size:24px;margin-bottom:8px;color:#fff}
+.bstep p{font-size:15.5px;line-height:1.6;color:#c7d6ff}
+.bstep .ml{position:absolute;inset-inline-end:18px;top:24px;padding:4px 10px;border-radius:10px;background:#fff;color:var(--blue-d);font-size:20px;transform:rotate(6deg)}
+[lang="ar"] .bstep .ml{font-size:15px}
+.stream{stroke-dasharray:3 7;animation:pour 1s linear infinite}
+@keyframes pour{to{stroke-dashoffset:-20}}
+.steam{animation:steam 3s ease-in-out infinite}
+.steam:nth-child(2){animation-delay:.5s}.steam:nth-child(3){animation-delay:1s}
+@keyframes steam{0%,100%{transform:translateY(4px);opacity:.25}50%{transform:translateY(-4px);opacity:1}}
 
-/* ─── HOW TO ─── */
-#howto{padding:120px 52px;background:var(--off);}
-.howto-hdr{text-align:center;max-width:480px;margin:0 auto 60px;}
-.howto-hdr .section-tag{justify-content:center;}
-.howto-hdr p{font-size:.88rem;color:var(--gray);line-height:1.82;margin-top:10px;}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:0 auto 56px;position:relative;}
-.steps::before{content:"";position:absolute;top:20px;left:12%;right:12%;height:2px;background:var(--border);z-index:0;}
-.step{text-align:center;position:relative;z-index:1;padding:0 12px;}
-.step-n{width:40px;height:40px;background:var(--blue);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;margin:0 auto 18px;box-shadow:0 4px 14px rgba(37,99,235,.3);transition:transform .3s,box-shadow .3s;}
-.step:hover .step-n{transform:scale(1.18);box-shadow:0 8px 24px rgba(37,99,235,.42);}
-.step-title{font-family:"DM Serif Display",serif;font-size:.98rem;color:var(--ink);margin-bottom:7px;}
-.step-desc{font-size:.75rem;color:var(--gray);line-height:1.68;}
-.howto-frame{max-width:760px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 22px 64px rgba(37,99,235,.13);border:1px solid var(--border);}
-.howto-frame img{display:block;width:100%;height:auto;}
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,80px);align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side h2{font-size:clamp(42px,6vw,70px);margin:18px 0}
+.faq-side p{color:var(--muted);margin-bottom:26px}
+.qa{border-bottom:1.5px solid var(--line)}
+.qa summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;cursor:pointer;font:750 clamp(19px,1.8vw,22px)/1.35 var(--display);letter-spacing:-.02em}
+[lang="ar"] .qa summary{letter-spacing:0;font-weight:600}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);position:relative;transition:background .3s, color .3s}
+.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;margin:-1px 0 0 -7px;border-radius:2px;background:currentColor}
+.qa summary i::after{transform:rotate(90deg);transition:transform .3s}
+.qa[open] summary i{background:var(--blue);color:#fff;box-shadow:none}
+.qa[open] summary i::after{transform:rotate(0)}
+.qa p{padding-bottom:24px;padding-inline-end:50px;color:var(--muted);font-size:17px}
 
-/* ─── ORDER CTA ─── */
-#order{min-height:clamp(520px,65vh,680px);padding:110px 52px;text-align:center;background:linear-gradient(140deg,var(--dark) 0%,var(--navy) 40%,var(--blue) 80%,var(--blue2) 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-#order::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(255,255,255,.08) 0%,transparent 62%);pointer-events:none;}
-#order::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;}
-.order-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);color:white;font-size:.57rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px;position:relative;z-index:1;}
-.order-title{font-family:"DM Serif Display",serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:400;line-height:.95;color:white;margin-bottom:14px;position:relative;z-index:1;}
-.order-title em{font-style:italic;color:var(--blue-mid);display:block;}
-.order-sub{font-size:.95rem;color:rgba(255,255,255,.65);max-width:360px;margin:0 auto 40px;line-height:1.82;position:relative;z-index:1;}
-.order-btn{display:inline-flex;align-items:center;gap:13px;background:white;color:var(--blue);text-decoration:none;padding:17px 40px;font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:2px solid white;border-radius:10px;transition:all .28s;position:relative;z-index:1;}
-.order-btn:hover{background:transparent;color:white;transform:translateY(-3px);box-shadow:0 18px 48px rgba(0,0,0,.2);}
-.order-btn svg{width:19px;height:19px;}
-.order-note{margin-top:18px;font-size:.6rem;color:rgba(255,255,255,.34);letter-spacing:.14em;text-transform:uppercase;font-weight:700;position:relative;z-index:1;}
+/* Final CTA + footer */
+.final{background:linear-gradient(140deg,#0f172a,#173eaf 58%,#4d87fb);color:#fff;overflow:hidden}
+.final .bigword{position:absolute;inset-inline:0;bottom:-.18em;text-align:center;font:800 clamp(90px,19vw,300px)/1 var(--display);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.16);pointer-events:none;white-space:nowrap;font-family:"Bricolage Grotesque",sans-serif}
+.final-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.final h2{font-size:clamp(58px,9vw,128px);line-height:.88;letter-spacing:-.055em}
+[lang="ar"] .final h2{line-height:1.2;letter-spacing:0;font-size:clamp(50px,8vw,108px)}
+.final h2 span{color:#93c5fd}
+.final p{font-size:clamp(17px,1.6vw,20px);margin:22px 0 30px;max-width:28em;color:#c7d6ff}
+.final .btn-ghost{color:#fff;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+.sticker{justify-self:center;width:min(100%,400px);aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6), 0 0 0 10px rgba(255,255,255,.12);animation:bob 6s ease-in-out infinite}
+.sticker img{width:78%;mix-blend-mode:multiply}
+@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}
+footer{background:var(--ink-navy);color:#a5b4d4;padding-block:56px calc(36px + env(safe-area-inset-bottom,0px));font-size:15px}
+[data-theme="dark"] footer{background:#03060f}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+.foot .logo{background:#fff;width:150px;height:56px;margin-bottom:14px}
+.foot h4{margin:0 0 14px;color:#fff;font:700 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase}
+[lang="ar"] .foot h4{letter-spacing:0;font-size:15px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:14px}
+.foot-bottom a{color:#93c5fd;font-weight:700}
 
-/* ─── FOOTER ─── */
-footer{padding:0;background:white;border-top:1px solid var(--border);}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;max-width:1180px;margin:0 auto;padding:52px 52px 44px;}
-.footer-brand img{height:34px;display:block;opacity:.6;margin-bottom:14px;}
-.footer-brand p{font-size:.78rem;color:var(--gray-light);line-height:1.7;max-width:220px;}
-.footer-col h4{font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.footer-col ul a{font-size:.8rem;color:var(--gray);text-decoration:none;transition:color .2s;}
-.footer-col ul a:hover{color:var(--blue);}
-.footer-ig{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;color:var(--gray);text-decoration:none;padding:10px 16px;border:1px solid var(--border);border-radius:8px;transition:all .22s;margin-top:4px;}
-.footer-ig:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
-.footer-ig svg{width:15px;height:15px;flex-shrink:0;}
-.footer-bottom{border-top:1px solid var(--border);padding:18px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--off);}
-.footer-copy{font-size:.6rem;font-weight:700;color:var(--gray-light);letter-spacing:.08em;text-transform:uppercase;}
-.footer-credit{font-size:.6rem;font-weight:800;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:opacity .2s;}
-.footer-credit:hover{opacity:.7;}
+/* Checkout dialog */
+.modal{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:16px;visibility:hidden;pointer-events:none}
+.modal.open{visibility:visible;pointer-events:auto}
+.modal .scrim{z-index:0}
+.modal.open .scrim{opacity:1;visibility:visible}
+.sheet{position:relative;z-index:1;width:min(560px,100%);max-height:calc(100dvh - 32px);overflow:auto;background:var(--bg2);border-radius:30px;padding:28px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6), inset 0 0 0 1px var(--line);transform:translateY(30px) scale(.97);opacity:0;transition:transform .35s cubic-bezier(.3,1.3,.5,1), opacity .25s}
+.modal.open .sheet{transform:none;opacity:1}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
+.sheet-head h3{font-size:34px}
+.sheet-head p{color:var(--muted);margin-top:6px;font-size:15.5px}
+.summary{background:var(--surface);border-radius:20px;padding:16px 18px;box-shadow:inset 0 0 0 1.5px var(--line);margin-bottom:20px}
+.summary .row{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:15.5px}
+.summary .row.t{border-top:1.5px dashed var(--line);margin-top:8px;padding-top:12px;font-weight:800;font-size:18px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .full{grid-column:1/-1}
+.field{display:grid;gap:6px}
+.field label{font-weight:700;font-size:14px}
+.field label small{color:var(--muted);font-weight:500}
+.input{width:100%;height:52px;border-radius:14px;border:0;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);padding:0 16px;font:500 16px var(--body);color:var(--text);outline:0;transition:box-shadow .2s}
+textarea.input{height:auto;min-height:84px;padding:14px 16px;resize:vertical}
+select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-inline-end:40px}
+[dir="rtl"] select.input{background-position:left 16px center}
+.input:focus{box-shadow:inset 0 0 0 2px var(--accent)}
+.input[aria-invalid="true"]{box-shadow:inset 0 0 0 2px #e5484d}
+.err{color:#e5484d;font-size:13.5px;font-weight:600}
+.sheet .btn{width:100%;margin-top:6px}
+.done{text-align:center;display:grid;gap:14px;justify-items:center}
+.done .tick{width:76px;height:76px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;animation:pop .5s cubic-bezier(.3,1.7,.5,1)}
+.done .tick svg{width:38px;height:38px}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+.done h3{font-size:34px}
+.done p{color:var(--muted);max-width:26em}
+.done .summary{width:100%;text-align:start;margin:4px 0 0}
+.toast{position:fixed;left:50%;top:calc(96px + env(safe-area-inset-top,0px));z-index:80;display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:var(--ink-navy);color:#fff;font-weight:650;font-size:15px;box-shadow:0 16px 30px -14px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.1);transform:translate(-50%,-20px);opacity:0;transition:transform .3s, opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.toast i{width:12px;height:12px;border-radius:50%;background:var(--c,#60a5fa)}
 
-/* ─── CART DRAWER ─── */
-.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:400;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(3px);}
-.cart-overlay.open{opacity:1;pointer-events:auto;}
-.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:white;z-index:401;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 48px rgba(0,0,0,.12);}
-.cart-drawer.open{transform:translateX(0);}
-.cart-drawer-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.cart-drawer-head h3{font-family:"DM Serif Display",serif;font-size:1.3rem;color:var(--ink);}
-.cart-head-right{display:flex;align-items:center;gap:8px;}
-.cart-pieces-pill{font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:100px;}
-.cart-close-btn{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;cursor:none;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gray);transition:all .2s;}
-.cart-close-btn:hover{border-color:var(--blue);color:var(--blue);}
-.cart-body{flex:1;overflow-y:auto;padding:20px 24px;}
-.cart-empty{text-align:center;padding:48px 0;}
-.cart-empty-icon{font-size:2.8rem;margin-bottom:12px;opacity:.5;}
-.cart-empty p{font-size:.85rem;color:var(--gray-light);font-weight:600;}
-.cart-section-label{font-size:.58rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:10px;}
-.cart-items{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
-.cart-item{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--off);border:1px solid var(--border);border-radius:10px;}
-.cart-item-emoji{font-size:1.4rem;flex-shrink:0;}
-.cart-item-info{flex:1;}
-.cart-item-name{font-size:.82rem;font-weight:800;color:var(--ink);}
-.cart-item-sub{font-size:.7rem;color:var(--gray);margin-top:1px;}
-.cart-item-price{font-family:"Bebas Neue",sans-serif;font-size:1.1rem;color:var(--blue);flex-shrink:0;}
-.cart-item-remove{width:26px;height:26px;border:1px solid var(--border);border-radius:6px;background:none;cursor:none;display:flex;align-items:center;justify-content:center;color:var(--gray-light);font-size:.9rem;transition:all .2s;flex-shrink:0;}
-.cart-item-remove:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2;}
-/* Box count control in cart */
-.cart-box-ctrl{display:flex;align-items:center;justify-content:space-between;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:20px;}
-.cart-box-ctrl-label{font-size:.78rem;font-weight:700;color:var(--gray);}
-.box-qty-ctrl{display:flex;align-items:center;gap:8px;}
-.box-qty-btn{width:30px;height:30px;border:1.5px solid var(--border);border-radius:7px;background:white;cursor:none;font-size:.9rem;color:var(--gray);display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.box-qty-btn:hover{border-color:var(--blue);color:var(--blue);}
-.box-qty-num{font-family:"Bebas Neue",sans-serif;font-size:1.3rem;color:var(--ink);min-width:24px;text-align:center;}
-/* Cart warning */
-.cart-warning{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fef9c3;border:1px solid #fde047;border-radius:8px;font-size:.74rem;font-weight:700;color:#713f12;margin-bottom:16px;}
-.cart-warning svg{width:14px;height:14px;flex-shrink:0;}
-.cart-divider{height:1px;background:var(--border);margin:16px 0;}
-.cart-summary-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
-.cart-summary-row span:first-child{font-size:.78rem;color:var(--gray);font-weight:600;}
-.cart-summary-row span:last-child{font-size:.78rem;font-weight:800;color:var(--ink);}
-.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
-.cart-total-row span:first-child{font-size:.82rem;font-weight:800;color:var(--ink);}
-.cart-total-price{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;color:var(--blue);}
-.cart-footer{padding:16px 24px 24px;border-top:1px solid var(--border);flex-shrink:0;}
-.checkout-btn{width:100%;padding:15px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:all .28s;display:flex;align-items:center;justify-content:center;gap:10px;}
-.checkout-btn:hover:not(:disabled){background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.3);}
-.checkout-btn:disabled{opacity:.45;cursor:not-allowed;}
-.checkout-btn svg{width:16px;height:16px;}
+/* Reveal on scroll (only content that starts below the first screen) */
+.rv{transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.pre{opacity:0;transform:translateY(30px) scale(.98)}
 
-/* ─── CHECKOUT MODAL ─── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;}
-.modal-overlay.open{opacity:1;pointer-events:auto;}
-.modal-box{background:white;border-radius:20px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);transform:translateY(20px);transition:transform .3s;}
-.modal-overlay.open .modal-box{transform:translateY(0);}
-.modal-head{padding:24px 28px 0;display:flex;align-items:flex-start;justify-content:space-between;}
-.modal-head h3{font-family:"DM Serif Display",serif;font-size:1.6rem;color:var(--ink);}
-.modal-head p{font-size:.78rem;color:var(--gray);margin-top:4px;}
-.modal-close{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;cursor:none;font-size:1.1rem;color:var(--gray);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
-.modal-close:hover{border-color:var(--blue);color:var(--blue);}
-.modal-body{padding:20px 28px 28px;}
-/* Order summary in modal */
-.order-review{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:22px;}
-.order-review-title{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:10px;}
-.order-review-items{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;}
-.or-item{display:flex;justify-content:space-between;font-size:.8rem;}
-.or-item span:first-child{color:var(--gray);}
-.or-item span:last-child{font-weight:800;color:var(--ink);}
-.or-total{display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);}
-.or-total span:first-child{font-size:.78rem;font-weight:700;color:var(--gray);}
-.or-total-price{font-family:"Bebas Neue",sans-serif;font-size:1.4rem;color:var(--blue);}
-/* Form */
-.form-group{margin-bottom:16px;}
-.form-group label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:6px;}
-.form-group label span{color:#ef4444;}
-.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:9px;font-family:"Nunito",sans-serif;font-size:.88rem;color:var(--ink);background:white;transition:border-color .22s;outline:none;}
-.form-input:focus{border-color:var(--blue);}
-.form-input::placeholder{color:var(--gray-light);}
-textarea.form-input{resize:vertical;min-height:80px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.place-order-btn{width:100%;margin-top:20px;padding:15px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:all .28s;display:flex;align-items:center;justify-content:center;gap:10px;}
-.place-order-btn:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.3);}
-.place-order-btn svg{width:16px;height:16px;}
-
-/* ─── SUCCESS MODAL ─── */
-.success-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:600;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;}
-.success-modal.open{opacity:1;pointer-events:auto;}
-.success-box{background:white;border-radius:20px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);transform:scale(.95);transition:transform .3s;}
-.success-modal.open .success-box{transform:scale(1);}
-.success-box-head{padding:32px 28px 20px;text-align:center;}
-.success-check{width:64px;height:64px;background:linear-gradient(135deg,var(--blue),var(--blue2));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 8px 24px rgba(37,99,235,.32);}
-.success-check svg{width:28px;height:28px;color:white;}
-.success-box-head h3{font-family:"DM Serif Display",serif;font-size:1.8rem;color:var(--ink);margin-bottom:6px;}
-.success-box-head p{font-size:.85rem;color:var(--gray);line-height:1.7;}
-.success-box-body{padding:0 28px 28px;}
-.success-order-sum{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px;font-size:.8rem;}
-.success-order-sum h4{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:10px;}
-.success-items{display:flex;flex-direction:column;gap:4px;margin-bottom:8px;}
-.si{display:flex;justify-content:space-between;color:var(--gray);}
-.si span:last-child{font-weight:800;color:var(--ink);}
-.success-total{display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);}
-.success-total span:first-child{font-weight:700;color:var(--gray);}
-.success-total-num{font-family:"Bebas Neue",sans-serif;font-size:1.3rem;color:var(--blue);}
-.success-actions{display:flex;flex-direction:column;gap:10px;}
-.wa-send-btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:15px;background:var(--green);color:white;text-decoration:none;border-radius:10px;font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transition:all .28s;}
-.wa-send-btn:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,211,102,.3);}
-.wa-send-btn svg{width:18px;height:18px;}
-.email-send-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;background:white;color:var(--gray);text-decoration:none;border:1.5px solid var(--border);border-radius:10px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transition:all .22s;}
-.email-send-btn:hover{border-color:var(--blue);color:var(--blue);}
-.email-send-btn svg{width:15px;height:15px;}
-.success-note{text-align:center;font-size:.68rem;color:var(--gray-light);margin-top:12px;line-height:1.6;}
-
-/* ─── REVEAL ─── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.in{opacity:1;transform:none;}
-.reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
-.reveal-l.in{opacity:1;transform:none;}
-.reveal-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease;}
-.reveal-r.in{opacity:1;transform:none;}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:1024px){#hero{grid-template-columns:1fr;min-height:auto;}.hero-left{padding:96px 24px 48px;}.hero-right{min-height:50vw;max-height:480px;}.hero-elephant{width:clamp(260px,60%,420px);}}
-@media(max-width:768px){nav{padding:0 18px;}.nav-links,.nav-ig{display:none;}.ham{display:flex;}.hero-right{max-height:360px;}#about{padding:72px 20px;}.about-grid{grid-template-columns:1fr;gap:40px;}#menu{padding:72px 20px;}.sec-hdr{margin-bottom:20px;}.box-type-toggle{flex-direction:column;}.box-btn{min-width:0;}#howto{padding:72px 20px;}.steps{grid-template-columns:1fr 1fr;gap:24px;}.steps::before{display:none;}#order{padding:80px 20px;}.footer-top{grid-template-columns:1fr;gap:32px;padding:40px 20px 32px;}.footer-bottom{padding:14px 20px;}.form-row{grid-template-columns:1fr;}}
-@media(max-width:480px){.steps{grid-template-columns:1fr;}.hero-stats,.stats-row{flex-wrap:wrap;border:none;gap:8px;}.hstat,.stat{border:1px solid var(--border);border-radius:9px;}.hero-right{max-height:300px;}}
+@media (max-width:1060px){
+  .build-grid{grid-template-columns:1fr}
+  .aside{display:none}
+  .mbar{display:flex}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .nav-links,.nav .nav-cta{display:none}
+  .menu-btn{display:grid}
+  .nav-actions{margin-inline-start:auto}
+  .nav .hide-sm{display:none}
+  .hero-grid,.faq-grid,.final-grid{grid-template-columns:1fr}
+  .hero-art{width:100%}
+  .stage{width:min(100%,420px)}
+  .chips{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;max-width:100%;padding:4px 2px 10px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .hero-note{font-size:20px;inset-inline-end:0;top:1%}
+  .faq-side{position:static}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .t-mascot,.t-copy,.t-feat{grid-column:span 2}
+  .t-mascot{grid-row:auto}
+  .t-stat{grid-column:span 1;min-height:170px}
+  .sticker{width:min(100%,300px)}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot > div:first-child{grid-column:1/-1}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .nav-in{height:62px;padding-inline:16px 8px}
+  .icon-btn{width:42px;height:42px}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .cta-row .btn{flex:1 1 100%}
+  .facts li{flex:1;min-width:0;padding:12px 14px}
+  .facts b{font-size:22px}
+  .sheet{padding:22px 18px;border-radius:26px}
+  .qa p{padding-inline-end:0}
+  .marquee span{padding-inline:16px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv.pre{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<div class="cur" id="cur"></div>
-<div class="cur-ring" id="curRing"></div>
+<div class="topbar"><span data-t="topbar">Delivering across the UAE · 10 drip bags for AED 150</span> · <a href="#build" data-t="topbar.cta">Build your box →</a></div>
 
-<!-- ── MOBILE MENU ── -->
-<div class="mob-menu" id="mobMenu">
-  <a href="#about" onclick="closeMM()">About</a>
-  <a href="#menu" onclick="closeMM()">Menu</a>
-  <a href="#howto" onclick="closeMM()">How to Use</a>
-  <a href="#order" onclick="closeMM()">Order</a>
-  <a href="https://www.instagram.com/trunkinocoffee/" target="_blank" onclick="closeMM()">Instagram</a>
-  <a class="nav-cta" href="#menu" onclick="closeMM()">Build Your Box</a>
-</div>
-
-<!-- ── NAV ── -->
-<nav id="nav">
-  <a class="nav-logo" href="#"><img src="assets/trunkinologo-removebg-preview.png" alt="Trunkino Coffee"/></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#howto">How to Use</a></li>
-    <li><a href="#order">Order</a></li>
-  </ul>
-  <div class="nav-right">
-    <a class="nav-ig" href="https://www.instagram.com/trunkinocoffee/" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <button class="nav-cart-btn" id="navCartBtn" aria-label="Cart">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      <span class="cart-badge" id="cartBadge">0</span>
-    </button>
-    <a class="nav-cta" href="#menu">Build Your Box →</a>
-    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+<header class="nav" id="nav">
+  <div class="nav-in glass">
+    <a class="logo" href="#top" aria-label="Trunkino Coffee" data-tl="logo"></a>
+    <ul class="nav-links">
+      <li><a href="#story" data-t="nav.story">Our story</a></li>
+      <li><a href="#build" data-t="nav.flavors">Flavors</a></li>
+      <li><a href="#brew" data-t="nav.brew">How to brew</a></li>
+      <li><a href="#faq" data-t="nav.faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn lang-btn hide-sm" type="button" data-lang-toggle aria-label="التبديل إلى العربية" data-tl="lang.aria">ع</button>
+      <button class="icon-btn theme-btn hide-sm" type="button" data-theme-toggle aria-label="Switch theme" data-tl="theme.aria">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+      <button class="icon-btn" type="button" data-open-box aria-label="Open your box" data-tl="box.open">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5 12 4l8.5 4.5v8L12 21l-8.5-4.5z"/><path d="M3.5 8.5 12 13l8.5-4.5M12 13v8"/></svg>
+        <span class="badge" data-badge>0</span>
+      </button>
+      <a class="btn btn-primary nav-cta" href="#build" data-t="nav.build">Build your box</a>
+      <button class="icon-btn menu-btn" type="button" id="menuOpen" aria-label="Open menu" data-tl="menu.open" aria-expanded="false" aria-controls="mmenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
   </div>
+</header>
+
+<nav class="mmenu" id="mmenu" aria-label="Menu">
+  <div class="row">
+    <span class="logo" aria-hidden="true"></span>
+    <button class="icon-btn" type="button" id="menuClose" aria-label="Close menu" data-tl="menu.close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <a class="big" href="#story" data-t="nav.story">Our story</a>
+  <a class="big" href="#build" data-t="nav.flavors">Flavors</a>
+  <a class="big" href="#brew" data-t="nav.brew">How to brew</a>
+  <a class="big" href="#faq" data-t="nav.faq">FAQ</a>
+  <a class="big" href="https://www.instagram.com/trunkinocoffee/" target="_blank" rel="noopener" data-t="nav.ig">Instagram ↗</a>
+  <div class="tools">
+    <button class="icon-btn lang-btn" type="button" data-lang-toggle aria-label="التبديل إلى العربية" data-tl="lang.aria">ع</button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Switch theme" data-tl="theme.aria">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+    </button>
+  </div>
+  <a class="btn" href="#build" data-t="nav.build">Build your box</a>
 </nav>
 
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-dots"></div>
-    <div style="position:relative;z-index:2;">
-      <div class="hero-badge"><span class="badge-dot"></span>Now Delivering Across UAE</div>
-      <img class="hero-logo" src="assets/trunkinologo-removebg-preview.png" alt="Trunkino Coffee"/>
-      <h1 class="hero-title"><span>Coffee</span><em>Drip</em><span>Bag</span></h1>
-      <p class="hero-sub">Specialty drip bag coffee in <strong>Unique Flavors</strong></p>
-      <p class="hero-sub" style="margin-top:-18px;margin-bottom:20px;">No machine. No barista. Just your perfect moment.</p>
-      <div class="hero-deliver">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Delivering across the UAE
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="gridbg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="pill glass"><i class="dot"></i><span data-t="hero.pill">Specialty drip coffee · Made for the UAE</span></span>
+        <h1><span data-t="hero.h1a">Café coffee.</span><br><span class="u"><span class="grad" data-t="hero.h1b">No machine.</span><svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20C60 6 120 8 170 14s90 6 126-6" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/></svg></span></h1>
+        <p class="lede" data-th="hero.lede">Specialty drip bag coffee in <b>8 unexpected flavors</b>. Tear it, hang it on your cup, pour 150&nbsp;ml of hot water — and that's your perfect moment.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#build"><span data-t="nav.build">Build your box</span>
+            <svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-wa" data-wa href="https://wa.me/971504594090" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.75.46 3.45 1.32 4.95L2.06 22l5.3-1.39a9.86 9.86 0 0 0 4.68 1.19c5.46 0 9.89-4.43 9.89-9.89S17.5 2 12.04 2zm5.77 14.06c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.21 1.58 1.96 1.08.97 2 1.27 2.29 1.41.29.14.46.12.62-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.69-.17 1.36z"/></svg>
+            <span data-t="wa.order">Order on WhatsApp</span></a>
+        </div>
+        <ul class="facts">
+          <li class="glass"><b>8</b><span data-t="fact.flavors">bold flavors</span></li>
+          <li class="glass"><b>10</b><span data-t="fact.bags">bags in every box</span></li>
+          <li class="glass"><b data-t="fact.price">AED 150</b><span data-t="fact.per">per box</span></li>
+        </ul>
       </div>
-      <div class="hero-btns">
-        <a class="btn-wa" href="https://wa.me/971504594090" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Order on WhatsApp
-        </a>
-        <a class="btn-outline" href="#menu">Build Your Box <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-right-word">TRUNKINO</div>
-    <img class="hero-elephant" src="assets/hero-bg.jpg" alt="Trunkino Coffee"/>
-  </div>
-</section>
 
-<!-- ── MARQUEE ── -->
-<div class="marquee-wrap"><div class="marquee-track">
-  <span class="marquee-item"><span class="m-dot"></span>Specialty Drip Coffee</span><span class="marquee-item"><span class="m-dot"></span>8 Bold Flavors</span><span class="marquee-item"><span class="m-dot"></span>10 Bags Per Box</span><span class="marquee-item"><span class="m-dot"></span>AED 150 / Box</span><span class="marquee-item"><span class="m-dot"></span>No Machine Needed</span><span class="marquee-item"><span class="m-dot"></span>UAE Delivery</span><span class="marquee-item"><span class="m-dot"></span>Trunkino Coffee</span>
-  <span class="marquee-item"><span class="m-dot"></span>Specialty Drip Coffee</span><span class="marquee-item"><span class="m-dot"></span>8 Bold Flavors</span><span class="marquee-item"><span class="m-dot"></span>10 Bags Per Box</span><span class="marquee-item"><span class="m-dot"></span>AED 150 / Box</span><span class="marquee-item"><span class="m-dot"></span>No Machine Needed</span><span class="marquee-item"><span class="m-dot"></span>UAE Delivery</span><span class="marquee-item"><span class="m-dot"></span>Trunkino Coffee</span>
-</div></div>
-
-<!-- ── ABOUT ── -->
-<section id="about">
-  <div class="about-grid">
-    <div class="reveal-l">
-      <p class="section-tag">Our Story</p>
-      <h2 class="about-headline">Not your average<br/><em>coffee brand.</em></h2>
-      <p class="about-body">Trunkino was born from a love of specialty coffee and bold creativity. We take precision drip bag brewing and pair it with unexpected, vibrant flavors — delivering a unique coffee experience straight to your door across the UAE.</p>
-      <div class="feat-list">
-        <div class="feat"><div class="feat-icon">☕</div><div class="feat-text"><strong>Drip Bag Precision</strong><span>Café-quality specialty coffee in a portable drip bag. Open, expand, pour 150ml, enjoy.</span></div></div>
-        <div class="feat"><div class="feat-icon">✨</div><div class="feat-text"><strong>Bold &amp; Unexpected Flavors</strong><span>From classic Dates to bold Red Bull — coffee you've never tasted before.</span></div></div>
-        <div class="feat"><div class="feat-icon">🇦🇪</div><div class="feat-text"><strong>UAE-Wide Delivery</strong><span>Order on WhatsApp and get Trunkino anywhere in the UAE, fast.</span></div></div>
+      <div class="hero-art" id="heroArt">
+        <div class="stage">
+          <div class="ring" aria-hidden="true"></div>
+          <div class="orb" aria-hidden="true"></div>
+          <span class="bean" style="inset-inline-start:4%;top:22%;animation-delay:-1s" aria-hidden="true"><svg viewBox="0 0 40 52"><ellipse cx="20" cy="26" rx="16" ry="23" fill="currentColor"/><path d="M20 5c-7 10 7 22 0 42" stroke="#c48a5a" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
+          <span class="bean" style="inset-inline-end:6%;bottom:20%;width:28px;animation-delay:-3s" aria-hidden="true"><svg viewBox="0 0 40 52"><ellipse cx="20" cy="26" rx="16" ry="23" fill="currentColor"/><path d="M20 5c-7 10 7 22 0 42" stroke="#c48a5a" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
+          <span class="bean" style="inset-inline-start:14%;bottom:8%;width:24px;animation-delay:-4.5s" aria-hidden="true"><svg viewBox="0 0 40 52"><ellipse cx="20" cy="26" rx="16" ry="23" fill="currentColor"/><path d="M20 5c-7 10 7 22 0 42" stroke="#c48a5a" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
+          <span class="bean" style="inset-inline-end:22%;top:5%;width:22px;animation-delay:-2s" aria-hidden="true"><svg viewBox="0 0 40 52"><ellipse cx="20" cy="26" rx="16" ry="23" fill="currentColor"/><path d="M20 5c-7 10 7 22 0 42" stroke="#c48a5a" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
+          <div class="stack" id="stack">
+            <div class="sachet b1" data-slot="prev" aria-hidden="true"></div>
+            <div class="sachet b2" data-slot="next" aria-hidden="true"></div>
+            <div class="sachet front" data-slot="front" role="img" aria-label="Trunkino Mango drip bag"></div>
+          </div>
+          <p class="hero-note hand" aria-hidden="true"><span data-th="hero.note">pick a<br>flavor!</span><svg class="flip" viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M50 4C46 22 30 32 10 34M10 34l9-8M10 34l10 5"/></svg></p>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Preview a flavor" data-tl="chips.aria"></div>
       </div>
     </div>
-    <div class="about-visual reveal-r">
-      <img class="about-img" src="assets/hero-bg.jpg" alt="Trunkino Coffee Product"/>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── MENU + CART ── -->
-<section id="menu">
-  <div class="sec-hdr">
-    <div><p class="section-tag">Build Your Box</p><h2 class="sec-title">Choose Your <em>Flavors</em></h2></div>
-    <button class="nav-cta" id="openCartFromMenu" style="border:none;cursor:none;">View Cart →</button>
-  </div>
+  <div class="marquee-wrap" aria-hidden="true"><div class="marquee"><div class="marquee-track" id="marquee"></div></div></div>
 
-  <!-- Box type selector -->
-  <div class="box-type-wrap">
-    <div class="box-type-toggle">
-      <button class="box-btn active" data-type="chefs" id="btnChefs">
-        <div class="box-btn-icon">🐘</div>
-        <div class="box-btn-name">Chef's Special</div>
-        <div class="box-btn-sub">Mix any flavors you like — total must be 10 pieces</div>
-        <div class="box-btn-price">AED 150 / box</div>
-      </button>
-      <button class="box-btn" data-type="classic" id="btnClassic">
-        <div class="box-btn-icon">🫙</div>
-        <div class="box-btn-name">Classic Box</div>
-        <div class="box-btn-sub">One flavor, 10 pieces — the full dedicated experience</div>
-        <div class="box-btn-price">AED 150 / box</div>
-      </button>
+  <!-- Story -->
+  <section class="sec" id="story">
+    <div class="wrap bento">
+      <figure class="tile t-mascot rv" style="margin:0">
+        <img src="assets/elephant.jpg" width="780" height="734" alt="Trunkino the elephant pouring a cup of coffee with its trunk" data-ta="alt:mascot.alt" loading="lazy">
+        <figcaption class="tag hand" data-t="mascot.tag">meet Trunkino ♥</figcaption>
+      </figure>
+      <div class="tile t-copy rv">
+        <span class="kicker" data-t="story.kicker">Our story</span>
+        <h2 data-th="story.h2">Not your average <em>coffee brand.</em></h2>
+        <p data-t="story.body">Trunkino was born from a love of specialty coffee and bold creativity. We pair precision drip bag brewing with unexpected, vibrant flavors — and deliver it straight to your door, anywhere in the UAE.</p>
+      </div>
+      <div class="tile t-stat t-blue rv"><b>8</b><span data-t="stat.flavors">flavors you won't find anywhere else</span></div>
+      <div class="tile t-stat rv"><b class="grad" data-t="stat.ml">150 ml</b><span data-t="stat.water">of hot water. That's the whole recipe.</span></div>
+      <div class="tile t-feat rv"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v15a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z"/><path d="M8 8H4l1 6 3 1M16 8h4l-1 6-3 1M8 7h8"/></svg></span><b data-t="feat1.t">Drip bag precision</b><span data-t="feat1.d">Café-quality specialty coffee in a portable drip bag. Open, hang, pour 150 ml, enjoy.</span></div>
+      <div class="tile t-feat rv"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 5.6L20 9.5l-4.4 3.8 1.4 5.7L12 16l-5 3 1.4-5.7L4 9.5l5.8-.9z"/></svg></span><b data-t="feat2.t">Bold, unexpected flavors</b><span data-t="feat2.d">From classic Dates to a bold Red Bull blend — coffee you've never tasted before.</span></div>
+      <div class="tile t-feat rv"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><b data-t="feat3.t">UAE-wide delivery</b><span data-t="feat3.d">Order on WhatsApp and get Trunkino anywhere in the Emirates.</span></div>
     </div>
-    <!-- Progress (Chef's Special) -->
-    <div class="cart-progress-bar" id="chefsProgress">
-      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-label"><span id="progressCount">0</span> / 10 pieces per box</span>
-      <button class="cart-open-mini" id="openCartMini">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        Cart
-      </button>
-    </div>
-  </div>
+  </section>
 
-  <!-- Flavor cards -->
-  <div class="menu-grid" id="menuGrid">
-    <div class="mcard reveal" data-flavor="Dates" data-emoji="🫙">
-      <div class="mcard-top"><div class="mcard-num">01</div><div class="mcard-emoji">🫙</div></div>
-      <div class="mcard-name">Dates</div>
-      <div class="mcard-desc">A nod to tradition. Sweet, warm, and deeply comforting — like your favorite Emirati moment in a cup.</div>
-      <div class="tags"><span class="tag">Sweet</span><span class="tag">Cozy</span><span class="tag">Traditional</span></div>
-      <div class="card-ctrl">
-        <!-- Injected by JS -->
+  <!-- Build your box -->
+  <section class="sec build" id="build">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker" data-t="build.kicker">Build your box</span>
+        <h2 data-t="build.h2">Pick your flavors.</h2>
+        <p data-th="build.p">Every box holds 10 drip bags for AED 150. Mix anything you like for a <b>Chef's Special</b>, or fill it with one flavor for a <b>Classic Box</b>.</p>
+      </div>
+      <div class="mixes rv" id="mixes"></div>
+      <div class="build-grid">
+        <div class="cards" id="cards">
+          <article class="fcard rv" data-f="dates" style="--c:#8b4a22">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><g transform="rotate(-24 24 24)"><ellipse cx="17" cy="26" rx="7.5" ry="14" fill="#7a3b17"/><ellipse cx="15" cy="21" rx="2.2" ry="5.5" fill="#b0683a"/><ellipse cx="31" cy="24" rx="7.5" ry="14" fill="#94501f"/><ellipse cx="29" cy="19" rx="2.2" ry="5.5" fill="#c27a45"/></g></svg></span><span class="fc-no">01</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.dates.n">Dates</h3>
+            <p data-t="f.dates.d">A nod to tradition. Sweet, warm and deeply comforting — like your favorite Emirati moment in a cup.</p>
+            <ul class="tags" data-tags="dates"><li>Sweet</li><li>Cozy</li><li>Traditional</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="chocolate" style="--c:#5a3220">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><g transform="rotate(-12 24 24)"><rect x="10" y="7" width="28" height="35" rx="4" fill="#4a2716"/><g fill="#6e3d24"><rect x="13" y="10" width="10" height="8" rx="2"/><rect x="25" y="10" width="10" height="8" rx="2"/><rect x="13" y="20" width="10" height="8" rx="2"/><rect x="25" y="20" width="10" height="8" rx="2"/></g><path d="M10 27h28v11a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4z" fill="#2563eb"/><path d="M10 27h28" stroke="#93c5fd" stroke-width="2.4"/></g></svg></span><span class="fc-no">02</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.chocolate.n">Chocolate</h3>
+            <p data-t="f.chocolate.d">Rich, smooth and indulgent. Specialty coffee wrapped in velvety chocolate notes for the ultimate treat.</p>
+            <ul class="tags" data-tags="chocolate"><li>Rich</li><li>Smooth</li><li>Indulgent</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="guava" style="--c:#ec5f84">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="26" r="17" fill="#77b244"/><circle cx="24" cy="26" r="14" fill="#f47a93"/><circle cx="24" cy="26" r="7.5" fill="#f9a8b8"/><g fill="#fff3d6"><circle cx="21" cy="23" r="1.5"/><circle cx="27.5" cy="23.5" r="1.5"/><circle cx="24" cy="29.5" r="1.5"/><circle cx="19.5" cy="28" r="1.2"/><circle cx="28.5" cy="28.5" r="1.2"/></g><path d="M24 9c2-4 6-6 10-5-2 4-6 5-10 5z" fill="#4e8a2a"/></svg></span><span class="fc-no">03</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.guava.n">Guava</h3>
+            <p data-t="f.guava.d">Fresh, tropical and juicy. Guava brings a vibrant brightness to your morning brew that wakes you right up.</p>
+            <ul class="tags" data-tags="guava"><li>Fresh</li><li>Tropical</li><li>Juicy</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="tobacco" style="--c:#7d6d36">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 39C9 21 21 9 40 8c0 19-12 31-31 31z" fill="#8c7b3a"/><path d="M9 39C9 25 17 15 33 12c-3 15-11 23-24 27z" fill="#a8954d"/><path d="M9 39L34 14" stroke="#5c5024" stroke-width="2.2" stroke-linecap="round"/><path d="M17 31l-1-8M22 26l-.5-8M27 21v-6M20 28h8M25 23h7" stroke="#5c5024" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="fc-no">04</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.tobacco.n">Tobacco</h3>
+            <p data-t="f.tobacco.d">Bold, smoky and intense. Not for the faint-hearted — this one is for those who like depth in every sip.</p>
+            <ul class="tags" data-tags="tobacco"><li>Bold</li><li>Smoky</li><li>Intense</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="mango" style="--c:#ffa514">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 31c-3-12 6-22 18-21 8 1 10 9 6 17-5 9-12 14-18 13-3-.5-5-4-6-9z" fill="#ffb21f"/><path d="M27 13c-2 6 1 13 8 16" stroke="#ff8a1f" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/><path d="M18 30c0-8 5-13 11-15" stroke="#ffe08a" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M29 11c3-4 7-5 11-4-2 4-6 6-11 4z" fill="#4e9a37"/></svg></span><span class="fc-no">05</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.mango.n">Mango</h3>
+            <p data-t="f.mango.d">Sunny, sweet and vibrant. Tropical mango meets specialty coffee in a combination that just makes sense.</p>
+            <ul class="tags" data-tags="mango"><li>Sunny</li><li>Sweet</li><li>Vibrant</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="redbull" style="--c:#1f3f9e">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="#1f3f9e"/><path d="M27.5 7 14 27h9.5l-3 14L35 20h-9.5z" fill="#ffcf1f" stroke="#e8283b" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="fc-no">06</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.redbull.n">Red Bull</h3>
+            <p data-t="f.redbull.d">Energetic, bold and powerful. The UAE's most daring coffee drink — double the energy, double the flavor.</p>
+            <ul class="tags" data-tags="redbull"><li>Energetic</li><li>Bold</li><li>Powerful</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="coconut" style="--c:#8a6244">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="26" r="17" fill="#6b4226"/><path d="M11 18c3-4 6-6 9-7M33 11c3 2 5 4 6 7" stroke="#4a2c18" stroke-width="1.8" stroke-linecap="round"/><circle cx="24" cy="27" r="13" fill="#fffaf0"/><circle cx="24" cy="27" r="8.5" fill="#f1e7d4"/></svg></span><span class="fc-no">07</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.coconut.n">Coconut</h3>
+            <p data-t="f.coconut.d">Creamy, smooth and soft. A tropical escape in every sip — like drinking coffee on a beach.</p>
+            <ul class="tags" data-tags="coconut"><li>Creamy</li><li>Smooth</li><li>Soft</li></ul>
+            <div class="fc-act"></div>
+          </article>
+          <article class="fcard rv" data-f="berries" style="--c:#6b3fa6">
+            <div class="fc-top"><span class="fc-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12c1-5 5-7 9-7" stroke="#3f8a3a" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="17" cy="29" r="8.5" fill="#5a3796"/><circle cx="31" cy="31" r="8.5" fill="#7b4dc4"/><circle cx="24" cy="19" r="8.5" fill="#6a41ae"/><circle cx="21" cy="16.5" r="2.2" fill="#a98be0"/><circle cx="14" cy="27" r="2.2" fill="#8a6bd0"/><circle cx="28" cy="29" r="2.2" fill="#a98be0"/><circle cx="36" cy="14" r="5" fill="#d9304f"/><circle cx="34.5" cy="12.5" r="1.4" fill="#ff8a9c"/></svg></span><span class="fc-no">08</span></div>
+            <span class="fc-qty"></span>
+            <h3 data-t="f.berries.n">Berries</h3>
+            <p data-t="f.berries.d">Fresh, fruity and refreshing. Mixed berry notes dance through specialty coffee for a bright, lively cup.</p>
+            <ul class="tags" data-tags="berries"><li>Fresh</li><li>Fruity</li><li>Refreshing</li></ul>
+            <div class="fc-act"></div>
+          </article>
+        </div>
+        <aside class="aside" aria-label="Your box" data-tl="box.title"><div class="boxp" data-boxp></div></aside>
       </div>
     </div>
-    <div class="mcard reveal" data-flavor="Chocolate" data-emoji="🍫">
-      <div class="mcard-top"><div class="mcard-num">02</div><div class="mcard-emoji">🍫</div></div>
-      <div class="mcard-name">Chocolate</div>
-      <div class="mcard-desc">Rich, smooth, and indulgent. Specialty coffee wrapped in velvety chocolate notes for the ultimate treat.</div>
-      <div class="tags"><span class="tag">Rich</span><span class="tag">Smooth</span><span class="tag">Indulgent</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-    <div class="mcard reveal" data-flavor="Guava" data-emoji="🍈">
-      <div class="mcard-top"><div class="mcard-num">03</div><div class="mcard-emoji">🍈</div></div>
-      <div class="mcard-name">Guava</div>
-      <div class="mcard-desc">Fresh, tropical, and juicy. Guava brings a vibrant brightness to your morning brew that wakes you right up.</div>
-      <div class="tags"><span class="tag">Fresh</span><span class="tag">Tropical</span><span class="tag">Juicy</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-    <div class="mcard reveal" data-flavor="Tabacco" data-emoji="🌿">
-      <div class="mcard-top"><div class="mcard-num">04</div><div class="mcard-emoji">🌿</div></div>
-      <div class="mcard-name">Tabacco</div>
-      <div class="mcard-desc">Bold, smoky, and intense. Not for the faint-hearted — this one is for those who like depth in every sip.</div>
-      <div class="tags"><span class="tag">Bold</span><span class="tag">Smoky</span><span class="tag">Intense</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-    <div class="mcard reveal" data-flavor="Mango" data-emoji="🥭">
-      <div class="mcard-top"><div class="mcard-num">05</div><div class="mcard-emoji">🥭</div></div>
-      <div class="mcard-name">Mango</div>
-      <div class="mcard-desc">Sunny, sweet, and vibrant. Tropical mango meets specialty coffee in a combination that just makes sense.</div>
-      <div class="tags"><span class="tag">Sunny</span><span class="tag">Sweet</span><span class="tag">Vibrant</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-    <div class="mcard reveal" data-flavor="Red Bull" data-emoji="⚡">
-      <div class="mcard-top"><div class="mcard-num">06</div><div class="mcard-emoji">⚡</div></div>
-      <div class="mcard-name">Red Bull</div>
-      <div class="mcard-desc">Energetic, bold, and powerful. The UAE's most daring coffee drink — double the energy, double the flavor.</div>
-      <div class="tags"><span class="tag">Energetic</span><span class="tag">Bold</span><span class="tag">Powerful</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-    <div class="mcard reveal" data-flavor="Coconut" data-emoji="🥥">
-      <div class="mcard-top"><div class="mcard-num">07</div><div class="mcard-emoji">🥥</div></div>
-      <div class="mcard-name">Coconut</div>
-      <div class="mcard-desc">Creamy, smooth, and soft. A tropical escape in every sip — like drinking coffee on a beach.</div>
-      <div class="tags"><span class="tag">Creamy</span><span class="tag">Smooth</span><span class="tag">Soft</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-    <div class="mcard reveal" data-flavor="Berries" data-emoji="🫐">
-      <div class="mcard-top"><div class="mcard-num">08</div><div class="mcard-emoji">🫐</div></div>
-      <div class="mcard-name">Berries</div>
-      <div class="mcard-desc">Fresh, fruity, and refreshing. Mixed berry notes dance through specialty coffee for a bright, lively cup.</div>
-      <div class="tags"><span class="tag">Fresh</span><span class="tag">Fruity</span><span class="tag">Refreshing</span></div>
-      <div class="card-ctrl"></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── HOW TO ── -->
-<section id="howto">
-  <div class="howto-hdr reveal">
-    <p class="section-tag">Simple by Design</p>
-    <h2 class="sec-title">How to <em>Use</em></h2>
-    <p>Your perfect coffee in the easiest way. No machine. No barista. Just you and hot water.</p>
-  </div>
-  <div class="steps">
-    <div class="step reveal"><div class="step-n">01</div><div class="step-title">Open the Bag</div><div class="step-desc">Open along the perforation carefully to preserve the drip bag inside.</div></div>
-    <div class="step reveal"><div class="step-n">02</div><div class="step-title">Expand the Drip</div><div class="step-desc">Unfold and expand the drip bag wings so it sits securely on your cup.</div></div>
-    <div class="step reveal"><div class="step-n">03</div><div class="step-title">Pour Hot Water</div><div class="step-desc">Slowly pour 150ml of hot water over the drip bag. Let it bloom and drip.</div></div>
-    <div class="step reveal"><div class="step-n">04</div><div class="step-title">Enjoy Your Coffee</div><div class="step-desc">Remove the bag, sit back, and enjoy your perfectly brewed Trunkino cup.</div></div>
-  </div>
-  <div class="howto-frame reveal"><img src="assets/howto.jpg?v=2" alt="How to brew Trunkino drip bag coffee"/></div>
-</section>
+  <!-- Brew -->
+  <section class="sec brew" id="brew">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker" data-t="brew.kicker">Simple by design</span>
+        <h2 data-t="brew.h2">Four steps. Zero machines.</h2>
+        <p data-t="brew.p">Your perfect coffee in the easiest way — just you, a cup and hot water.</p>
+      </div>
+      <ol class="steps">
+        <li class="bstep rv"><span class="n hand">01</span>
+          <svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M52 44h56v58a6 6 0 0 1-6 6H58a6 6 0 0 1-6-6z"/><path d="M52 56h56" stroke-dasharray="3 6" opacity=".6"/><path d="M55 34l51-9 2.4 13-51 9z"/><path d="M70 76h20M70 86h13" opacity=".6"/><path d="M118 20l9-7M121 31h11" opacity=".7"/></svg>
+          <h3 data-t="s1.t">Open the bag</h3><p data-t="s1.d">Tear along the perforation, carefully, to keep the drip bag inside intact.</p></li>
+        <li class="bstep rv"><span class="n hand">02</span>
+          <svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M66 34h28v66a4 4 0 0 1-4 4H70a4 4 0 0 1-4-4z"/><path d="M66 44 34 28l-7 26 39 13"/><path d="m94 44 32-16 7 26-39 13"/><path d="m72 62 8 10 8-10" opacity=".6"/><path d="M22 18l-6-6M138 18l6-6" opacity=".7"/></svg>
+          <h3 data-t="s2.t">Hang the wings</h3><p data-t="s2.d">Unfold the paper wings and hook them over your cup so the bag sits securely.</p></li>
+        <li class="bstep rv"><span class="n hand">03</span><span class="ml hand" data-t="stat.ml">150 ml</span>
+          <svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="stream" d="M138 6c-22 4-42 16-50 36"/><path d="M42 62h68v24a22 22 0 0 1-22 22H64a22 22 0 0 1-22-22z"/><path d="M110 68h6a10 10 0 0 1 0 20h-9"/><path d="M64 62V42h24v20"/><path d="M64 48 48 40M88 48l16-8"/></svg>
+          <h3 data-t="s3.t">Pour slowly</h3><p data-t="s3.d">Pour 150 ml of hot water over the bag. Let it bloom, then let it drip.</p></li>
+        <li class="bstep rv"><span class="n hand">04</span>
+          <svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g><path class="steam" d="M62 44c-7-8 7-13 0-22"/><path class="steam" d="M78 44c-7-8 7-13 0-22"/><path class="steam" d="M94 44c-7-8 7-13 0-22"/></g><path d="M40 54h76v26a24 24 0 0 1-24 24H64a24 24 0 0 1-24-24z"/><path d="M116 62h6a10 10 0 0 1 0 20h-9"/><path d="M30 112h96"/></svg>
+          <h3 data-t="s4.t">Enjoy</h3><p data-t="s4.d">Remove the bag, sit back and enjoy your perfectly brewed Trunkino cup.</p></li>
+      </ol>
+    </div>
+  </section>
 
-<!-- ── ORDER CTA ── -->
-<section id="order">
-  <div class="order-eyebrow">Ready to order?</div>
-  <h2 class="order-title">Your cup is<br/><em>waiting.</em></h2>
-  <p class="order-sub">Build your box above or order directly on WhatsApp — delivered anywhere in the UAE.</p>
-  <a class="order-btn" href="https://wa.me/971504594090" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Order on WhatsApp
-  </a>
-  <p class="order-note">Fast delivery · UAE-wide · Any flavor · Any time</p>
-</section>
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-side rv">
+        <span class="kicker" data-t="faq.kicker">Questions</span>
+        <h2 data-t="faq.h2">Good to know.</h2>
+        <p data-t="faq.p">Anything else? Message us on WhatsApp — a real person will answer.</p>
+        <a class="btn btn-wa" data-wa href="https://wa.me/971504594090" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.75.46 3.45 1.32 4.95L2.06 22l5.3-1.39a9.86 9.86 0 0 0 4.68 1.19c5.46 0 9.89-4.43 9.89-9.89S17.5 2 12.04 2z"/></svg>
+          <span data-t="faq.ask">Ask on WhatsApp</span></a>
+      </div>
+      <div class="rv" id="faqList">
+        <details class="qa" open><summary><span data-t="q1">How do I make it?</span><i aria-hidden="true"></i></summary><p data-t="a1">Tear the bag along the perforation, open the paper wings and hang them on your cup, then slowly pour 150 ml of hot water over it. Remove the bag and enjoy.</p></details>
+        <details class="qa"><summary><span data-t="q2">Do I need a coffee machine?</span><i aria-hidden="true"></i></summary><p data-t="a2">No. Each drip bag is a complete pour-over — all you need is a cup and hot water.</p></details>
+        <details class="qa"><summary><span data-t="q3">How does a box work?</span><i aria-hidden="true"></i></summary><p data-t="a3">Every box holds 10 drip bags and costs AED 150 (AED 15 per bag). Mix any flavors for a Chef's Special, or choose one flavor for a Classic Box. Order as many boxes as you like.</p></details>
+        <details class="qa"><summary><span data-t="q4">Where do you deliver?</span><i aria-hidden="true"></i></summary><p data-t="a4">Anywhere in the UAE — from Abu Dhabi and Dubai to Fujairah and Ras Al Khaimah.</p></details>
+        <details class="qa"><summary><span data-t="q5">How do I pay and confirm my order?</span><i aria-hidden="true"></i></summary><p data-t="a5">Build your box, add your details and send the order to us on WhatsApp. We'll confirm the order, payment and delivery with you there.</p></details>
+        <details class="qa"><summary><span data-t="q6">Can I order without the website?</span><i aria-hidden="true"></i></summary><p data-t="a6">Of course. Message us on WhatsApp with the flavors you want and we'll take it from there.</p></details>
+      </div>
+    </div>
+  </section>
 
-<!-- ── FOOTER ── -->
+  <!-- Final CTA -->
+  <section class="sec final" id="order">
+    <div class="bigword" aria-hidden="true">TRUNKINO</div>
+    <div class="wrap final-grid">
+      <div class="rv">
+        <h2 data-th="final.h2">Your cup is <span>waiting.</span></h2>
+        <p data-t="final.p">Build your box or order straight on WhatsApp — delivered anywhere in the UAE.</p>
+        <div class="cta-row">
+          <a class="btn btn-white" href="#build"><span data-t="nav.build">Build your box</span>
+            <svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" data-wa href="https://wa.me/971504594090" target="_blank" rel="noopener"><span data-t="wa.order">Order on WhatsApp</span></a>
+        </div>
+      </div>
+      <div class="sticker rv"><img src="assets/elephant.jpg" width="780" height="734" alt="" loading="lazy"></div>
+    </div>
+  </section>
+</main>
+
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="assets/trunkinologo-removebg-preview.png" alt="Trunkino Coffee"/>
-      <p>Specialty drip bag coffee in unique flavors, delivered across the UAE. No machine needed.</p>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <span class="logo" role="img" aria-label="Trunkino Coffee"></span>
+        <p style="max-width:24em" data-t="foot.about">Specialty drip bag coffee in unique flavors, delivered across the UAE. No machine needed.</p>
+      </div>
+      <div><h4 data-t="foot.explore">Explore</h4><ul><li><a href="#story" data-t="nav.story">Our story</a></li><li><a href="#build" data-t="foot.flavors">Flavors &amp; boxes</a></li><li><a href="#brew" data-t="nav.brew">How to brew</a></li><li><a href="#faq" data-t="nav.faq">FAQ</a></li></ul></div>
+      <div><h4 data-t="foot.hello">Say hello</h4><ul><li><a data-wa href="https://wa.me/971504594090" target="_blank" rel="noopener" data-t="foot.wa">WhatsApp</a></li><li><a href="https://www.instagram.com/trunkinocoffee/" target="_blank" rel="noopener" data-t="foot.ig">Instagram · @trunkinocoffee</a></li></ul></div>
     </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#howto">How to Use</a></li>
-        <li><a href="#order">Order</a></li>
-      </ul>
+    <div class="foot-bottom">
+      <span data-t="foot.copy">© 2026 Trunkino Coffee · Made in the UAE</span>
+      <span><span data-t="foot.made">Made &amp; designed by</span> <a href="https://falahstudios.com" target="_blank" rel="noopener" data-t="foot.studio">Falah Studios</a></span>
     </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <a class="footer-ig" href="https://www.instagram.com/trunkinocoffee/" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
-        @trunkinocoffee
-      </a>
-      <div style="margin-top:20px;"><h4>Order</h4><ul style="margin-top:10px;"><li><a href="https://wa.me/971504594090" target="_blank">WhatsApp</a></li></ul></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2026 Trunkino Coffee · Made in UAE</p>
-    <a class="footer-credit" href="https://www.instagram.com/falahstudios/" target="_blank">Made &amp; Designed by Falah Studios</a>
   </div>
 </footer>
 
-<!-- ── CART DRAWER ── -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-drawer-head">
-    <h3>Your Box</h3>
-    <div class="cart-head-right">
-      <span class="cart-pieces-pill" id="cartPiecesPill">0 pieces</span>
-      <button class="cart-close-btn" id="cartCloseBtn">×</button>
-    </div>
-  </div>
-  <div class="cart-body" id="cartBody">
-    <div class="cart-empty" id="cartEmpty">
-      <div class="cart-empty-icon">🛒</div>
-      <p>Your box is empty.<br/>Select flavors from the menu.</p>
-    </div>
-    <div id="cartContent" style="display:none;">
-      <p class="cart-section-label" id="cartTypeLabel">Chef's Special</p>
-      <div class="cart-items" id="cartItemsList"></div>
-      <!-- Classic box qty -->
-      <div class="cart-box-ctrl" id="classicBoxCtrl" style="display:none;">
-        <span class="cart-box-ctrl-label">Number of boxes</span>
-        <div class="box-qty-ctrl">
-          <button class="box-qty-btn" id="boxQtyMinus">−</button>
-          <span class="box-qty-num" id="boxQtyNum">1</span>
-          <button class="box-qty-btn" id="boxQtyPlus">+</button>
-        </div>
-      </div>
-      <!-- Warning if not valid -->
-      <div class="cart-warning" id="cartWarning" style="display:none;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span id="cartWarningText">Add more pieces to complete a box of 10.</span>
-      </div>
-      <div class="cart-divider"></div>
-      <div class="cart-summary-row"><span>Box type</span><span id="sumBoxType">Chef's Special</span></div>
-      <div class="cart-summary-row"><span>Total pieces</span><span id="sumPieces">0</span></div>
-      <div class="cart-summary-row"><span>Boxes</span><span id="sumBoxes">0</span></div>
-      <div class="cart-total-row">
-        <span>Total</span>
-        <span class="cart-total-price" id="sumTotal">AED 0</span>
-      </div>
-    </div>
-  </div>
-  <div class="cart-footer">
-    <button class="checkout-btn" id="checkoutBtn" disabled>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      Proceed to Checkout
-    </button>
-  </div>
+<!-- Mobile box bar -->
+<div class="mbar" id="mbar">
+  <div class="mini" id="mini" aria-hidden="true"></div>
+  <div class="txt" id="mbarTxt"></div>
+  <button class="btn btn-primary" type="button" data-open-box data-t="mbar.view">View box</button>
 </div>
 
-<!-- ── CHECKOUT MODAL ── -->
-<div class="modal-overlay" id="checkoutModal">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div><h3>Complete Your Order</h3><p>Fill in your details and we'll get it to you.</p></div>
-      <button class="modal-close" id="modalClose">×</button>
-    </div>
-    <div class="modal-body">
-      <div class="order-review">
-        <div class="order-review-title">Order Summary</div>
-        <div class="order-review-items" id="modalOrderItems"></div>
-        <div class="or-total"><span>Total</span><span class="or-total-price" id="modalTotal">AED 0</span></div>
+<!-- Box drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your box" data-tl="box.title" aria-hidden="true">
+  <div class="drawer-head"><span class="hand" data-t="drawer.title">your trunkino box</span>
+    <button class="icon-btn" type="button" id="drawerClose" aria-label="Close your box" data-tl="box.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="boxp" data-boxp></div>
+</aside>
+
+<!-- Checkout -->
+<div class="modal" id="checkout" role="dialog" aria-modal="true" aria-labelledby="coTitle">
+  <div class="scrim" data-close></div>
+  <div class="sheet">
+    <div id="coForm">
+      <div class="sheet-head">
+        <div><h3 id="coTitle" data-t="co.title">Almost yours.</h3><p data-t="co.sub">Add your details — we'll confirm everything with you on WhatsApp.</p></div>
+        <button class="icon-btn" type="button" data-close aria-label="Close checkout" data-tl="co.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
-      <form id="checkoutForm" novalidate>
-        <div class="form-row">
-          <div class="form-group"><label>Full Name <span>*</span></label><input class="form-input" type="text" name="name" placeholder="Your full name" required/></div>
-          <div class="form-group"><label>WhatsApp Number <span>*</span></label><input class="form-input" type="tel" name="phone" placeholder="+971 XX XXX XXXX" required/></div>
-        </div>
-        <div class="form-group"><label>Email Address <span>*</span></label><input class="form-input" type="email" name="email" placeholder="your@email.com" required/></div>
-        <div class="form-group"><label>Delivery Area &amp; Address <span>*</span></label><textarea class="form-input" name="address" placeholder="e.g. Dubai Marina, Building X, Apt 12" required></textarea></div>
-        <div class="form-group"><label>Notes <span style="color:var(--gray-light);font-weight:600;">(optional)</span></label><textarea class="form-input" name="notes" placeholder="Any special requests or instructions?"></textarea></div>
-        <button type="submit" class="place-order-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Place Order
-        </button>
+      <div class="summary" id="coSummary"></div>
+      <form class="form" id="form" novalidate>
+        <div class="field"><label for="fName" data-t="co.name">Full name</label><input class="input" id="fName" name="name" autocomplete="name" required><span class="err" hidden></span></div>
+        <div class="field"><label for="fPhone" data-t="co.phone">WhatsApp number</label><input class="input" id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="+971 5X XXX XXXX" required><span class="err" hidden></span></div>
+        <div class="field full"><label for="fEmirate" data-t="co.emirate">Emirate</label>
+          <select class="input" id="fEmirate" name="emirate" required></select><span class="err" hidden></span></div>
+        <div class="field full"><label for="fAddress" data-t="co.address">Area &amp; address</label><textarea class="input" id="fAddress" name="address" autocomplete="street-address" data-tp="co.addressPh" placeholder="e.g. Dubai Marina, Building name, Apt 12" required></textarea><span class="err" hidden></span></div>
+        <div class="field full"><label for="fEmail"><span data-t="co.email">Email</span> <small data-t="co.optional">(optional)</small></label><input class="input" id="fEmail" name="email" type="email" dir="ltr" autocomplete="email"><span class="err" hidden></span></div>
+        <div class="field full"><label for="fNotes"><span data-t="co.notes">Notes</span> <small data-t="co.optional">(optional)</small></label><textarea class="input" id="fNotes" name="notes" data-tp="co.notesPh" placeholder="Gift message, delivery time, anything else?"></textarea></div>
+        <button class="btn btn-primary full" type="submit" data-t="co.submit">Review &amp; send order</button>
       </form>
     </div>
+    <div id="coDone" class="done" hidden>
+      <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h3 data-t="done.title">One last tap.</h3>
+      <p data-t="done.p">Send your order to Trunkino on WhatsApp — we'll confirm it, plus payment and delivery, right there.</p>
+      <div class="summary" id="doneSummary"></div>
+      <a class="btn btn-wa" id="sendWa" href="https://wa.me/971504594090" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.75.46 3.45 1.32 4.95L2.06 22l5.3-1.39a9.86 9.86 0 0 0 4.68 1.19c5.46 0 9.89-4.43 9.89-9.89S17.5 2 12.04 2z"/></svg>
+        <span data-t="done.send">Send order on WhatsApp</span></a>
+      <button class="clear" type="button" id="editOrder" data-t="done.edit">Edit my details</button>
+      <button class="clear" type="button" id="newOrder" data-t="done.new" hidden>Start a new box</button>
+    </div>
   </div>
 </div>
 
-<!-- ── SUCCESS MODAL ── -->
-<div class="success-modal" id="successModal">
-  <div class="success-box">
-    <div class="success-box-head">
-      <div class="success-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h3>Order Placed!</h3>
-      <p>Your order is ready. Send it to us on WhatsApp and we'll get it prepared right away.</p>
-    </div>
-    <div class="success-box-body">
-      <div class="success-order-sum">
-        <h4>Your Order Receipt</h4>
-        <div class="success-items" id="successItems"></div>
-        <div class="success-total"><span>Total</span><span class="success-total-num" id="successTotal">AED 0</span></div>
-      </div>
-      <div class="success-actions">
-        <a class="wa-send-btn" id="waSendBtn" href="#" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Send Order on WhatsApp
-        </a>
-        <a class="email-send-btn" id="emailSendBtn" href="#">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Also Send via Email
-        </a>
-      </div>
-      <p class="success-note">Screenshot this order summary for your records. Trunkino will confirm your order and delivery details via WhatsApp.</p>
-    </div>
-  </div>
-</div>
+<div class="toast" id="toast" role="status" aria-live="polite"><i></i><span></span></div>
 
 <script>
-// ── CONFIG
-const TRUNKINO_WA = '971504594090';
-const TRUNKINO_EMAIL = 'hello@trunkino.com'; // update to your email
-const PRICE_PER_PIECE = 15;
-const PIECES_PER_BOX = 10;
+(() => {
+  "use strict";
+  const WA = "971504594090", PER_BOX = 10, PRICE = 15;
+  const KEY = "trunkino-box-v2", LKEY = "trunkino-lang", TKEY = "trunkino-theme";
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const root = document.documentElement;
+  const store = { get: (k) => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* private mode */ } } };
 
-// ── CURSOR
-const cur=document.getElementById('cur'),ring=document.getElementById('curRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=(mx-4.5)+'px';cur.style.top=(my-4.5)+'px';});
-(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=(rx-19)+'px';ring.style.top=(ry-19)+'px';requestAnimationFrame(loop);})();
-function addCursorHover(els){els.forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('pop');ring.classList.add('pop');});el.addEventListener('mouseleave',()=>{cur.classList.remove('pop');ring.classList.remove('pop');});});}
-addCursorHover(document.querySelectorAll('a,button,.mcard,.step,.feat'));
+  // ---------------- Copy, in English and Arabic ----------------
+  const T = {
+    en: {
+      "topbar": "Delivering across the UAE · 10 drip bags for AED 150", "topbar.cta": "Build your box →", "logo": "Trunkino Coffee",
+      "nav.story": "Our story", "nav.flavors": "Flavors", "nav.brew": "How to brew", "nav.faq": "FAQ", "nav.build": "Build your box", "nav.ig": "Instagram ↗",
+      "lang.aria": "التبديل إلى العربية", "theme.aria": "Switch light or dark mode", "box.open": "Open your box", "box.close": "Close your box", "box.title": "Your box",
+      "menu.open": "Open menu", "menu.close": "Close menu", "chips.aria": "Preview a flavor",
+      "hero.pill": "Specialty drip coffee · Made for the UAE", "hero.h1a": "Café coffee.", "hero.h1b": "No machine.",
+      "hero.lede": "Specialty drip bag coffee in <b>8 unexpected flavors</b>. Tear it, hang it on your cup, pour 150&nbsp;ml of hot water — and that's your perfect moment.",
+      "wa.order": "Order on WhatsApp", "fact.flavors": "bold flavors", "fact.bags": "bags in every box", "fact.price": "AED 150", "fact.per": "per box",
+      "hero.note": "pick a<br>flavor!", "sachet.aria": "Trunkino {name} drip bag",
+      "mascot.alt": "Trunkino the elephant pouring a cup of coffee with its trunk", "mascot.tag": "meet Trunkino ♥",
+      "story.kicker": "Our story", "story.h2": "Not your average <em>coffee brand.</em>",
+      "story.body": "Trunkino was born from a love of specialty coffee and bold creativity. We pair precision drip bag brewing with unexpected, vibrant flavors — and deliver it straight to your door, anywhere in the UAE.",
+      "stat.flavors": "flavors you won't find anywhere else", "stat.ml": "150 ml", "stat.water": "of hot water. That's the whole recipe.",
+      "feat1.t": "Drip bag precision", "feat1.d": "Café-quality specialty coffee in a portable drip bag. Open, hang, pour 150 ml, enjoy.",
+      "feat2.t": "Bold, unexpected flavors", "feat2.d": "From classic Dates to a bold Red Bull blend — coffee you've never tasted before.",
+      "feat3.t": "UAE-wide delivery", "feat3.d": "Order on WhatsApp and get Trunkino anywhere in the Emirates.",
+      "build.kicker": "Build your box", "build.h2": "Pick your flavors.",
+      "build.p": "Every box holds 10 drip bags for AED 150. Mix anything you like for a <b>Chef's Special</b>, or fill it with one flavor for a <b>Classic Box</b>.",
+      "mix.lbl": "Not sure? Try a mix →", "mix.all": "Taste all 8", "mix.tropical": "Tropical", "mix.sweet": "Sweet tooth", "mix.bold": "Bold & awake", "mix.surprise": "Surprise me",
+      "f.dates.n": "Dates", "f.dates.d": "A nod to tradition. Sweet, warm and deeply comforting — like your favorite Emirati moment in a cup.", "f.dates.tags": "Sweet|Cozy|Traditional",
+      "f.chocolate.n": "Chocolate", "f.chocolate.d": "Rich, smooth and indulgent. Specialty coffee wrapped in velvety chocolate notes for the ultimate treat.", "f.chocolate.tags": "Rich|Smooth|Indulgent",
+      "f.guava.n": "Guava", "f.guava.d": "Fresh, tropical and juicy. Guava brings a vibrant brightness to your morning brew that wakes you right up.", "f.guava.tags": "Fresh|Tropical|Juicy",
+      "f.tobacco.n": "Tobacco", "f.tobacco.d": "Bold, smoky and intense. Not for the faint-hearted — this one is for those who like depth in every sip.", "f.tobacco.tags": "Bold|Smoky|Intense",
+      "f.mango.n": "Mango", "f.mango.d": "Sunny, sweet and vibrant. Tropical mango meets specialty coffee in a combination that just makes sense.", "f.mango.tags": "Sunny|Sweet|Vibrant",
+      "f.redbull.n": "Red Bull", "f.redbull.d": "Energetic, bold and powerful. The UAE's most daring coffee drink — double the energy, double the flavor.", "f.redbull.tags": "Energetic|Bold|Powerful",
+      "f.coconut.n": "Coconut", "f.coconut.d": "Creamy, smooth and soft. A tropical escape in every sip — like drinking coffee on a beach.", "f.coconut.tags": "Creamy|Smooth|Soft",
+      "f.berries.n": "Berries", "f.berries.d": "Fresh, fruity and refreshing. Mixed berry notes dance through specialty coffee for a bright, lively cup.", "f.berries.tags": "Fresh|Fruity|Refreshing",
+      "card.dec": "Remove one {name}", "card.inc": "Add one {name}", "card.box": "+ Full box",
+      "t.added": "Added {name}", "t.addedBox": "Added a box of {name}", "t.addedMix": "Added a {name} box", "t.surprise": "Added a surprise box", "t.fresh": "Fresh box, ready to fill",
+      "box.h": "Your box", "box.bags": "{n} bags", "box.bag1": "1 bag", "box.boxes": "{n} boxes", "box.box1": "1 box", "box.label": "box {n}",
+      "box.empty": "Your box is empty. Add 10 bags to fill it — mix flavors or pick one.", "box.more": "{n} more to complete box {b}.", "box.ready": "{n} ready · {type}",
+      "box.readyOne": "Box ready", "box.readyMany": "{n} boxes ready", "box.total": "Total", "box.checkout": "Checkout", "box.clear": "Empty the box",
+      "type.chef": "Chef's Special", "type.classic": "Classic Box · {name}",
+      "mbar.view": "View box", "mbar.count": "{n} / 10 bags", "drawer.title": "your trunkino box",
+      "brew.kicker": "Simple by design", "brew.h2": "Four steps. Zero machines.", "brew.p": "Your perfect coffee in the easiest way — just you, a cup and hot water.",
+      "s1.t": "Open the bag", "s1.d": "Tear along the perforation, carefully, to keep the drip bag inside intact.",
+      "s2.t": "Hang the wings", "s2.d": "Unfold the paper wings and hook them over your cup so the bag sits securely.",
+      "s3.t": "Pour slowly", "s3.d": "Pour 150 ml of hot water over the bag. Let it bloom, then let it drip.",
+      "s4.t": "Enjoy", "s4.d": "Remove the bag, sit back and enjoy your perfectly brewed Trunkino cup.",
+      "faq.kicker": "Questions", "faq.h2": "Good to know.", "faq.p": "Anything else? Message us on WhatsApp — a real person will answer.", "faq.ask": "Ask on WhatsApp",
+      "q1": "How do I make it?", "a1": "Tear the bag along the perforation, open the paper wings and hang them on your cup, then slowly pour 150 ml of hot water over it. Remove the bag and enjoy.",
+      "q2": "Do I need a coffee machine?", "a2": "No. Each drip bag is a complete pour-over — all you need is a cup and hot water.",
+      "q3": "How does a box work?", "a3": "Every box holds 10 drip bags and costs AED 150 (AED 15 per bag). Mix any flavors for a Chef's Special, or choose one flavor for a Classic Box. Order as many boxes as you like.",
+      "q4": "Where do you deliver?", "a4": "Anywhere in the UAE — from Abu Dhabi and Dubai to Fujairah and Ras Al Khaimah.",
+      "q5": "How do I pay and confirm my order?", "a5": "Build your box, add your details and send the order to us on WhatsApp. We'll confirm the order, payment and delivery with you there.",
+      "q6": "Can I order without the website?", "a6": "Of course. Message us on WhatsApp with the flavors you want and we'll take it from there.",
+      "final.h2": "Your cup is <span>waiting.</span>", "final.p": "Build your box or order straight on WhatsApp — delivered anywhere in the UAE.",
+      "foot.about": "Specialty drip bag coffee in unique flavors, delivered across the UAE. No machine needed.", "foot.explore": "Explore", "foot.flavors": "Flavors & boxes",
+      "foot.hello": "Say hello", "foot.wa": "WhatsApp", "foot.ig": "Instagram · @trunkinocoffee", "foot.copy": "© {yr} Trunkino Coffee · Made in the UAE", "foot.made": "Made & designed by", "foot.studio": "Falah Studios",
+      "co.title": "Almost yours.", "co.sub": "Add your details — we'll confirm everything with you on WhatsApp.", "co.close": "Close checkout",
+      "co.name": "Full name", "co.phone": "WhatsApp number", "co.emirate": "Emirate", "co.pick": "Choose your emirate", "co.address": "Area & address", "co.addressPh": "e.g. Dubai Marina, Building name, Apt 12",
+      "co.email": "Email", "co.optional": "(optional)", "co.notes": "Notes", "co.notesPh": "Gift message, delivery time, anything else?", "co.submit": "Review & send order",
+      "emirates": "Abu Dhabi|Dubai|Sharjah|Ajman|Umm Al Quwain|Ras Al Khaimah|Fujairah",
+      "err.name": "Please enter your name.", "err.phone": "Please enter a WhatsApp number we can reach.", "err.emirate": "Please choose your emirate.", "err.address": "Please add your area and address.", "err.email": "That email doesn't look right.",
+      "done.title": "One last tap.", "done.p": "Send your order to Trunkino on WhatsApp — we'll confirm it, plus payment and delivery, right there.", "done.send": "Send order on WhatsApp", "done.edit": "Edit my details", "done.new": "Start a new box",
+      "sum.line": "{type} · {boxes}",
+      "wa.hello": "Hi Trunkino! I'd like to order some drip bags ☕",
+      "msg.head": "🧾 *New Trunkino Order*", "msg.type": "📦 *Box Type:*", "msg.pieces": "🔢 *Total Pieces:*", "msg.total": "💰 *Total:*", "msg.name": "👤 *Name:*", "msg.wa": "📱 *WhatsApp:*",
+      "msg.emirate": "📍 *Emirate:*", "msg.address": "🏠 *Address:*", "msg.email": "📧 *Email:*", "msg.notes": "📝 *Notes:*", "msg.from": "Sent from trunkinocoffee.com",
+    },
+    ar: {
+      "topbar": "توصيل لجميع أنحاء الإمارات · 10 أكياس تقطير بـ 150 درهم", "topbar.cta": "جهّز علبتك ←", "logo": "ترنكينو كوفي",
+      "nav.story": "قصتنا", "nav.flavors": "النكهات", "nav.brew": "طريقة التحضير", "nav.faq": "الأسئلة", "nav.build": "جهّز علبتك", "nav.ig": "إنستغرام ↗",
+      "lang.aria": "Switch to English", "theme.aria": "التبديل بين الوضع الفاتح والداكن", "box.open": "افتح علبتك", "box.close": "أغلق علبتك", "box.title": "علبتك",
+      "menu.open": "افتح القائمة", "menu.close": "أغلق القائمة", "chips.aria": "استعرض نكهة",
+      "hero.pill": "قهوة مختصة بالتقطير · صُنعت للإمارات", "hero.h1a": "قهوة المقاهي.", "hero.h1b": "بدون آلة.",
+      "hero.lede": "قهوة مختصة في أكياس تقطير بـ<b>8 نكهات غير متوقعة</b>. افتح الكيس، علّقه على كوبك، واسكب 150 مل من الماء الساخن — وهذه لحظتك المثالية.",
+      "wa.order": "اطلب عبر واتساب", "fact.flavors": "نكهات جريئة", "fact.bags": "أكياس في كل علبة", "fact.price": "150 درهم", "fact.per": "للعلبة",
+      "hero.note": "اختر<br>نكهتك!", "sachet.aria": "كيس تقطير ترنكينو بنكهة {name}",
+      "mascot.alt": "فيل ترنكينو يسكب كوب قهوة بخرطومه", "mascot.tag": "تعرّف على ترنكينو ♥",
+      "story.kicker": "قصتنا", "story.h2": "لسنا علامة قهوة <em>عادية.</em>",
+      "story.body": "وُلدت ترنكينو من حب القهوة المختصة والإبداع الجريء. نجمع بين دقة التحضير بأكياس التقطير ونكهات حيوية غير متوقعة — ونوصلها إلى باب بيتك في أي مكان في الإمارات.",
+      "stat.flavors": "نكهات لن تجدها في أي مكان آخر", "stat.ml": "150 مل", "stat.water": "من الماء الساخن. هذه هي الوصفة كلها.",
+      "feat1.t": "دقة أكياس التقطير", "feat1.d": "قهوة مختصة بجودة المقاهي في كيس تقطير تأخذه معك. افتح، علّق، اسكب 150 مل، واستمتع.",
+      "feat2.t": "نكهات جريئة وغير متوقعة", "feat2.d": "من التمر الكلاسيكي إلى مزيج ريد بُل الجريء — قهوة لم تتذوق مثلها من قبل.",
+      "feat3.t": "توصيل لكل الإمارات", "feat3.d": "اطلب عبر واتساب واستلم ترنكينو في أي إمارة.",
+      "build.kicker": "جهّز علبتك", "build.h2": "اختر نكهاتك.",
+      "build.p": "كل علبة فيها 10 أكياس تقطير بـ 150 درهم. امزج ما تحب في <b>تشكيلة الشيف</b>، أو املأها بنكهة واحدة في <b>العلبة الكلاسيكية</b>.",
+      "mix.lbl": "محتار؟ جرّب تشكيلة ←", "mix.all": "تذوّق الـ8 كلها", "mix.tropical": "استوائية", "mix.sweet": "لمحبي الحلو", "mix.bold": "جرأة ونشاط", "mix.surprise": "فاجئني",
+      "f.dates.n": "تمر", "f.dates.d": "لمسة من التقاليد. حلوة ودافئة ومريحة — كأجمل لحظة إماراتية في كوب.", "f.dates.tags": "حلوة|دافئة|تقليدية",
+      "f.chocolate.n": "شوكولاتة", "f.chocolate.d": "غنية وناعمة ومترفة. قهوة مختصة ملفوفة بنكهة الشوكولاتة المخملية لمتعة لا تُقاوم.", "f.chocolate.tags": "غنية|ناعمة|مترفة",
+      "f.guava.n": "جوافة", "f.guava.d": "منعشة واستوائية ومليئة بالعصارة. الجوافة تضيف إشراقة حيوية لقهوتك الصباحية توقظك فورًا.", "f.guava.tags": "منعشة|استوائية|عصيرية",
+      "f.tobacco.n": "توباكو", "f.tobacco.d": "جريئة ودخانية وقوية. ليست للمترددين — هذه لمن يحب العمق في كل رشفة.", "f.tobacco.tags": "جريئة|دخانية|قوية",
+      "f.mango.n": "مانجو", "f.mango.d": "مشمسة وحلوة ونابضة بالحياة. المانجو الاستوائية تلتقي بالقهوة المختصة في مزيج منطقي تمامًا.", "f.mango.tags": "مشمسة|حلوة|نابضة",
+      "f.redbull.n": "ريد بُل", "f.redbull.d": "نشيطة وجريئة وقوية. أجرأ مشروب قهوة في الإمارات — طاقة مضاعفة ونكهة مضاعفة.", "f.redbull.tags": "نشيطة|جريئة|قوية",
+      "f.coconut.n": "جوز الهند", "f.coconut.d": "كريمية وناعمة ولطيفة. هروب استوائي في كل رشفة — كأنك تشرب قهوتك على الشاطئ.", "f.coconut.tags": "كريمية|ناعمة|لطيفة",
+      "f.berries.n": "توت", "f.berries.d": "منعشة ومليئة بالفواكه. نكهات التوت المشكّل تتراقص في القهوة المختصة لكوب مشرق وحيوي.", "f.berries.tags": "منعشة|فواكه|مشرقة",
+      "card.dec": "أزل كيس {name}", "card.inc": "أضف كيس {name}", "card.box": "+ علبة كاملة",
+      "t.added": "أُضيفت {name}", "t.addedBox": "أُضيفت علبة {name}", "t.addedMix": "أُضيفت علبة {name}", "t.surprise": "أُضيفت علبة مفاجأة", "t.fresh": "علبة جديدة جاهزة",
+      "box.h": "علبتك", "box.bags": "الأكياس: {n}", "box.bag1": "الأكياس: 1", "box.boxes": "العلب: {n}", "box.box1": "العلب: 1", "box.label": "العلبة {n}",
+      "box.empty": "علبتك فارغة. أضف 10 أكياس لتمتلئ — امزج النكهات أو اختر نكهة واحدة.", "box.more": "باقي {n} لتكتمل العلبة {b}.", "box.ready": "{n} · {type}",
+      "box.readyOne": "العلبة جاهزة", "box.readyMany": "العلب الجاهزة: {n}", "box.total": "المجموع", "box.checkout": "إتمام الطلب", "box.clear": "إفراغ العلبة",
+      "type.chef": "تشكيلة الشيف", "type.classic": "العلبة الكلاسيكية · {name}",
+      "mbar.view": "عرض العلبة", "mbar.count": "{n} / 10 أكياس", "drawer.title": "علبة ترنكينو الخاصة بك",
+      "brew.kicker": "بسيطة بطبيعتها", "brew.h2": "أربع خطوات. بدون أي آلة.", "brew.p": "قهوتك المثالية بأسهل طريقة — أنت وكوب وماء ساخن فقط.",
+      "s1.t": "افتح الكيس", "s1.d": "افتحه من الخط المثقّب بهدوء حتى يبقى كيس التقطير سليمًا.",
+      "s2.t": "علّق الأجنحة", "s2.d": "افتح الأجنحة الورقية وثبّتها على حافة كوبك ليستقر الكيس جيدًا.",
+      "s3.t": "اسكب ببطء", "s3.d": "اسكب 150 مل من الماء الساخن فوق الكيس. اتركه يتفتّح، ثم دعه يقطّر.",
+      "s4.t": "استمتع", "s4.d": "أزل الكيس، استرخِ، واستمتع بكوب ترنكينو المحضّر بإتقان.",
+      "faq.kicker": "أسئلة", "faq.h2": "معلومات تهمك.", "faq.p": "عندك سؤال آخر؟ راسلنا على واتساب — وسيرد عليك شخص حقيقي.", "faq.ask": "اسألنا على واتساب",
+      "q1": "كيف أحضّرها؟", "a1": "افتح الكيس من الخط المثقّب، وافتح الأجنحة الورقية وعلّقها على كوبك، ثم اسكب ببطء 150 مل من الماء الساخن. أزل الكيس واستمتع.",
+      "q2": "هل أحتاج آلة قهوة؟", "a2": "لا. كل كيس تقطير هو قهوة مقطّرة متكاملة — كل ما تحتاجه كوب وماء ساخن.",
+      "q3": "كيف تعمل العلبة؟", "a3": "كل علبة فيها 10 أكياس تقطير بسعر 150 درهم (15 درهم للكيس). امزج أي نكهات في تشكيلة الشيف، أو اختر نكهة واحدة للعلبة الكلاسيكية. واطلب عدد العلب الذي تريده.",
+      "q4": "أين توصلون؟", "a4": "إلى أي مكان في الإمارات — من أبوظبي ودبي إلى الفجيرة ورأس الخيمة.",
+      "q5": "كيف أدفع وأؤكد طلبي؟", "a5": "جهّز علبتك، أضف بياناتك وأرسل الطلب لنا عبر واتساب. وسنؤكد معك الطلب والدفع والتوصيل هناك.",
+      "q6": "هل أستطيع الطلب بدون الموقع؟", "a6": "طبعًا. راسلنا على واتساب بالنكهات التي تريدها وسنتولى الباقي.",
+      "final.h2": "كوبك <span>بانتظارك.</span>", "final.p": "جهّز علبتك أو اطلب مباشرة عبر واتساب — نوصل لأي مكان في الإمارات.",
+      "foot.about": "قهوة مختصة في أكياس تقطير بنكهات فريدة، توصل لجميع أنحاء الإمارات. بدون الحاجة لآلة.", "foot.explore": "استكشف", "foot.flavors": "النكهات والعلب",
+      "foot.hello": "تواصل معنا", "foot.wa": "واتساب", "foot.ig": "إنستغرام · ‎@trunkinocoffee", "foot.copy": "© {yr} ترنكينو كوفي · صُنع في الإمارات", "foot.made": "تصميم وتطوير", "foot.studio": "استوديوهات فلاح",
+      "co.title": "اقتربت!", "co.sub": "أضف بياناتك — وسنؤكد كل شيء معك عبر واتساب.", "co.close": "أغلق نافذة الطلب",
+      "co.name": "الاسم الكامل", "co.phone": "رقم واتساب", "co.emirate": "الإمارة", "co.pick": "اختر إمارتك", "co.address": "المنطقة والعنوان", "co.addressPh": "مثال: دبي مارينا، اسم المبنى، شقة 12",
+      "co.email": "البريد الإلكتروني", "co.optional": "(اختياري)", "co.notes": "ملاحظات", "co.notesPh": "رسالة هدية، وقت التوصيل، أو أي شيء آخر؟", "co.submit": "راجع وأرسل الطلب",
+      "emirates": "أبوظبي|دبي|الشارقة|عجمان|أم القيوين|رأس الخيمة|الفجيرة",
+      "err.name": "يرجى كتابة اسمك.", "err.phone": "يرجى كتابة رقم واتساب يمكننا التواصل عليه.", "err.emirate": "يرجى اختيار الإمارة.", "err.address": "يرجى إضافة المنطقة والعنوان.", "err.email": "البريد الإلكتروني غير صحيح.",
+      "done.title": "خطوة أخيرة.", "done.p": "أرسل طلبك إلى ترنكينو عبر واتساب — وسنؤكده معك مع الدفع والتوصيل هناك.", "done.send": "أرسل الطلب عبر واتساب", "done.edit": "تعديل بياناتي", "done.new": "ابدأ علبة جديدة",
+      "sum.line": "{type} · {boxes}",
+      "wa.hello": "مرحبًا ترنكينو! أود طلب أكياس قهوة ☕",
+      "msg.head": "🧾 *طلب جديد من ترنكينو*", "msg.type": "📦 *نوع العلبة:*", "msg.pieces": "🔢 *عدد الأكياس:*", "msg.total": "💰 *المجموع:*", "msg.name": "👤 *الاسم:*", "msg.wa": "📱 *واتساب:*",
+      "msg.emirate": "📍 *الإمارة:*", "msg.address": "🏠 *العنوان:*", "msg.email": "📧 *البريد:*", "msg.notes": "📝 *ملاحظات:*", "msg.from": "أُرسل من trunkinocoffee.com",
+    },
+  };
+  let lang = root.lang === "ar" ? "ar" : "en";
+  const t = (k, v = {}) => (T[lang][k] ?? T.en[k] ?? k).replace(/\{(\w+)\}/g, (_, n) => v[n] ?? "");
+  const tEn = (k, v = {}) => T.en[k].replace(/\{(\w+)\}/g, (_, n) => v[n] ?? "");
+  const aed = (n) => (lang === "ar" ? `${n.toLocaleString("en-US")} درهم` : `AED ${n.toLocaleString("en-US")}`);
+  const yr = new Date().getFullYear();
+  const nBags = (n) => (n === 1 ? t("box.bag1") : t("box.bags", { n }));
+  const nBoxes = (n, en) => (en ? (n === 1 ? tEn("box.box1") : tEn("box.boxes", { n })) : n === 1 ? t("box.box1") : t("box.boxes", { n }));
 
-// ── NAV SCROLL
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>14));
+  // ---------------- Flavors (read from the cards) ----------------
+  const FL = $$(".fcard").map((el) => ({ id: el.dataset.f, el, c: el.style.getPropertyValue("--c").trim(), icon: $(".fc-ic svg", el).outerHTML }));
+  const byId = Object.fromEntries(FL.map((f) => [f.id, f]));
+  const fname = (f) => t(`f.${f.id}.n`);
 
-// ── MOBILE MENU
-const ham=document.getElementById('ham'),mm=document.getElementById('mobMenu');
-ham.addEventListener('click',()=>{ham.classList.toggle('open');mm.classList.toggle('open');});
-function closeMM(){ham.classList.remove('open');mm.classList.remove('open');}
+  // ---------------- Box state ----------------
+  let items = {};
+  try { const s = JSON.parse(store.get(KEY) || "{}"); for (const [k, v] of Object.entries(s)) if (byId[k] && v > 0) items[k] = Math.min(99, v | 0); } catch { /* ignore */ }
+  const pieces = () => Object.values(items).reduce((a, b) => a + b, 0);
+  const boxes = () => Math.ceil(pieces() / PER_BOX);
+  const valid = () => pieces() > 0 && pieces() % PER_BOX === 0;
+  const chosen = () => FL.filter((f) => items[f.id] > 0);
+  const isClassic = () => chosen().length === 1 && valid();
+  const boxType = (en) => (isClassic() ? (en ? tEn : t)("type.classic", { name: en ? T.en[`f.${chosen()[0].id}.n`] : fname(chosen()[0]) }) : (en ? tEn : t)("type.chef"));
+  const save = () => store.set(KEY, JSON.stringify(items));
+  function setQty(id, q) { if (q > 0) items[id] = Math.min(99, q); else delete items[id]; save(); render(); }
+  const add = (id, n = 1) => setQty(id, (items[id] || 0) + n);
 
-// ── SCROLL REVEAL
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -36px 0px'});
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
-
-// ── CART STATE
-const cart = {
-  type: 'chefs',       // 'chefs' | 'classic'
-  items: {},           // { 'Dates': 3, ... }  — for Chef's
-  classicFlavor: null, // string — for Classic
-  classicBoxes: 1,
-};
-
-function totalPieces(){
-  if(cart.type==='classic') return cart.classicFlavor ? cart.classicBoxes*PIECES_PER_BOX : 0;
-  return Object.values(cart.items).reduce((a,b)=>a+b,0);
-}
-function totalBoxes(){
-  const p=totalPieces();
-  return cart.type==='classic' ? cart.classicBoxes : Math.floor(p/PIECES_PER_BOX);
-}
-function totalPrice(){ return totalPieces()*PRICE_PER_PIECE; }
-function isValid(){
-  if(cart.type==='classic') return cart.classicFlavor!==null && cart.classicBoxes>=1;
-  const p=totalPieces();
-  return p>=PIECES_PER_BOX && p%PIECES_PER_BOX===0;
-}
-function isCartEmpty(){
-  if(cart.type==='classic') return !cart.classicFlavor;
-  return totalPieces()===0;
-}
-
-// ── BOX TYPE TOGGLE
-const btnChefs=document.getElementById('btnChefs');
-const btnClassic=document.getElementById('btnClassic');
-const chefsProgress=document.getElementById('chefsProgress');
-
-function setBoxType(type){
-  cart.type=type;
-  // reset selections
-  cart.items={};
-  cart.classicFlavor=null;
-  cart.classicBoxes=1;
-  btnChefs.classList.toggle('active',type==='chefs');
-  btnClassic.classList.toggle('active',type==='classic');
-  chefsProgress.style.display=type==='chefs'?'flex':'none';
-  renderCardControls();
-  updateAll();
-}
-btnChefs.addEventListener('click',()=>setBoxType('chefs'));
-btnClassic.addEventListener('click',()=>setBoxType('classic'));
-addCursorHover([btnChefs,btnClassic]);
-
-// ── CARD CONTROLS
-function renderCardControls(){
-  document.querySelectorAll('.mcard').forEach(card=>{
-    const flavor=card.dataset.flavor;
-    const ctrl=card.querySelector('.card-ctrl');
-    card.classList.remove('selected','has-items');
-    if(cart.type==='chefs'){
-      const qty=cart.items[flavor]||0;
-      if(qty>0) card.classList.add('has-items');
-      ctrl.innerHTML=`
-        <div class="qty-ctrl">
-          <button class="qty-btn minus" data-flavor="${flavor}">−</button>
-          <span class="qty-count">${qty||0}</span>
-          <button class="qty-btn plus" data-flavor="${flavor}">+</button>
-        </div>`;
-      ctrl.querySelectorAll('.qty-btn').forEach(btn=>{
-        addCursorHover([btn]);
-        btn.addEventListener('click',e=>{
-          e.stopPropagation();
-          const f=btn.dataset.flavor;
-          if(btn.classList.contains('plus')) addPiece(f);
-          else removePiece(f);
-        });
-      });
-    } else {
-      const selected=cart.classicFlavor===flavor;
-      if(selected) card.classList.add('selected');
-      ctrl.innerHTML=`
-        <button class="select-btn" data-flavor="${flavor}">
-          ${selected
-            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Selected'
-            : 'Select This Flavor'}
-        </button>`;
-      const selBtn=ctrl.querySelector('.select-btn');
-      addCursorHover([selBtn]);
-      selBtn.addEventListener('click',e=>{
-        e.stopPropagation();
-        selectClassicFlavor(flavor);
-      });
-    }
-  });
-}
-
-function addPiece(flavor){
-  const current=totalPieces();
-  // allow adding up to next multiple of 10
-  const boxCap=Math.ceil((current+1)/PIECES_PER_BOX)*PIECES_PER_BOX;
-  if(current>=boxCap && current>0 && current%PIECES_PER_BOX===0){
-    // at a complete box, allow adding for next box
-  }
-  cart.items[flavor]=(cart.items[flavor]||0)+1;
-  updateAll();
-}
-function removePiece(flavor){
-  if(!cart.items[flavor]) return;
-  cart.items[flavor]--;
-  if(cart.items[flavor]===0) delete cart.items[flavor];
-  updateAll();
-}
-function selectClassicFlavor(flavor){
-  cart.classicFlavor=cart.classicFlavor===flavor?null:flavor;
-  renderCardControls();
-  updateAll();
-}
-
-// ── BOX QTY (classic)
-document.getElementById('boxQtyMinus').addEventListener('click',()=>{
-  if(cart.classicBoxes>1){cart.classicBoxes--;updateAll();}
-});
-document.getElementById('boxQtyPlus').addEventListener('click',()=>{
-  cart.classicBoxes++;updateAll();
-});
-addCursorHover([document.getElementById('boxQtyMinus'),document.getElementById('boxQtyPlus')]);
-
-// ── UPDATE ALL UI
-function updateAll(){
-  updateProgress();
-  updateBadge();
-  updateDrawer();
-  // re-render card controls for Chef's (qty numbers change)
-  if(cart.type==='chefs') renderCardControls();
-}
-
-function updateProgress(){
-  if(cart.type!=='chefs') return;
-  const p=totalPieces();
-  const fill=document.getElementById('progressFill');
-  const count=document.getElementById('progressCount');
-  const pct=(p%PIECES_PER_BOX)/PIECES_PER_BOX*100;
-  fill.style.width=(p%PIECES_PER_BOX===0&&p>0?100:pct)+'%';
-  count.textContent=p;
-}
-
-function updateBadge(){
-  const p=totalPieces();
-  const badge=document.getElementById('cartBadge');
-  const pill=document.getElementById('cartPiecesPill');
-  badge.textContent=p;
-  badge.style.display=p>0?'flex':'none';
-  pill.textContent=p+' piece'+(p!==1?'s':'');
-}
-
-function updateDrawer(){
-  const empty=isCartEmpty();
-  const emptyEl=document.getElementById('cartEmpty');
-  const contentEl=document.getElementById('cartContent');
-  emptyEl.style.display=empty?'block':'none';
-  contentEl.style.display=empty?'none':'block';
-  if(empty){
-    document.getElementById('checkoutBtn').disabled=true;
-    return;
-  }
-  // type label
-  document.getElementById('cartTypeLabel').textContent=cart.type==='chefs'?'Chef\'s Special':'Classic Box';
-  document.getElementById('sumBoxType').textContent=cart.type==='chefs'?'Chef\'s Special':'Classic Box';
-
-  // items list
-  const list=document.getElementById('cartItemsList');
-  list.innerHTML='';
-  if(cart.type==='chefs'){
-    Object.entries(cart.items).forEach(([flavor,qty])=>{
-      const card=document.querySelector(`.mcard[data-flavor="${flavor}"]`);
-      const emoji=card?card.dataset.emoji:'☕';
-      const item=document.createElement('div');
-      item.className='cart-item';
-      item.innerHTML=`
-        <span class="cart-item-emoji">${emoji}</span>
-        <div class="cart-item-info">
-          <div class="cart-item-name">${flavor}</div>
-          <div class="cart-item-sub">${qty} piece${qty>1?'s':''} · AED ${qty*PRICE_PER_PIECE}</div>
-        </div>
-        <span class="cart-item-price">×${qty}</span>
-        <button class="cart-item-remove" data-flavor="${flavor}" aria-label="Remove">×</button>`;
-      item.querySelector('.cart-item-remove').addEventListener('click',e=>{
-        delete cart.items[e.currentTarget.dataset.flavor];
-        updateAll();
-      });
-      addCursorHover([item.querySelector('.cart-item-remove')]);
-      list.appendChild(item);
+  // Card controls
+  function cardControls() {
+    FL.forEach((f) => {
+      $(".fc-act", f.el).innerHTML = `<div class="stepper"><button type="button" data-act="dec" aria-label="${esc(t("card.dec", { name: fname(f) }))}">−</button><output aria-live="polite">${items[f.id] || 0}</output><button type="button" class="add" data-act="inc" aria-label="${esc(t("card.inc", { name: fname(f) }))}">+</button></div><button type="button" class="fill" data-act="box">${esc(t("card.box"))}</button>`;
     });
-  } else if(cart.classicFlavor){
-    const card=document.querySelector(`.mcard[data-flavor="${cart.classicFlavor}"]`);
-    const emoji=card?card.dataset.emoji:'☕';
-    const item=document.createElement('div');
-    item.className='cart-item';
-    item.innerHTML=`
-      <span class="cart-item-emoji">${emoji}</span>
-      <div class="cart-item-info">
-        <div class="cart-item-name">${cart.classicFlavor}</div>
-        <div class="cart-item-sub">${cart.classicBoxes*PIECES_PER_BOX} pieces · Classic Box</div>
-      </div>
-      <span class="cart-item-price">×${cart.classicBoxes*PIECES_PER_BOX}</span>`;
-    list.appendChild(item);
   }
-
-  // classic box qty control
-  const classicCtrl=document.getElementById('classicBoxCtrl');
-  classicCtrl.style.display=cart.type==='classic'&&cart.classicFlavor?'flex':'none';
-  document.getElementById('boxQtyNum').textContent=cart.classicBoxes;
-
-  // warning
-  const warning=document.getElementById('cartWarning');
-  const valid=isValid();
-  if(!valid&&!isCartEmpty()){
-    warning.style.display='flex';
-    if(cart.type==='chefs'){
-      const p=totalPieces();
-      const rem=PIECES_PER_BOX-(p%PIECES_PER_BOX);
-      document.getElementById('cartWarningText').textContent=
-        p%PIECES_PER_BOX!==0
-          ? `Add ${rem} more piece${rem>1?'s':''} to complete a box of 10.`
-          : 'Add at least 10 pieces to checkout.';
-    }
-  } else {
-    warning.style.display='none';
-  }
-
-  // summary
-  const p=totalPieces();
-  document.getElementById('sumPieces').textContent=p;
-  document.getElementById('sumBoxes').textContent=totalBoxes()+' box'+(totalBoxes()!==1?'es':'');
-  document.getElementById('sumTotal').textContent='AED '+totalPrice();
-
-  // checkout btn
-  document.getElementById('checkoutBtn').disabled=!valid;
-}
-
-// ── CART OPEN/CLOSE
-function openCart(){
-  document.getElementById('cartOverlay').classList.add('open');
-  document.getElementById('cartDrawer').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeCart(){
-  document.getElementById('cartOverlay').classList.remove('open');
-  document.getElementById('cartDrawer').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('navCartBtn').addEventListener('click',openCart);
-document.getElementById('cartCloseBtn').addEventListener('click',closeCart);
-document.getElementById('cartOverlay').addEventListener('click',closeCart);
-document.getElementById('openCartFromMenu').addEventListener('click',openCart);
-document.getElementById('openCartMini').addEventListener('click',openCart);
-addCursorHover([document.getElementById('navCartBtn'),document.getElementById('cartCloseBtn'),document.getElementById('openCartFromMenu'),document.getElementById('openCartMini')]);
-
-// ── CHECKOUT OPEN/CLOSE
-function openCheckout(){
-  closeCart();
-  // Populate modal summary
-  const itemsEl=document.getElementById('modalOrderItems');
-  itemsEl.innerHTML='';
-  if(cart.type==='chefs'){
-    Object.entries(cart.items).forEach(([flavor,qty])=>{
-      const d=document.createElement('div');
-      d.className='or-item';
-      d.innerHTML=`<span>${flavor} × ${qty}</span><span>AED ${qty*PRICE_PER_PIECE}</span>`;
-      itemsEl.appendChild(d);
+  FL.forEach((f) => {
+    f.el.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-act]"); if (!b) return;
+      if (b.dataset.act === "inc") { add(f.id); toast(t("t.added", { name: fname(f) }), f.c); }
+      if (b.dataset.act === "dec") setQty(f.id, (items[f.id] || 0) - 1);
+      if (b.dataset.act === "box") { add(f.id, PER_BOX); toast(t("t.addedBox", { name: fname(f) }), f.c); }
     });
-  } else if(cart.classicFlavor){
-    const d=document.createElement('div');
-    d.className='or-item';
-    d.innerHTML=`<span>${cart.classicFlavor} × ${cart.classicBoxes*PIECES_PER_BOX} (${cart.classicBoxes} box${cart.classicBoxes>1?'es':''})</span><span>AED ${totalPrice()}</span>`;
-    itemsEl.appendChild(d);
-  }
-  document.getElementById('modalTotal').textContent='AED '+totalPrice();
-  document.getElementById('checkoutModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeCheckout(){
-  document.getElementById('checkoutModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('checkoutBtn').addEventListener('click',openCheckout);
-document.getElementById('modalClose').addEventListener('click',closeCheckout);
-document.getElementById('checkoutModal').addEventListener('click',e=>{if(e.target===document.getElementById('checkoutModal'))closeCheckout();});
-addCursorHover([document.getElementById('modalClose')]);
-
-// ── FORM SUBMIT
-document.getElementById('checkoutForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const fd=new FormData(e.target);
-  const name=fd.get('name').trim();
-  const phone=fd.get('phone').trim();
-  const email=fd.get('email').trim();
-  const address=fd.get('address').trim();
-  const notes=fd.get('notes').trim();
-  if(!name||!phone||!email||!address){
-    alert('Please fill in all required fields.');
-    return;
-  }
-  closeCheckout();
-  showSuccess({name,phone,email,address,notes});
-});
-
-// ── SUCCESS
-function showSuccess(customer){
-  // Build order lines
-  const lines=[];
-  let orderDetail='';
-  if(cart.type==='chefs'){
-    Object.entries(cart.items).forEach(([flavor,qty])=>{
-      const card=document.querySelector(`.mcard[data-flavor="${flavor}"]`);
-      const emoji=card?card.dataset.emoji:'☕';
-      lines.push({emoji,flavor,qty,price:qty*PRICE_PER_PIECE});
-      orderDetail+=`${emoji} ${flavor} × ${qty} pieces\n`;
+    f.el.addEventListener("pointermove", (e) => {
+      const r = f.el.getBoundingClientRect();
+      f.el.style.setProperty("--mx", `${e.clientX - r.left}px`); f.el.style.setProperty("--my", `${e.clientY - r.top}px`);
     });
-  } else if(cart.classicFlavor){
-    const card=document.querySelector(`.mcard[data-flavor="${cart.classicFlavor}"]`);
-    const emoji=card?card.dataset.emoji:'☕';
-    const qty=cart.classicBoxes*PIECES_PER_BOX;
-    lines.push({emoji,flavor:cart.classicFlavor,qty,price:totalPrice()});
-    orderDetail+=`${emoji} ${cart.classicFlavor} × ${qty} pieces (${cart.classicBoxes} box${cart.classicBoxes>1?'es':''})\n`;
+  });
+
+  // Ready-made mixes add one full box
+  const MIXES = [
+    ["mix.all", { dates: 2, chocolate: 2, guava: 1, tobacco: 1, mango: 1, redbull: 1, coconut: 1, berries: 1 }],
+    ["mix.tropical", { mango: 4, guava: 3, coconut: 3 }],
+    ["mix.sweet", { dates: 4, chocolate: 3, berries: 3 }],
+    ["mix.bold", { redbull: 4, tobacco: 3, chocolate: 3 }],
+    ["mix.surprise", null],
+  ];
+  function mixButtons() {
+    const el = $("#mixes");
+    el.innerHTML = `<span class="lbl hand">${esc(t("mix.lbl"))}</span>`;
+    MIXES.forEach(([key, mix]) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "mix";
+      const ids = mix ? Object.keys(mix).slice(0, 4) : FL.slice(4, 8).map((f) => f.id);
+      b.innerHTML = `<span class="dots">${ids.map((id) => `<i style="--c:${byId[id].c}"></i>`).join("")}</span>${esc(t(key))}`;
+      b.addEventListener("click", () => {
+        let m = mix;
+        if (!m) { m = {}; for (let i = 0; i < PER_BOX; i++) { const f = FL[Math.floor(Math.random() * FL.length)]; m[f.id] = (m[f.id] || 0) + 1; } }
+        for (const [id, n] of Object.entries(m)) items[id] = Math.min(99, (items[id] || 0) + n);
+        save(); render(); toast(mix ? t("t.addedMix", { name: t(key) }) : t("t.surprise"), "#60a5fa");
+      });
+      el.appendChild(b);
+    });
   }
 
-  // Success items
-  const successItems=document.getElementById('successItems');
-  successItems.innerHTML='';
-  lines.forEach(l=>{
-    const d=document.createElement('div');
-    d.className='si';
-    d.innerHTML=`<span>${l.emoji} ${l.flavor} × ${l.qty}</span><span>AED ${l.price}</span>`;
-    successItems.appendChild(d);
-  });
-  // customer info
-  ['name','phone','email','area'].forEach(k=>{
-    const d=document.createElement('div');
-    d.className='si';
-    const labels={name:'Name',phone:'WhatsApp',email:'Email',area:'Address'};
-    const vals={name:customer.name,phone:customer.phone,email:customer.email,area:customer.address};
-    if(vals[k]) d.innerHTML=`<span>${labels[k]}</span><span>${vals[k]}</span>`;
-    if(vals[k]) successItems.appendChild(d);
-  });
-  document.getElementById('successTotal').textContent='AED '+totalPrice();
-
-  // WhatsApp message
-  const boxLabel=cart.type==='chefs'?"Chef's Special":`Classic Box (${cart.classicFlavor})`;
-  const waMsg=
-`🧾 *New Trunkino Order*
-
-📦 *Box Type:* ${boxLabel}
-
-${orderDetail}
-🔢 *Total Pieces:* ${totalPieces()} (${totalBoxes()} box${totalBoxes()>1?'es':''})
-💰 *Total:* AED ${totalPrice()}
-
-👤 *Name:* ${customer.name}
-📱 *WhatsApp:* ${customer.phone}
-📧 *Email:* ${customer.email}
-📍 *Address:* ${customer.address}${customer.notes?'\n📝 *Notes:* '+customer.notes:''}
-
----
-Sent from trunkino.com`;
-
-  document.getElementById('waSendBtn').href=`https://wa.me/${TRUNKINO_WA}?text=${encodeURIComponent(waMsg)}`;
-
-  // Email body
-  const emailBody=
-`New Order from Trunkino Website
-
-Box Type: ${boxLabel}
-${orderDetail}
-Total Pieces: ${totalPieces()} (${totalBoxes()} box${totalBoxes()>1?'es':''})
-Total: AED ${totalPrice()}
-
-Customer Details:
-Name: ${customer.name}
-WhatsApp: ${customer.phone}
-Email: ${customer.email}
-Address: ${customer.address}${customer.notes?'\nNotes: '+customer.notes:''}`;
-
-  document.getElementById('emailSendBtn').href=
-    `mailto:${TRUNKINO_EMAIL}?subject=New Order - ${customer.name}&body=${encodeURIComponent(emailBody)}`;
-
-  document.getElementById('successModal').classList.add('open');
-  document.body.style.overflow='hidden';
-  addCursorHover([document.getElementById('waSendBtn'),document.getElementById('emailSendBtn')]);
-}
-document.getElementById('successModal').addEventListener('click',e=>{
-  if(e.target===document.getElementById('successModal')){
-    document.getElementById('successModal').classList.remove('open');
-    document.body.style.overflow='';
-    // reset cart
-    cart.items={};cart.classicFlavor=null;cart.classicBoxes=1;
-    renderCardControls();updateAll();
+  // ---------------- Box panel ----------------
+  const seq = () => FL.flatMap((f) => Array(items[f.id] || 0).fill(f));
+  const info = (ok) => ok ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg>';
+  function current() { const p = pieces(), b = Math.max(1, boxes()), inBox = p === 0 ? 0 : p - (b - 1) * PER_BOX; return { p, b, inBox, cur: seq().slice((b - 1) * PER_BOX, (b - 1) * PER_BOX + inBox) }; }
+  const readyText = () => (boxes() === 1 ? t("box.readyOne") : t("box.readyMany", { n: boxes() }));
+  function boxPanel() {
+    const { p, b, inBox, cur } = current();
+    const slots = Array.from({ length: PER_BOX }, (_, i) => (cur[i] ? `<span class="slot f" style="--c:${cur[i].c}" title="${esc(fname(cur[i]))}"></span>` : `<span class="slot">${i + 1}</span>`)).join("");
+    const msg = p === 0 ? `<div class="msg">${info(false)}${esc(t("box.empty"))}</div>`
+      : !valid() ? `<div class="msg">${info(false)}${esc(t("box.more", { n: PER_BOX - (p % PER_BOX), b }))}</div>`
+      : `<div class="msg ok">${info(true)}${esc(readyText())} · ${esc(boxType())}</div>`;
+    const lines = chosen().map((f) => `<li style="--c:${f.c}"><i></i><span>${esc(fname(f))}</span><span class="q"><button type="button" data-q="${f.id}" data-d="-1" aria-label="${esc(t("card.dec", { name: fname(f) }))}">−</button><b>${items[f.id]}</b><button type="button" data-q="${f.id}" data-d="1" aria-label="${esc(t("card.inc", { name: fname(f) }))}">+</button></span><span class="p">${aed(items[f.id] * PRICE)}</span></li>`).join("");
+    const cnt = nBags(p) + (boxes() > 1 ? " · " + nBoxes(boxes()) : "");
+    return `<div class="boxp-head"><h3>${esc(t("box.h"))}</h3><span class="cnt">${esc(cnt)}</span></div>
+      <div class="crate"><div class="slots">${slots}</div><div class="crate-label"><span>${esc(t("box.label", { n: b }))}</span><span dir="ltr" style="font:800 14px/1.3 Figtree,sans-serif">${inBox}/10</span></div></div>
+      ${msg}
+      ${lines ? `<ul class="lines">${lines}</ul>` : ""}
+      <div class="tot"><span>${esc(t("box.total"))}</span><b>${aed(p * PRICE)}</b></div>
+      <button class="btn btn-primary" type="button" data-checkout ${valid() ? "" : "disabled"}>${esc(t("box.checkout"))}
+        <svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      ${p ? `<button class="clear" type="button" data-clear>${esc(t("box.clear"))}</button>` : ""}`;
   }
-});
+  const mbar = $("#mbar");
+  function render() {
+    const p = pieces();
+    FL.forEach((f) => {
+      const q = items[f.id] || 0;
+      f.el.classList.toggle("on", q > 0);
+      $(".fc-qty", f.el).textContent = q ? "×" + q : "";
+      const out = $("output", f.el); if (out) out.textContent = q;
+    });
+    $$("[data-badge]").forEach((el) => { el.textContent = p; el.classList.toggle("on", p > 0); });
+    const html = boxPanel();
+    $$("[data-boxp]").forEach((el) => { el.innerHTML = html; });
+    const { inBox, cur } = current();
+    $("#mini").innerHTML = Array.from({ length: PER_BOX }, (_, i) => (i < inBox ? `<i class="f" style="--c:${cur[i].c}"></i>` : "<i></i>")).join("");
+    $("#mbarTxt").innerHTML = `<b>${esc(valid() ? readyText() : t("mbar.count", { n: inBox }))}</b>${aed(p * PRICE)}`;
+    mbar.classList.toggle("show", p > 0);
+    document.body.style.paddingBottom = p > 0 && innerWidth <= 1060 ? "96px" : "";
+  }
+  document.addEventListener("click", (e) => {
+    const q = e.target.closest("[data-q]");
+    if (q) { setQty(q.dataset.q, (items[q.dataset.q] || 0) + Number(q.dataset.d)); return; }
+    if (e.target.closest("[data-clear]")) { items = {}; save(); render(); return; }
+    if (e.target.closest("[data-checkout]")) { openCheckout(); return; }
+    if (e.target.closest("[data-open-box]")) { openDrawer(); return; }
+    if (e.target.closest("[data-lang-toggle]")) { setLang(lang === "ar" ? "en" : "ar"); return; }
+    if (e.target.closest("[data-theme-toggle]")) { const next = root.dataset.theme === "dark" ? "light" : "dark"; root.dataset.theme = next; store.set(TKEY, next); }
+  });
 
-// ── INIT
-setBoxType('chefs');
+  // ---------------- Toast ----------------
+  const toastEl = $("#toast"); let toastTimer;
+  function toast(text, color) {
+    $("span", toastEl).textContent = text; toastEl.style.setProperty("--c", color);
+    toastEl.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toastEl.classList.remove("show"), 1700);
+  }
+
+  // ---------------- Drawer, menu, checkout ----------------
+  const drawer = $("#drawer"), scrim = $("#scrim");
+  let lastFocus = null;
+  const lock = (on) => { root.style.overflow = on ? "hidden" : ""; };
+  function openDrawer() { lastFocus = document.activeElement; drawer.classList.add("open"); scrim.classList.add("open"); drawer.setAttribute("aria-hidden", "false"); lock(true); $("#drawerClose").focus(); }
+  function closeDrawer() { drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.setAttribute("aria-hidden", "true"); lock(false); lastFocus?.focus?.(); }
+  $("#drawerClose").addEventListener("click", closeDrawer);
+  scrim.addEventListener("click", closeDrawer);
+
+  const mm = $("#mmenu"), menuOpen = $("#menuOpen");
+  const setMenu = (on) => { mm.classList.toggle("open", on); menuOpen.setAttribute("aria-expanded", String(on)); lock(on); if (on) $("#menuClose").focus(); };
+  menuOpen.addEventListener("click", () => setMenu(true));
+  $("#menuClose").addEventListener("click", () => setMenu(false));
+  $$("a", mm).forEach((a) => a.addEventListener("click", () => setMenu(false)));
+
+  const modal = $("#checkout"), form = $("#form");
+  const summaryHtml = () => chosen().map((f) => `<div class="row"><span>${esc(fname(f))} × ${items[f.id]}</span><span>${aed(items[f.id] * PRICE)}</span></div>`).join("") +
+    `<div class="row"><span>${esc(t("sum.line", { type: boxType(), boxes: nBoxes(boxes()) }))}</span><span>${esc(nBags(pieces()))}</span></div><div class="row t"><span>${esc(t("box.total"))}</span><span>${aed(pieces() * PRICE)}</span></div>`;
+  function openCheckout() {
+    if (!valid()) return;
+    if (drawer.classList.contains("open")) closeDrawer();
+    lastFocus = document.activeElement;
+    $("#coSummary").innerHTML = summaryHtml();
+    $("#coForm").hidden = false; $("#coDone").hidden = true;
+    modal.classList.add("open"); lock(true);
+    setTimeout(() => $("#fName").focus(), 60);
+  }
+  function closeCheckout() { modal.classList.remove("open"); lock(false); lastFocus?.focus?.(); }
+  $$("[data-close]", modal).forEach((b) => b.addEventListener("click", closeCheckout));
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (modal.classList.contains("open")) closeCheckout(); else if (drawer.classList.contains("open")) closeDrawer(); else if (mm.classList.contains("open")) setMenu(false);
+  });
+
+  // Emirates list keeps an English value so the order message stays readable for the team
+  function emirates() {
+    const sel = $("#fEmirate"), v = sel.value, en = T.en.emirates.split("|"), loc = t("emirates").split("|");
+    sel.innerHTML = `<option value="">${esc(t("co.pick"))}</option>` + en.map((e, i) => `<option value="${esc(e)}">${esc(loc[i])}</option>`).join("");
+    sel.value = v;
+  }
+  const RULES = {
+    name: (v) => (v.trim().length >= 2 ? "" : "err.name"),
+    phone: (v) => (v.replace(/\D/g, "").length >= 9 ? "" : "err.phone"),
+    emirate: (v) => (v ? "" : "err.emirate"),
+    address: (v) => (v.trim().length >= 6 ? "" : "err.address"),
+    email: (v) => (!v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "err.email"),
+  };
+  function check(input) {
+    const rule = RULES[input.name]; if (!rule) return true;
+    const err = rule(input.value), out = input.parentElement.querySelector(".err");
+    input.setAttribute("aria-invalid", err ? "true" : "false"); out.textContent = err ? t(err) : ""; out.hidden = !err;
+    return !err;
+  }
+  $$(".input", form).forEach((i) => i.addEventListener("blur", () => { if (i.value) check(i); }));
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const bad = $$(".input", form).filter((i) => !check(i));
+    if (bad.length) { bad[0].focus(); return; }
+    const d = Object.fromEntries(new FormData(form));
+    // Flavor names go out in both languages so the Trunkino team can always read them.
+    const lines = chosen().map((f) => `• ${lang === "ar" ? `${fname(f)} (${T.en[`f.${f.id}.n`]})` : fname(f)} × ${items[f.id]}`).join("\n");
+    const emirateLoc = t("emirates").split("|")[T.en.emirates.split("|").indexOf(d.emirate)] || d.emirate;
+    const type = lang === "ar" ? `${boxType()} (${boxType(true)})` : boxType();
+    const msg = [
+      t("msg.head"), "", `${t("msg.type")} ${type}`, lines, "",
+      `${t("msg.pieces")} ${pieces()} (${nBoxes(boxes())})`, `${t("msg.total")} ${aed(pieces() * PRICE)}`, "",
+      `${t("msg.name")} ${d.name.trim()}`, `${t("msg.wa")} ${d.phone.trim()}`, `${t("msg.emirate")} ${emirateLoc}`, `${t("msg.address")} ${d.address.trim()}`,
+      ...(d.email.trim() ? [`${t("msg.email")} ${d.email.trim()}`] : []), ...(d.notes.trim() ? [`${t("msg.notes")} ${d.notes.trim()}`] : []),
+      "", "---", t("msg.from"),
+    ].join("\n");
+    $("#sendWa").href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+    $("#doneSummary").innerHTML = summaryHtml();
+    $("#coForm").hidden = true; $("#coDone").hidden = false; $("#newOrder").hidden = true;
+    $("#sendWa").focus();
+  });
+  $("#sendWa").addEventListener("click", () => { $("#newOrder").hidden = false; });
+  $("#editOrder").addEventListener("click", () => { $("#coForm").hidden = false; $("#coDone").hidden = true; $("#fName").focus(); });
+  $("#newOrder").addEventListener("click", () => { items = {}; save(); render(); form.reset(); closeCheckout(); toast(t("t.fresh"), "#60a5fa"); });
+
+  // ---------------- Hero: fanned drip bags ----------------
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // The pouch is product artwork, so its printing stays as on the real bag in both languages.
+  const PK = { dates: "#d62828", chocolate: "#141414", guava: "#e0457b", tobacco: "#141414", mango: "#ef8a00", redbull: "#d71f26", coconut: "#7a4a2a", berries: "#2b3a9f" };
+  const star = (r1, r2, n = 14) => Array.from({ length: n * 2 }, (_, i) => { const a = (i / (n * 2)) * Math.PI * 2 - Math.PI / 2, r = i % 2 ? r2 : r1; return `${i ? "L" : "M"}${(50 + Math.cos(a) * r).toFixed(1)} ${(31 + Math.sin(a) * r * 0.62).toFixed(1)}`; }).join("") + "Z";
+  const BURST = star(50, 33), BURST_IN = star(36, 24), BC = { redbull: "#e3262e", berries: "#e0405e", tobacco: "#3b3b3b" };
+  const FLY = '<svg viewBox="0 0 24 24" fill="#d6e8ff" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 9C10 5 4.5 3.5 3.6 6.4 2.8 9 5.2 11.6 8.6 11.3 5.8 12.6 5.2 16 7.6 16.8 10.2 17.6 11.6 14.4 12 11.8 12.4 14.4 13.8 17.6 16.4 16.8 18.8 16 18.2 12.6 15.4 11.3 18.8 11.6 21.2 9 20.4 6.4 19.5 3.5 14 5 12 9Z"/><path d="M12 8.5v9" fill="none"/></svg>';
+  const sachetHtml = (f) => `<span class="seal"></span><span class="wm"></span><span class="ar ar1">تعدل<br>المزاج</span><span class="burst"><svg viewBox="0 0 100 62" aria-hidden="true"><path d="${BURST}" fill="${BC[f.id] || f.c}"/><path d="${BURST_IN}" fill="#ffd23f"/></svg><b>STAY<br>CAFFEINATED</b></span><span class="cdb">Coffee<br>Drip Bag</span><span class="uf">UNIQUE&nbsp;&nbsp;FLAVORS,<br>MADE JUST FOR YOU</span><span class="fl">${esc(T.en[`f.${f.id}.n`].toUpperCase())}</span><span class="ill">${f.icon}</span><span class="ele"></span><span class="ar ar2">القهوه<br>المثاليه</span><span class="bf bf1">${FLY}</span><span class="bf bf2">${FLY}</span><span class="holo"></span><span class="sheen"></span>`;
+  const paint = (el, f) => { el.style.setProperty("--c", f.c); el.style.setProperty("--pk", PK[f.id] || "#141414"); el.innerHTML = sachetHtml(f); };
+  const slotEls = { prev: $('[data-slot="prev"]'), next: $('[data-slot="next"]'), front: $('[data-slot="front"]') };
+  let hi = FL.findIndex((f) => f.id === "mango"), pauseUntil = 0;
+  function chipButtons() {
+    const chips = $("#chips"); chips.innerHTML = "";
+    FL.forEach((f, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip glass"; b.innerHTML = `<i style="--c:${f.c}"></i>${esc(fname(f))}`;
+      b.setAttribute("aria-pressed", String(i === hi));
+      b.addEventListener("click", () => { show(i, true); pauseUntil = performance.now() + 9000; });
+      chips.appendChild(b);
+    });
+  }
+  function show(i, animate) {
+    hi = (i + FL.length) % FL.length;
+    const f = FL[hi];
+    $$(".chip").forEach((c, j) => c.setAttribute("aria-pressed", String(j === hi)));
+    slotEls.front.setAttribute("aria-label", t("sachet.aria", { name: fname(f) }));
+    paint(slotEls.prev, FL[(hi - 1 + FL.length) % FL.length]);
+    paint(slotEls.next, FL[(hi + 1) % FL.length]);
+    if (!animate || reduce) { paint(slotEls.front, f); return; }
+    slotEls.front.classList.remove("swap"); void slotEls.front.offsetWidth; slotEls.front.classList.add("swap");
+    setTimeout(() => paint(slotEls.front, f), 240);
+  }
+  if (!reduce) setInterval(() => { if (performance.now() > pauseUntil && !document.hidden) show(hi + 1, true); }, 2800);
+
+  const art = $("#heroArt");
+  if (!reduce && matchMedia("(pointer: fine)").matches) {
+    art.addEventListener("pointermove", (e) => {
+      const r = art.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      $("#stack").style.transform = `translate(${x * 14}px, ${y * 10}px) rotateX(${-y * 10}deg) rotateY(${x * 14}deg)`;
+      $$(".bean", art).forEach((b, k) => { b.style.translate = `${x * (18 + k * 8)}px ${y * (14 + k * 6)}px`; });
+    });
+    art.addEventListener("pointerleave", () => { $("#stack").style.transform = ""; $$(".bean", art).forEach((b) => { b.style.translate = ""; }); });
+  }
+
+  function marquee() {
+    const run = FL.map((f, i) => `<span class="${i % 2 ? "o" : ""}"><i style="--c:${f.c}"></i>${esc(fname(f))}</span>`).join("") +
+      `<span><i style="--c:#ffffff"></i>${esc(t("topbar"))}</span>`;
+    $("#marquee").innerHTML = run + run;
+  }
+
+  // ---------------- Language ----------------
+  function applyText() {
+    $$("[data-t]").forEach((el) => { el.textContent = t(el.dataset.t, { yr }); });
+    $$("[data-th]").forEach((el) => { el.innerHTML = t(el.dataset.th); });
+    $$("[data-tp]").forEach((el) => { el.placeholder = t(el.dataset.tp); });
+    $$("[data-tl]").forEach((el) => { el.setAttribute("aria-label", t(el.dataset.tl)); });
+    $$("[data-ta]").forEach((el) => { const [attr, key] = el.dataset.ta.split(":"); el.setAttribute(attr, t(key)); });
+    $$("[data-tags]").forEach((el) => { el.innerHTML = t(`f.${el.dataset.tags}.tags`).split("|").map((x) => `<li>${esc(x)}</li>`).join(""); });
+    $$(".lang-btn").forEach((b) => { b.textContent = lang === "ar" ? "EN" : "ع"; });
+    $$("[data-wa]").forEach((a) => { a.href = `https://wa.me/${WA}?text=${encodeURIComponent(t("wa.hello"))}`; });
+    document.title = lang === "ar" ? "ترنكينو كوفي — قهوة مختصة في أكياس تقطير بـ8 نكهات · الإمارات" : "Trunkino Coffee — Specialty Drip Bag Coffee in 8 Flavors · UAE";
+    cardControls(); mixButtons(); chipButtons(); marquee(); emirates(); show(hi, false); render();
+    if (modal.classList.contains("open")) { $("#coSummary").innerHTML = summaryHtml(); $("#doneSummary").innerHTML = summaryHtml(); }
+  }
+  function setLang(l) {
+    lang = l; root.lang = l; root.dir = l === "ar" ? "rtl" : "ltr"; store.set(LKEY, l);
+    applyText();
+  }
+
+  // ---------------- Page polish ----------------
+  const nav = $("#nav"), bar = $("#progress");
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`;
+    nav.firstElementChild.style.boxShadow = scrollY > 10 ? "inset 0 1px 0 var(--hi), inset 0 0 0 1px var(--glass-line), 0 18px 40px -20px var(--shadow)" : "";
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", render);
+
+  applyText();
+  root.classList.remove("i18n-pending");
+  onScroll();
+
+  if ("IntersectionObserver" in window && !reduce) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.remove("pre"); io.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px" });
+    $$(".rv").forEach((el, i) => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add("pre"); el.style.transitionDelay = (el.classList.contains("fcard") ? (i % 2) * 90 : 0) + "ms"; io.observe(el); } });
+  }
+})();
 </script>
 </body>
 </html>
